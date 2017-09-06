@@ -86,7 +86,12 @@ bool HelloWorld::init()
     return true;
 }
 void HelloWorld::gotoAnalytics(Ref* pSender) {
+    TransitionScene * reScene = NULL;
+    Scene * s = AnalyticsHome::scene();
+    float t = 1.2f;
     
+    reScene = TransitionJumpZoom ::create(t , s);
+    Director::getInstance()->replaceScene(reScene);
 }
 void HelloWorld::gotoShare(Ref* pSender) {
     TransitionScene * reScene = NULL;
@@ -97,7 +102,12 @@ void HelloWorld::gotoShare(Ref* pSender) {
     Director::getInstance()->replaceScene(reScene);
 }
 void HelloWorld::gotoPush(Ref* pSender) {
+    TransitionScene * reScene = NULL;
+    Scene * s = PushScence::scene();
+    float t = 1.2f;
     
+    reScene = TransitionJumpZoom ::create(t , s);
+    Director::getInstance()->replaceScene(reScene);
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)

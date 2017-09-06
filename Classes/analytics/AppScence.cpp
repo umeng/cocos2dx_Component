@@ -52,14 +52,7 @@ bool AppScence::init()
     // add the label as a child to this layer
     this->addChild(pLabel, 1);
 
-    MenuItemFont *appButton = MenuItemFont::create("App", CC_CALLBACK_1(AppScence::gotoApp, this));
-
-    appButton->setPosition(Vec2(visibleSize.width/2, 160));
-    appButton->setFontSizeObj(14);
-    // 底层API分享
-    MenuItemFont *gameButton = MenuItemFont::create("游戏", CC_CALLBACK_1(AppScence::gotoGame, this));
-    gameButton->setPosition(Vec2(visibleSize.width/2, 120));
- gameButton->setFontSizeObj(14);
+   
     // 授权某平台
 
     MenuItemImage *pCloseItem = MenuItemImage::create(
@@ -71,9 +64,7 @@ bool AppScence::init()
                                 origin.y + pCloseItem->getContentSize().height));
    
     Menu* pMenu = Menu::create();
-    pMenu->addChild(appButton, 1);
-    pMenu->addChild(pCloseItem, 1);
-    pMenu->addChild(gameButton, 1);
+  
    
     pMenu->setPosition(Size::ZERO);
     this->addChild(pMenu, 1);
@@ -90,7 +81,7 @@ void AppScence::gotoGame(Ref* pSender) {
 void AppScence::menuCloseCallback(Ref* pSender)
 {
     TransitionScene * reScene = NULL;
-    Scene * s = AnalyticsHome::scene()();
+    Scene * s = AnalyticsHome::scene();
     float t = 1.2f;
     
     reScene = TransitionJumpZoom ::create(t , s);

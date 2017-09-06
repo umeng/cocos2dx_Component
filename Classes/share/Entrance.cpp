@@ -45,7 +45,7 @@ bool Entrance::init()
     //    you may modify it.
     
     // add a "close" icon to exit the progress. it's an autorelease object
-    Label *pLabel = Label::createWithTTF("UM-Cocos2dx-Social", "fonts/Marker Felt.ttf", 24);
+    Label *pLabel = Label::createWithTTF("Cocos2dx-UMSocial", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     pLabel->setPosition(Vec2(origin.x + visibleSize.width/2,

@@ -59,57 +59,57 @@ bool PushScence::init()
     
     MenuItemFont *del_tags = MenuItemFont::create("del tags", CC_CALLBACK_1(PushScence::delTags, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width*2/4, 160));
-    add_tags->setFontSizeObj(10);
+    del_tags->setPosition(Vec2(visibleSize.width*2/4, 160));
+    del_tags->setFontSizeObj(10);
 
     
     
     MenuItemFont *list_tags = MenuItemFont::create("list tags", CC_CALLBACK_1(PushScence::listTags, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width*3/4, 160));
-    add_tags->setFontSizeObj(10);
+    list_tags->setPosition(Vec2(visibleSize.width*3/4, 160));
+    list_tags->setFontSizeObj(10);
 
     
     
     MenuItemFont *add_alias = MenuItemFont::create("add alias", CC_CALLBACK_1(PushScence::addAlias, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width/4, 120));
-    add_tags->setFontSizeObj(10);
+    add_alias->setPosition(Vec2(visibleSize.width/4, 120));
+    add_alias->setFontSizeObj(10);
 
     
     
     MenuItemFont *alias_type = MenuItemFont::create("alias type", CC_CALLBACK_1(PushScence::aliasType, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width*2/4, 120));
-    add_tags->setFontSizeObj(10);
+    alias_type->setPosition(Vec2(visibleSize.width*2/4, 120));
+    alias_type->setFontSizeObj(10);
 
     
     
     MenuItemFont *add_ex_alias = MenuItemFont::create("add exclisive alias", CC_CALLBACK_1(PushScence::addExAlias, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width*3/4, 120));
-    add_tags->setFontSizeObj(10);
+    add_ex_alias->setPosition(Vec2(visibleSize.width*3/4, 120));
+    add_ex_alias->setFontSizeObj(10);
 
     
     
     MenuItemFont *del_alias = MenuItemFont::create("del alias", CC_CALLBACK_1(PushScence::delAlias, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width/4, 80));
-    add_tags->setFontSizeObj(10);
+    del_alias->setPosition(Vec2(visibleSize.width/4, 80));
+    del_alias->setFontSizeObj(10);
 
     
     
     MenuItemFont *serialnet = MenuItemFont::create("serialnet", CC_CALLBACK_1(PushScence::Serialent, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width*2/4, 80));
-    add_tags->setFontSizeObj(10);
+    serialnet->setPosition(Vec2(visibleSize.width*2/4, 80));
+    serialnet->setFontSizeObj(10);
 
     
     
     MenuItemFont *app_info = MenuItemFont::create("appinfo", CC_CALLBACK_1(PushScence::appInfo, this));
     
-    add_tags->setPosition(Vec2(visibleSize.width*3/4, 80));
-    add_tags->setFontSizeObj(10);
+    app_info->setPosition(Vec2(visibleSize.width*3/4, 80));
+    app_info->setFontSizeObj(10);
 
     // 底层API分享
    
@@ -176,6 +176,5 @@ void PushScence::menuCloseCallback(Ref* pSender)
     float t = 1.2f;
     
     reScene = TransitionJumpZoom ::create(t , s);
-    Director::getInstance()->replaceScene(reScene);
-}
+    Director::getInstance()->replaceScene(reScene);}
 

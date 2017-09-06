@@ -9,7 +9,7 @@
 #include "UmSocialControllerIOS.h"
 #import <UIKit/UIKit.h>
 #import <UShareUI/UShareUI.h>
-#import <UMSocialCore/UMSocialCore.h>
+
 //#import "UMSocialTencentWeiboHandler.h"
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
