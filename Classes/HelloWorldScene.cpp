@@ -1,5 +1,7 @@
 #include "HelloWorldScene.h"
-
+#include "Entrance.h"
+#include "AnalyticsHome.h"
+#include "PushScence..h"
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -29,7 +31,7 @@ bool HelloWorld::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
+    this->setColor(Color3B(255, 255, 255));
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
@@ -42,10 +44,26 @@ bool HelloWorld::init()
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
+    MenuItemFont *analyticsButton = MenuItemFont::create("统计", CC_CALLBACK_1(::HelloWorld::gotoAnalytics, this));
+    
+    analyticsButton->setPosition(Vec2(visibleSize.width/2, 160));
+    analyticsButton->setFontSizeObj(14);
+    // 底层API分享
+    MenuItemFont *pushButton = MenuItemFont::create("推送", CC_CALLBACK_1(HelloWorld::gotoPush, this));
+    pushButton->setPosition(Vec2(visibleSize.width/2, 120));
+    pushButton->setFontSizeObj(14);
+    // 授权某平台
+    MenuItemFont *shareButton = MenuItemFont::create("分享", CC_CALLBACK_1(HelloWorld::gotoShare, this));
+    shareButton->setPosition(Vec2(visibleSize.width/2, 80));
+    shareButton->setFontSizeObj(14);
 
     // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
+    auto menu = Menu::create();
     menu->setPosition(Vec2::ZERO);
+    menu->addChild(analyticsButton,1);
+    menu->addChild(pushButton,1);
+    menu->addChild(shareButton,1);
+    menu->addChild(closeItem,1);
     this->addChild(menu, 1);
 
     /////////////////////////////
@@ -54,27 +72,33 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
+    Label *pLabel = Label::createWithTTF("UM-Component", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
-    label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
-
+    pLabel->setPosition(Vec2(origin.x + visibleSize.width/2,
+                             origin.y + visibleSize.height - pLabel->getContentSize().height));
     // add the label as a child to this layer
-    this->addChild(label, 1);
+    this->addChild(pLabel, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+   
     
     return true;
 }
-
+void HelloWorld::gotoAnalytics(Ref* pSender) {
+    
+}
+void HelloWorld::gotoShare(Ref* pSender) {
+    TransitionScene * reScene = NULL;
+    Scene * s = Entrance::scene();
+    float t = 1.2f;
+    
+    reScene = TransitionJumpZoom ::create(t , s);
+    Director::getInstance()->replaceScene(reScene);
+}
+void HelloWorld::gotoPush(Ref* pSender) {
+    
+}
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
