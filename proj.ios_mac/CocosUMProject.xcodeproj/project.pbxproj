@@ -114,6 +114,8 @@
 		7B8D03EC1F5FD9EC0065B0BA /* libSocialFacebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D038A1F5FC13A0065B0BA /* libSocialFacebook.a */; };
 		7B8D03EE1F5FE2090065B0BA /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		9D1185191F666ECD0039F0B1 /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1185181F666ECD0039F0B1 /* UMAnalytics.framework */; };
+		9D11851D1F6677460039F0B1 /* MobClickCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D11851C1F6677460039F0B1 /* MobClickCpp.mm */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -241,7 +243,6 @@
 		7B8D03741F5F885F0065B0BA /* GameScence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScence.h; sourceTree = "<group>"; };
 		7B8D03771F5FC0ED0065B0BA /* UMPush.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMPush.framework; sourceTree = "<group>"; };
 		7B8D037A1F5FC0F70065B0BA /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
-		7B8D037C1F5FC1020065B0BA /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
 		7B8D03811F5FC13A0065B0BA /* libSocialEmail.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialEmail.a; sourceTree = "<group>"; };
 		7B8D03821F5FC13A0065B0BA /* UMSocialEmailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialEmailHandler.h; sourceTree = "<group>"; };
 		7B8D03841F5FC13A0065B0BA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -300,6 +301,9 @@
 		7B8D03E51F5FD96F0065B0BA /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9D1185181F666ECD0039F0B1 /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
+		9D11851B1F6677460039F0B1 /* MobClickCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickCpp.h; sourceTree = "<group>"; };
+		9D11851C1F6677460039F0B1 /* MobClickCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MobClickCpp.mm; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -323,6 +327,7 @@
 				7B8D03CF1F5FC13A0065B0BA /* libSocialTwitter.a in Frameworks */,
 				7B8D02DE1F5ECCCE0065B0BA /* CoreText.framework in Frameworks */,
 				7B8D02DC1F5ECCC00065B0BA /* CoreData.framework in Frameworks */,
+				9D1185191F666ECD0039F0B1 /* UMAnalytics.framework in Frameworks */,
 				7B8D02DA1F5ECCB10065B0BA /* ImageIO.framework in Frameworks */,
 				7B8D02D81F5ECCA30065B0BA /* Social.framework in Frameworks */,
 				7B8D03C71F5FC13A0065B0BA /* libSocialQQ.a in Frameworks */,
@@ -623,8 +628,10 @@
 		7B8D036D1F5ED1420065B0BA /* analytics */ = {
 			isa = PBXGroup;
 			children = (
-				7B8D037C1F5FC1020065B0BA /* UMAnalytics.framework */,
+				9D1185181F666ECD0039F0B1 /* UMAnalytics.framework */,
 				7B8D03711F5F885F0065B0BA /* AppScence.cpp */,
+				9D11851B1F6677460039F0B1 /* MobClickCpp.h */,
+				9D11851C1F6677460039F0B1 /* MobClickCpp.mm */,
 				7B8D03721F5F885F0065B0BA /* AppScence.h */,
 				7B8D03731F5F885F0065B0BA /* GameScence.cpp */,
 				7B8D03741F5F885F0065B0BA /* GameScence.h */,
@@ -973,6 +980,7 @@
 				7B8D03701F5ED1420065B0BA /* AnalyticsHome.cpp in Sources */,
 				7B8D02E01F5ECF410065B0BA /* ShareScene.cpp in Sources */,
 				7B8D03761F5F88600065B0BA /* GameScence.cpp in Sources */,
+				9D11851D1F6677460039F0B1 /* MobClickCpp.mm in Sources */,
 				7B8D03751F5F88600065B0BA /* AppScence.cpp in Sources */,
 				7B8D02A51F5EC17D0065B0BA /* CCUMSocialSDK.cpp in Sources */,
 			);
@@ -1017,6 +1025,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocialUI\"",
 					"\"$(SRCROOT)/../Classes/Common\"",
+					"\"$(SRCROOT)/../Classes/analytics\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1063,6 +1072,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocialUI\"",
 					"\"$(SRCROOT)/../Classes/Common\"",
+					"\"$(SRCROOT)/../Classes/analytics\"",
 				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
