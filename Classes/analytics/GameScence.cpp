@@ -8,6 +8,9 @@
 
 #include "GameScence.h"
 #include "AnalyticsHome.h"
+#include "HelloWorldScene.h"
+#include "MobClickCpp.h"
+
 USING_NS_CC;
 
 Scene* GameScence::scene()
@@ -33,7 +36,6 @@ bool GameScence::init()
     {
         return false;
     }
-    
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
@@ -42,58 +44,139 @@ bool GameScence::init()
     //    you may modify it.
     
     // add a "close" icon to exit the progress. it's an autorelease object
-    Label *pLabel = Label::createWithTTF("UM-Cocos2dx-Social", "fonts/Marker Felt.ttf", 24);
+    Label *pLabel = Label::createWithTTF("UM-Cocos2dx-Game", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     pLabel->setPosition(Vec2(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
+                             origin.y + visibleSize.height - pLabel->getContentSize().height));
     
     // add the label as a child to this layer
     this->addChild(pLabel, 1);
-
-    MenuItemFont *appButton = MenuItemFont::create("App", CC_CALLBACK_1(GameScence::gotoApp, this));
-
-    appButton->setPosition(Vec2(visibleSize.width/2, 160));
-    appButton->setFontSizeObj(14);
-    // 底层API分享
-    MenuItemFont *gameButton = MenuItemFont::create("游戏", CC_CALLBACK_1(GameScence::gotoGame, this));
-    gameButton->setPosition(Vec2(visibleSize.width/2, 120));
- gameButton->setFontSizeObj(14);
-    // 授权某平台
-
+    
+    // 关卡开始
+    MenuItemFont *startButton = MenuItemFont::create("关卡开始", CC_CALLBACK_1(GameScence::startLevel, this));
+    startButton->setPosition(Vec2(visibleSize.width/4, visibleSize.height/7*6));
+    startButton->setFontSizeObj(14);
+    // 关卡失败
+    MenuItemFont *failButton = MenuItemFont::create("关卡失败", CC_CALLBACK_1(GameScence::failLevel, this));
+    failButton->setPosition(Vec2(visibleSize.width/4, visibleSize.height/7*5));
+    failButton->setFontSizeObj(14);
+    // 关卡结束
+    MenuItemFont *endButton = MenuItemFont::create("关卡结束", CC_CALLBACK_1(GameScence::endLevel, this));
+    endButton->setPosition(Vec2(visibleSize.width/4, visibleSize.height/7*4));
+    endButton->setFontSizeObj(14);
+    // 使用物品
+    MenuItemFont *useButton = MenuItemFont::create("使用物品", CC_CALLBACK_1(GameScence::use, this));
+    useButton->setPosition(Vec2(visibleSize.width/4, visibleSize.height/7*3));
+    useButton->setFontSizeObj(14);
+    // 游戏奖励
+    MenuItemFont *awardButton = MenuItemFont::create("游戏奖励", CC_CALLBACK_1(GameScence::bonus, this));
+    awardButton->setPosition(Vec2(visibleSize.width/4, visibleSize.height/7*2));
+    awardButton->setFontSizeObj(14);
+    // 用户登入
+    MenuItemFont *enterButton = MenuItemFont::create("用户登入", CC_CALLBACK_1(GameScence::enter, this));
+    enterButton->setPosition(Vec2(visibleSize.width/4, visibleSize.height/7));
+    enterButton->setFontSizeObj(14);
+    // 用户登出
+    MenuItemFont *outButton = MenuItemFont::create("用户登出", CC_CALLBACK_1(GameScence::out, this));
+    outButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7*2));
+    outButton->setFontSizeObj(14);
+    // 充值付费
+    MenuItemFont *RechargeButton = MenuItemFont::create("充值付费", CC_CALLBACK_1(GameScence::Recharge, this));
+    RechargeButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7*3));
+    RechargeButton->setFontSizeObj(14);
+    // 购买物品（真实消费）
+    MenuItemFont *buyButton = MenuItemFont::create("购买物品（真实消费）", CC_CALLBACK_1(GameScence::buy, this));
+    buyButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7*4));
+    buyButton->setFontSizeObj(14);
+    // 购买物品（虚拟消费）
+    MenuItemFont *buyvirButton = MenuItemFont::create("购买物品（虚拟消费）", CC_CALLBACK_1(GameScence::buyvir, this));
+    buyvirButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7*5));
+    buyvirButton->setFontSizeObj(14);
+    // 有订单的充值付费
+    MenuItemFont *indentButton = MenuItemFont::create("订单充值", CC_CALLBACK_1(GameScence::indent, this));
+    indentButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7*6));
+    indentButton->setFontSizeObj(14);
+    
     MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                           CC_CALLBACK_1(GameScence::menuCloseCallback, this));
+                                                      "CloseNormal.png",
+                                                      "CloseSelected.png",
+                                                      CC_CALLBACK_1(GameScence::menuCloseCallback, this));
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
-                                origin.y + pCloseItem->getContentSize().height));
-   
+                                 origin.y + pCloseItem->getContentSize().height));
+    
     Menu* pMenu = Menu::create();
-    pMenu->addChild(appButton, 1);
     pMenu->addChild(pCloseItem, 1);
-    pMenu->addChild(gameButton, 1);
-   
+    pMenu->addChild(startButton, 1);
+    pMenu->addChild(failButton, 1);
+    pMenu->addChild(endButton, 1);
+    pMenu->addChild(useButton, 1);
+    pMenu->addChild(awardButton, 1);
+    pMenu->addChild(enterButton, 1);
+    pMenu->addChild(outButton, 1);
+    pMenu->addChild(RechargeButton, 1);
+    pMenu->addChild(buyButton, 1);
+    pMenu->addChild(buyvirButton, 1);
+    pMenu->addChild(indentButton, 1);
     pMenu->setPosition(Size::ZERO);
     this->addChild(pMenu, 1);
     return true;
 }
-
-void GameScence::gotoApp(Ref* pSender) {
-   
+void GameScence::startLevel(Ref* pSender)
+{
+    umeng::MobClickCpp::startLevel("start");
+    
 }
-void GameScence::gotoGame(Ref* pSender) {
-  
+void GameScence::failLevel(Ref* pSender)
+{
+    umeng::MobClickCpp::failLevel("start");
 }
-
+void GameScence::endLevel(Ref* pSender)
+{
+    umeng::MobClickCpp::finishLevel("start");
+    
+}
+void GameScence::use(Ref* pSender)
+{
+    umeng::MobClickCpp::use("use",2,4);    
+}
+void GameScence::bonus(Ref* pSender)
+{
+    umeng::MobClickCpp::bonus("bonus",2.1,4,3.3);
+}
+void GameScence::enter(Ref* pSender)
+{
+    umeng::MobClickCpp::profileSignIn("test_aaa");
+}
+void GameScence::out(Ref* pSender)
+{
+    umeng::MobClickCpp::profileSignOff();
+}
+void GameScence::Recharge(Ref* pSender)
+{
+    umeng::MobClickCpp::pay(1.11,2,2.3);
+}
+void GameScence::buy(Ref* pSender)
+{
+    umeng::MobClickCpp::buy("buy",2,4);
+}
+void GameScence::buyvir(Ref* pSender)
+{
+    umeng::MobClickCpp::pay(2.22,3,"pay",10,4);
+}
+void GameScence::indent(Ref* pSender)
+{
+    umeng::MobClickCpp::exchange("test_order",648.0,"CNY",6480,1);
+}
 void GameScence::menuCloseCallback(Ref* pSender)
 {
     TransitionScene * reScene = NULL;
-    Scene * s = AnalyticsHome ::scene();
+    Scene * s = HelloWorld::createScene();
     float t = 1.2f;
     
     reScene = TransitionJumpZoom ::create(t , s);
     Director::getInstance()->replaceScene(reScene);
-
-   }
+    
+}
 

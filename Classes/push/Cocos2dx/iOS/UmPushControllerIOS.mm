@@ -6,7 +6,7 @@
 
 
 
-UIViewController* getViewController(){
+static UIViewController* getViewController(){
     UIViewController* ctrol = nil;
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {
@@ -24,13 +24,13 @@ UIViewController* getViewController(){
     }
     return ctrol;
 }
-NSString* getNSStringFromCString(const char* cstr){
+static  NSString* getNSStringFromCString(const char* cstr){
     if (cstr) {
         return [NSString stringWithUTF8String:cstr];
     }
     return nil;
 }
-string asserstring(NSString* str){
+static string asserstring(NSString* str){
     if (str == nil || str.length == 0) {
         return "nil";
     }else{
