@@ -113,6 +113,8 @@
 		7B8D03EB1F5FD9E50065B0BA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D03891F5FC13A0065B0BA /* FBSDKShareKit.framework */; };
 		7B8D03EC1F5FD9EC0065B0BA /* libSocialFacebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D038A1F5FC13A0065B0BA /* libSocialFacebook.a */; };
 		7B8D03EE1F5FE2090065B0BA /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */; };
+		7B8D03FB1F66A7D30065B0BA /* CCUMPushSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D03F41F66A7D30065B0BA /* CCUMPushSDK.cpp */; };
+		7B8D03FC1F66A7D30065B0BA /* UmPushControllerIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D03F91F66A7D30065B0BA /* UmPushControllerIOS.mm */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -299,6 +301,10 @@
 		7B8D03E31F5FD9650065B0BA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D03E51F5FD96F0065B0BA /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		7B8D03F41F66A7D30065B0BA /* CCUMPushSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCUMPushSDK.cpp; sourceTree = "<group>"; };
+		7B8D03F51F66A7D30065B0BA /* CCUMPushSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMPushSDK.h; sourceTree = "<group>"; };
+		7B8D03F81F66A7D30065B0BA /* UmPushControllerIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmPushControllerIOS.h; sourceTree = "<group>"; };
+		7B8D03F91F66A7D30065B0BA /* UmPushControllerIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UmPushControllerIOS.mm; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -613,6 +619,7 @@
 		7B8D02E21F5ED12E0065B0BA /* push */ = {
 			isa = PBXGroup;
 			children = (
+				7B8D03EF1F66A7D30065B0BA /* Cocos2dx */,
 				7B8D03771F5FC0ED0065B0BA /* UMPush.framework */,
 				7B8D02E31F5ED12F0065B0BA /* PushScence..h */,
 				7B8D02E41F5ED12F0065B0BA /* PushScence.cpp */,
@@ -813,6 +820,33 @@
 			path = UMSocialUI;
 			sourceTree = "<group>";
 		};
+		7B8D03EF1F66A7D30065B0BA /* Cocos2dx */ = {
+			isa = PBXGroup;
+			children = (
+				7B8D03F31F66A7D30065B0BA /* Common */,
+				7B8D03F71F66A7D30065B0BA /* iOS */,
+			);
+			path = Cocos2dx;
+			sourceTree = "<group>";
+		};
+		7B8D03F31F66A7D30065B0BA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7B8D03F41F66A7D30065B0BA /* CCUMPushSDK.cpp */,
+				7B8D03F51F66A7D30065B0BA /* CCUMPushSDK.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7B8D03F71F66A7D30065B0BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7B8D03F81F66A7D30065B0BA /* UmPushControllerIOS.h */,
+				7B8D03F91F66A7D30065B0BA /* UmPushControllerIOS.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -963,6 +997,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				7B8D02A81F5EC17D0065B0BA /* GetScene.cpp in Sources */,
+				7B8D03FB1F66A7D30065B0BA /* CCUMPushSDK.cpp in Sources */,
 				7B8D02A31F5EC17D0065B0BA /* AuthScene.cpp in Sources */,
 				7B8D03451F5ED12F0065B0BA /* PushScence.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -973,6 +1008,7 @@
 				7B8D03701F5ED1420065B0BA /* AnalyticsHome.cpp in Sources */,
 				7B8D02E01F5ECF410065B0BA /* ShareScene.cpp in Sources */,
 				7B8D03761F5F88600065B0BA /* GameScence.cpp in Sources */,
+				7B8D03FC1F66A7D30065B0BA /* UmPushControllerIOS.mm in Sources */,
 				7B8D03751F5F88600065B0BA /* AppScence.cpp in Sources */,
 				7B8D02A51F5EC17D0065B0BA /* CCUMSocialSDK.cpp in Sources */,
 			);
