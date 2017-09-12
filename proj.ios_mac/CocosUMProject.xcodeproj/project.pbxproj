@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1784B0BF1F67A5D500E4CD7F /* UMPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D03771F5FC0ED0065B0BA /* UMPush.framework */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -161,6 +162,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1784B0C01F67DA2300E4CD7F /* CocosUMProject-mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CocosUMProject-mobile.entitlements"; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -326,6 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1784B0BF1F67A5D500E4CD7F /* UMPush.framework in Frameworks */,
 				7B8D03E61F5FD96F0065B0BA /* GameController.framework in Frameworks */,
 				7B8D03E41F5FD9650065B0BA /* MediaPlayer.framework in Frameworks */,
 				7B8D03DD1F5FC9A70065B0BA /* CoreLocation.framework in Frameworks */,
@@ -439,6 +442,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1784B0C01F67DA2300E4CD7F /* CocosUMProject-mobile.entitlements */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -900,6 +904,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = K7FM47A3M5;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CocosUMProject" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1052,8 +1067,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "CocosUMProject-mobile.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = K7FM47A3M5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocial_Sdk_Extra_Frameworks\"/**",
@@ -1062,6 +1079,7 @@
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocialUI\"",
 					"\"$(SRCROOT)/../Classes/Common\"",
 					"\"$(SRCROOT)/../Classes/analytics\"",
+					"\"$(SRCROOT)/../Classes/push\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1081,13 +1099,15 @@
 					"\"$(SRCROOT)/../Classes\"/**",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocial_Sdk_Extra_Frameworks\"/**",
 					"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.umeng.SocialSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
+				PROVISIONING_PROFILE = "a974cdf0-dd4b-4d68-ac72-52c1ce64a007";
+				PROVISIONING_PROFILE_SPECIFIER = UMPush_component_dev;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -1099,8 +1119,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "CocosUMProject-mobile.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = K7FM47A3M5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocial_Sdk_Extra_Frameworks\"/**",
@@ -1109,6 +1131,7 @@
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocialUI\"",
 					"\"$(SRCROOT)/../Classes/Common\"",
 					"\"$(SRCROOT)/../Classes/analytics\"",
+					"\"$(SRCROOT)/../Classes/push\"",
 				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1126,13 +1149,15 @@
 					"\"$(SRCROOT)/../Classes\"/**",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocial_Sdk_Extra_Frameworks\"/**",
 					"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.umeng.SocialSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
+				PROVISIONING_PROFILE = "a974cdf0-dd4b-4d68-ac72-52c1ce64a007";
+				PROVISIONING_PROFILE_SPECIFIER = UMPush_component_dev;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
