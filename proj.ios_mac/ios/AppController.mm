@@ -45,6 +45,7 @@ static AppDelegate s_sharedApplication;
     [UMConfigure setLogEnabled:YES];    // debug: only for console log, must be remove in release version
     [UMConfigure initWithAppkey:UMENG_APPKEY channel:@"App Store"]; // required
     [self setupUSharePlatforms];   // required: setting platforms on demand
+    
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc]init];
     entity.types = UMessageAuthorizationOptionAlert | UMessageAuthorizationOptionBadge | UMessageAuthorizationOptionSound;

@@ -19,8 +19,12 @@ public:
     
     //初始化sdk @石乐
     
-    static void initCocos2dxSDK(const char *sdkType, const char *version);
-    static void setAlias(const char *name, const char *type, PushCallBack callback);
+    static void addTags(const char *tags,  PushRemainTagsCallBack callback);
+    static void deleteTags(const char *tags,  PushRemainTagsCallBack callback);
+    static void getTags(PushGetTagsCallBack callback);
+    static void addAlias(const char *name, const char *type, PushAliasCallBack callback);
+    static void setAlias(const char *name, const char *type, PushAliasCallBack callback);
+    static void removeAlias(const char *name, const char *type, PushAliasCallBack callback);
       
 private:
     static string m_appKey;

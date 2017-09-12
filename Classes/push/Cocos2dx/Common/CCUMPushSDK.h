@@ -38,8 +38,9 @@ private:
 	const char* _wrapperVersion;
 
 };
-typedef void (*PushCallBack)(int stCode,
-const map<string, string>& data);
+typedef void (*PushGetTagsCallBack)(int stCode,int remain,const list<string>& data);
+typedef void (*PushRemainTagsCallBack)(int stCode,int remain);
+typedef void (*PushAliasCallBack)(int stCode);
 #define push_selector(_SELECTOR) (PushCallBack)(&_SELECTOR)
 
 #endif

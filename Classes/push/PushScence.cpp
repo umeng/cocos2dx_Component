@@ -8,6 +8,7 @@
 
 #include "PushScence..h"
 #include "HelloWorldScene.h"
+#include "UmPushControllerIOS.h"
 USING_NS_CC;
 
 Scene* PushScence::scene()
@@ -23,7 +24,9 @@ Scene* PushScence::scene()
     // return the scene
     return scene;
 }
-
+static void test(int i,int j){
+    printf("hello world\n  %d",i);
+}
 // on "init" you need to initialize your instance
 bool PushScence::init()
 {
@@ -64,7 +67,7 @@ bool PushScence::init()
 
     
     
-    MenuItemFont *list_tags = MenuItemFont::create("list tags", CC_CALLBACK_1(PushScence::listTags, this));
+    MenuItemFont *list_tags = MenuItemFont::create("get tags", CC_CALLBACK_1(PushScence::listTags, this));
     
     list_tags->setPosition(Vec2(visibleSize.width*3/4, 160));
     list_tags->setFontSizeObj(10);
@@ -78,7 +81,7 @@ bool PushScence::init()
 
     
     
-    MenuItemFont *alias_type = MenuItemFont::create("alias type", CC_CALLBACK_1(PushScence::aliasType, this));
+    MenuItemFont *alias_type = MenuItemFont::create("remove alias", CC_CALLBACK_1(PushScence::aliasType, this));
     
     alias_type->setPosition(Vec2(visibleSize.width*2/4, 120));
     alias_type->setFontSizeObj(10);
@@ -143,7 +146,7 @@ bool PushScence::init()
 }
 
 void PushScence::addTags(Ref* pSender) {
-   
+    UmPushControllerIOS::addTags("vhvfhd", test);
 }
 void PushScence::delTags(Ref* pSender) {
     

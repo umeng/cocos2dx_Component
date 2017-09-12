@@ -2,6 +2,7 @@
 
 #include "UmPushControllerIOS.h"
 #import <UIKit/UIKit.h>
+#import <UMPush/UMessage.h>
 #import "UmPushControllerIOS.h"
 
 
@@ -38,15 +39,140 @@ static string asserstring(NSString* str){
     }
 }
 
-void UmPushControllerIOS::initCocos2dxSDK(const char *sdkType, const char *version){
- 
-    
+
+void UmPushControllerIOS::addTags(const char *tags, PushRemainTagsCallBack callback){
+    [UMessage addTags:getNSStringFromCString(tags) response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
+        int code = -1;
+        int remainnum = 0;
+        if (error) {
+            code = error.code;
+        }else{
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *respobj = responseObject;
+                // 授权信息
+                if ([[respobj allKeys] containsObject:@"success"]) {
+                    if ([[respobj objectForKey:@"success"] isEqualToString:@"ok"]) {
+                        code = 200 ;
+                    }
+                }
+                if ([[respobj allKeys] containsObject:@"remain"]) {
+                    remainnum = [[respobj objectForKey:@"remain"] intValue];
+                }
+            }
+        }
+        callback(code, remainnum);
+
+    }];
 }
-void UmPushControllerIOS::setAlias(const char *name, const char *type, PushCallBack callback){
-    
-    map<string,string> data;
-    data.insert(pair<string, string>("uid",asserstring(@"123")));
-    callback(0,data);
+
+void UmPushControllerIOS::deleteTags(const char *tags, PushRemainTagsCallBack callback){
+    [UMessage deleteTags:getNSStringFromCString(tags) response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
+        int code = -1;
+        int remainnum = 0;
+        if (error) {
+            code = error.code;
+        }else{
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *respobj = responseObject;
+                // 授权信息
+                if ([[respobj allKeys] containsObject:@"success"]) {
+                    if ([[respobj objectForKey:@"success"] isEqualToString:@"ok"]) {
+                        code = 200 ;
+                    }
+                }
+                if ([[respobj allKeys] containsObject:@"remain"]) {
+                    remainnum = [[respobj objectForKey:@"remain"] intValue];
+                }
+            }
+        }
+        callback(code, remainnum);
+    }];
 }
+
+void UmPushControllerIOS::getTags(PushGetTagsCallBack callback){
+    [UMessage getTags:^(NSSet * _Nonnull responseTags, NSInteger remain, NSError * _Nonnull error) {
+        int code = -1;
+        list<string> tags;
+        int remainnum = 0;
+        if (error) {
+            code = error.code;
+        }else{
+            if ([responseTags isKindOfClass:[NSSet class]]) {
+                NSArray * tagsarray = [responseTags allObjects];
+                for (int i = 0; i < tagsarray.count; i++) {
+                    NSString *str = tagsarray[i];
+                    tags.push_back(asserstring(str));
+                }
+            }
+        }
+        if (remain) {
+            remainnum = [remain intValue];
+        }
+        callback(code,remainnum,tags);
+    }];
+}
+
+void UmPushControllerIOS::addAlias(const char *name, const char *type, PushAliasCallBack callback){
+    [UMessage addAlias:getNSStringFromCString(name) type:getNSStringFromCString(type) response:^(id  _Nonnull responseObject, NSError * _Nonnull error) {
+        int code = -1;
+        int remainnum = 0;
+        if (error) {
+            code = error.code;
+        }else{
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *respobj = responseObject;
+                // 授权信息
+                if ([[respobj allKeys] containsObject:@"success"]) {
+                    if ([[respobj objectForKey:@"success"] isEqualToString:@"ok"]) {
+                        code = 200 ;
+                    }
+                }
+            }
+        }
+        callback(code);
+    }];
+
+}
+
+void UmPushControllerIOS::setAlias(const char *name, const char *type, PushAliasCallBack callback){
+    [UMessage setAlias:getNSStringFromCString(name) type:getNSStringFromCString(type) response:^(id  _Nonnull responseObject, NSError * _Nonnull error) {
+        int code = -1;
+        if (error) {
+            code = error.code;
+        }else{
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *respobj = responseObject;
+                // 授权信息
+                if ([[respobj allKeys] containsObject:@"success"]) {
+                    if ([[respobj objectForKey:@"success"] isEqualToString:@"ok"]) {
+                        code = 200 ;
+                    }
+                }
+            }
+        }
+        callback(code);
+    }];
+}
+
+void UmPushControllerIOS::removeAlias(const char *name, const char *type, PushAliasCallBack callback){
+    [UMessage removeAlias:getNSStringFromCString(name) type:getNSStringFromCString(type) response:^(id  _Nonnull responseObject, NSError * _Nonnull error) {
+        int code = -1;
+        if (error) {
+            code = error.code;
+        }else{
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *respobj = responseObject;
+                // 授权信息
+                if ([[respobj allKeys] containsObject:@"success"]) {
+                    if ([[respobj objectForKey:@"success"] isEqualToString:@"ok"]) {
+                        code = 200 ;
+                    }
+                }
+            }
+        }
+        callback(code);
+    }];
+}
+
 
 
