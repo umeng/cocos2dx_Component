@@ -237,7 +237,7 @@
 		7B8D02DB1F5ECCC00065B0BA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D02DD1F5ECCCE0065B0BA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D02DF1F5ECF410065B0BA /* ShareScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShareScene.cpp; sourceTree = "<group>"; };
-		7B8D02E31F5ED12F0065B0BA /* PushScence..h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushScence..h; sourceTree = "<group>"; };
+		7B8D02E31F5ED12F0065B0BA /* PushScence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushScence.h; sourceTree = "<group>"; };
 		7B8D02E41F5ED12F0065B0BA /* PushScence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PushScence.cpp; sourceTree = "<group>"; };
 		7B8D036E1F5ED1420065B0BA /* AnalyticsHome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnalyticsHome.cpp; sourceTree = "<group>"; };
 		7B8D036F1F5ED1420065B0BA /* AnalyticsHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsHome.h; sourceTree = "<group>"; };
@@ -630,7 +630,7 @@
 			children = (
 				7B8D03EF1F66A7D30065B0BA /* Cocos2dx */,
 				7B8D03771F5FC0ED0065B0BA /* UMPush.framework */,
-				7B8D02E31F5ED12F0065B0BA /* PushScence..h */,
+				7B8D02E31F5ED12F0065B0BA /* PushScence.h */,
 				7B8D02E41F5ED12F0065B0BA /* PushScence.cpp */,
 			);
 			path = push;

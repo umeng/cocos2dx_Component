@@ -6,18 +6,21 @@
 //
 //
 
-#include "PushScence..h"
+#include "PushScence.h"
 #include "HelloWorldScene.h"
-#include "UmPushControllerIOS.h"
+#include "Cocos2dx/Common/CCUMPushSDK.h"
+#include <string>
+#include <list>
 USING_NS_CC;
-
+int pushlabel = 123;
+int pushlayer = 321;
 Scene* PushScence::scene()
 {
     // 'scene' is an autorelease object
     Scene *scene = Scene::create();
     
     PushScence *layer = PushScence::create();
-    
+     layer->setTag(pushlayer);
     // add layer as a child to scene
     scene->addChild(layer);
     
@@ -45,8 +48,9 @@ bool PushScence::init()
     //    you may modify it.
     
     // add a "close" icon to exit the progress. it's an autorelease object
-    Label *pLabel = Label::createWithTTF("UM-Cocos2dx-Social", "fonts/Marker Felt.ttf", 24);
-    
+    Label *pLabel = Label::createWithTTF("UM-Cocos2dx-Push", "fonts/Marker Felt.ttf", 24);
+    pLabel->setTag(pushlabel);
+
     // position the label on the center of the screen
     pLabel->setPosition(Vec2(origin.x + visibleSize.width/2,
                             origin.y + visibleSize.height - pLabel->getContentSize().height));
@@ -144,27 +148,68 @@ bool PushScence::init()
     this->addChild(pMenu, 1);
     return true;
 }
-
+void remainCallback(int stCode,int remain){
+    PushScence* hwLayer =(PushScence*) Director::getInstance()->getRunningScene()->getChildByTag(
+                                                                                   pushlayer);
+    Label* item = (Label*) hwLayer->getChildByTag(pushlabel);
+    string string_temp;
+    stringstream stream;
+    stream<<remain;
+    string_temp=stream.str();
+    item->setString("remain="+string_temp);
+}
+void tagsCallback(int stCode,int remain, list<string>& data){
+     list<string>::iterator itor = data.begin();
+    string string_temp ="tags=";
+    while(itor!=data.end())
+    {
+      string_temp = string_temp+ *itor;
+        itor++;
+    }
+    PushScence* hwLayer =(PushScence*) Director::getInstance()->getRunningScene()->getChildByTag(
+                                                                                                 pushlayer);
+    Label* item = (Label*) hwLayer->getChildByTag(pushlabel);
+   
+    item->setString("remain="+string_temp);
+}
+void aliasCallback(int stCode){
+    PushScence* hwLayer =(PushScence*) Director::getInstance()->getRunningScene()->getChildByTag(
+                                                                                                 pushlayer);
+    Label* item = (Label*) hwLayer->getChildByTag(pushlabel);
+    string string_temp;
+    stringstream stream;
+    stream<<stCode;
+    string_temp=stream.str();
+    item->setString("remain="+string_temp);
+}
 void PushScence::addTags(Ref* pSender) {
-    UmPushControllerIOS::addTags("vhvfhd", test);
+    CCUMPushSDK *sdk = CCUMPushSDK::create( );
+   
+    sdk->addTags("ddddd", push_remain_selector(remainCallback));
 }
 void PushScence::delTags(Ref* pSender) {
+    CCUMPushSDK *sdk = CCUMPushSDK::create( );
     
+    sdk->deleteTags("ddddd", push_remain_selector(remainCallback));
 }
 void PushScence::listTags(Ref* pSender) {
-    
+     CCUMPushSDK *sdk = CCUMPushSDK::create( );
+    sdk->getTags(push_gettag_selector(tagsCallback));
 }
 void PushScence::addAlias(Ref* pSender) {
-    
+    CCUMPushSDK *sdk = CCUMPushSDK::create( );
+    sdk->addAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::aliasType(Ref* pSender) {
     
 }
 void PushScence::addExAlias(Ref* pSender) {
-    
+    CCUMPushSDK *sdk = CCUMPushSDK::create( );
+    sdk->setAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::delAlias(Ref* pSender) {
-    
+    CCUMPushSDK *sdk = CCUMPushSDK::create( );
+    sdk->removeAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::Serialent(Ref* pSender) {
     

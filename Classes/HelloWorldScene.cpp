@@ -1,7 +1,7 @@
 #include "HelloWorldScene.h"
 #include "Entrance.h"
 #include "AnalyticsHome.h"
-#include "PushScence..h"
+#include "PushScence.h"
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()

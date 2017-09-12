@@ -16,7 +16,12 @@ USING_NS_CC;
 using namespace std;
 
 
-
+typedef void (*PushGetTagsCallBack)(int stCode,int remain, list<string>& data);
+typedef void (*PushRemainTagsCallBack)(int stCode,int remain);
+typedef void (*PushAliasCallBack)(int stCode);
+#define push_gettag_selector(_SELECTOR) (PushGetTagsCallBack)(&_SELECTOR)
+#define push_remain_selector(_SELECTOR) (PushRemainTagsCallBack)(&_SELECTOR)
+#define push_alias_selector(_SELECTOR) (PushAliasCallBack)(&_SELECTOR)
 class CCUMPushSDK {
 private:
 	CCUMPushSDK();
@@ -28,7 +33,12 @@ public:
 	 * @param appKey 友盟app key
 	 */
 	static CCUMPushSDK* create();
-
+    void addTags(const char *tags,  PushRemainTagsCallBack callback);
+    void deleteTags(const char *tags,  PushRemainTagsCallBack callback);
+    void getTags(PushGetTagsCallBack callback);
+    void addAlias(const char *name, const char *type, PushAliasCallBack callback);
+    void setAlias(const char *name, const char *type, PushAliasCallBack callback);
+    void removeAlias(const char *name, const char *type, PushAliasCallBack callback);
 	
 
 private:
@@ -38,9 +48,6 @@ private:
 	const char* _wrapperVersion;
 
 };
-typedef void (*PushGetTagsCallBack)(int stCode,int remain,const list<string>& data);
-typedef void (*PushRemainTagsCallBack)(int stCode,int remain);
-typedef void (*PushAliasCallBack)(int stCode);
-#define push_selector(_SELECTOR) (PushCallBack)(&_SELECTOR)
+
 
 #endif

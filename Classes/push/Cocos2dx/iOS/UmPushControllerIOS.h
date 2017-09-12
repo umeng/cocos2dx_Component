@@ -10,14 +10,14 @@
 
 
 using namespace std;
-using namespace umeng::social;
+
 
 class UmPushControllerIOS {
 public:
     
    
     
-    //初始化sdk @石乐
+   
     
     static void addTags(const char *tags,  PushRemainTagsCallBack callback);
     static void deleteTags(const char *tags,  PushRemainTagsCallBack callback);
