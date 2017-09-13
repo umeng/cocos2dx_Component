@@ -26,6 +26,7 @@ package com.umeng.soexample;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import com.umeng.message.PushAgent;
 import com.umeng.push.CCUMPushController;
 import com.umeng.social.CCUMSocialController;
 import org.cocos2dx.lib.Cocos2dxActivity;
@@ -38,6 +39,7 @@ public class AppActivity extends Cocos2dxActivity {
         mActivity = this;
         CCUMSocialController.initSocialSDK(mActivity);
         CCUMPushController.initPushSDK(mActivity);
+        PushAgent.getInstance(this).onAppStart();
 
     }
     @Override
