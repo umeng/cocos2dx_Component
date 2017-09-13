@@ -12,10 +12,9 @@
 #include <vector>
 #include <map>
 #include <string>
-#include "Cocos2dx/Common/CCUMSocialSDK.h"
+#include "CCUMSocialSDK.h"
 USING_NS_CC;
 
-USING_NS_UM_SOCIAL;
 // 环境变量PATH在windows下和linux下的分割符定义
 #ifdef _WIN32
 #define PATH_SEPARATOR ';'
@@ -185,75 +184,47 @@ void authCallback(int platform, int stCode, map<string, string>& data) {
 
 
 void Auth::qqAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(QQ, auth_selector(authCallback));
+   CCUMSocialSDK::authorize(QQ, auth_selector(authCallback));
 }
 void Auth::sinaAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(SINA, auth_selector(authCallback));
+    CCUMSocialSDK::authorize(SINA, auth_selector(authCallback));
 }
 void Auth::wxAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(WEIXIN, auth_selector(authCallback));
+    CCUMSocialSDK::authorize(WEIXIN, auth_selector(authCallback));
 }
 void Auth::qqAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(QQ, auth_selector(authCallback));
+   CCUMSocialSDK::deleteAuthorization(QQ, auth_selector(authCallback));
 }
 void Auth::sinaAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(SINA, auth_selector(authCallback));
+  CCUMSocialSDK::deleteAuthorization(SINA, auth_selector(authCallback));
 }
 void Auth::wxAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(WEIXIN, auth_selector(authCallback));
+    CCUMSocialSDK::deleteAuthorization(WEIXIN, auth_selector(authCallback));
 }
 void Auth::doubanAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(DOUBAN, auth_selector(authCallback));
+    CCUMSocialSDK::authorize(DOUBAN, auth_selector(authCallback));
 }
 void Auth::renrenAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(RENREN, auth_selector(authCallback));
+    CCUMSocialSDK::authorize(RENREN, auth_selector(authCallback));
 }
 void Auth::facebookAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(FACEBOOK, auth_selector(authCallback));
+    CCUMSocialSDK::authorize(FACEBOOK, auth_selector(authCallback));
 }
 void Auth::doubanAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(DOUBAN, auth_selector(authCallback));
+   CCUMSocialSDK::deleteAuthorization(DOUBAN, auth_selector(authCallback));
 }
 void Auth::renrenAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(RENREN, auth_selector(authCallback));
+   CCUMSocialSDK::deleteAuthorization(RENREN, auth_selector(authCallback));
 }
 void Auth::facebookAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(FACEBOOK, auth_selector(authCallback));
+   CCUMSocialSDK::deleteAuthorization(FACEBOOK, auth_selector(authCallback));
 }
 
 void Auth::twitterAuth(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("授权");
-    sdk->authorize(TWITTER, auth_selector(authCallback));
+   CCUMSocialSDK::authorize(TWITTER, auth_selector(authCallback));
 }
 void Auth::twitterAuthDel(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("删除授权");
-    sdk->deleteAuthorization(TWITTER, auth_selector(authCallback));
+   CCUMSocialSDK::deleteAuthorization(TWITTER, auth_selector(authCallback));
 }
 
 void Auth::menuCloseCallback(Ref* pSender)

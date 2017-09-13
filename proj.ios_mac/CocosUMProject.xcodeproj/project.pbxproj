@@ -61,8 +61,6 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		7B8D02A31F5EC17D0065B0BA /* AuthScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D02451F5EC17D0065B0BA /* AuthScene.cpp */; };
-		7B8D02A51F5EC17D0065B0BA /* CCUMSocialSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D024C1F5EC17D0065B0BA /* CCUMSocialSDK.cpp */; };
-		7B8D02A61F5EC17D0065B0BA /* UmSocialControllerIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D02511F5EC17D0065B0BA /* UmSocialControllerIOS.mm */; };
 		7B8D02A71F5EC17D0065B0BA /* Entrance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D02521F5EC17D0065B0BA /* Entrance.cpp */; };
 		7B8D02A81F5EC17D0065B0BA /* GetScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D02541F5EC17D0065B0BA /* GetScene.cpp */; };
 		7B8D02CA1F5ECBF80065B0BA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D02C91F5ECBF80065B0BA /* libc++.tbd */; };
@@ -114,9 +112,10 @@
 		7B8D03EB1F5FD9E50065B0BA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D03891F5FC13A0065B0BA /* FBSDKShareKit.framework */; };
 		7B8D03EC1F5FD9EC0065B0BA /* libSocialFacebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D038A1F5FC13A0065B0BA /* libSocialFacebook.a */; };
 		7B8D03EE1F5FE2090065B0BA /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */; };
-		7B8D03FB1F66A7D30065B0BA /* CCUMPushSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D03F41F66A7D30065B0BA /* CCUMPushSDK.cpp */; };
-		7B8D03FC1F66A7D30065B0BA /* UmPushControllerIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B8D03F91F66A7D30065B0BA /* UmPushControllerIOS.mm */; };
 		7B8D04001F66BB6A0065B0BA /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D03FF1F66BB6A0065B0BA /* UMAnalytics.framework */; };
+		7B9F322B1F695012000D86BF /* CCUMPushSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322A1F695012000D86BF /* CCUMPushSDK.mm */; };
+		7B9F322F1F695B19000D86BF /* CCUMSocialSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */; };
+		7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		9D11851D1F6677460039F0B1 /* MobClickCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D11851C1F6677460039F0B1 /* MobClickCpp.mm */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -215,11 +214,6 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D02451F5EC17D0065B0BA /* AuthScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuthScene.cpp; sourceTree = "<group>"; };
 		7B8D02461F5EC17D0065B0BA /* AuthScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthScene.h; sourceTree = "<group>"; };
-		7B8D024C1F5EC17D0065B0BA /* CCUMSocialSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCUMSocialSDK.cpp; sourceTree = "<group>"; };
-		7B8D024D1F5EC17D0065B0BA /* CCUMSocialSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMSocialSDK.h; sourceTree = "<group>"; };
-		7B8D024E1F5EC17D0065B0BA /* CCUMTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMTypeDef.h; sourceTree = "<group>"; };
-		7B8D02501F5EC17D0065B0BA /* UmSocialControllerIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmSocialControllerIOS.h; sourceTree = "<group>"; };
-		7B8D02511F5EC17D0065B0BA /* UmSocialControllerIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UmSocialControllerIOS.mm; sourceTree = "<group>"; };
 		7B8D02521F5EC17D0065B0BA /* Entrance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entrance.cpp; sourceTree = "<group>"; };
 		7B8D02531F5EC17D0065B0BA /* Entrance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entrance.h; sourceTree = "<group>"; };
 		7B8D02541F5EC17D0065B0BA /* GetScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GetScene.cpp; sourceTree = "<group>"; };
@@ -304,11 +298,12 @@
 		7B8D03E31F5FD9650065B0BA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D03E51F5FD96F0065B0BA /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		7B8D03F41F66A7D30065B0BA /* CCUMPushSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCUMPushSDK.cpp; sourceTree = "<group>"; };
-		7B8D03F51F66A7D30065B0BA /* CCUMPushSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMPushSDK.h; sourceTree = "<group>"; };
-		7B8D03F81F66A7D30065B0BA /* UmPushControllerIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UmPushControllerIOS.h; sourceTree = "<group>"; };
-		7B8D03F91F66A7D30065B0BA /* UmPushControllerIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UmPushControllerIOS.mm; sourceTree = "<group>"; };
 		7B8D03FF1F66BB6A0065B0BA /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
+		7B9F32291F695012000D86BF /* CCUMPushSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMPushSDK.h; sourceTree = "<group>"; };
+		7B9F322A1F695012000D86BF /* CCUMPushSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCUMPushSDK.mm; sourceTree = "<group>"; };
+		7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCUMSocialSDK.cpp; sourceTree = "<group>"; };
+		7B9F322D1F695B19000D86BF /* CCUMSocialSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMSocialSDK.h; sourceTree = "<group>"; };
+		7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCUMSocialSDK.mm; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9D11851B1F6677460039F0B1 /* MobClickCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickCpp.h; sourceTree = "<group>"; };
 		9D11851C1F6677460039F0B1 /* MobClickCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MobClickCpp.mm; sourceTree = "<group>"; };
@@ -575,11 +570,13 @@
 		7B8D02421F5EC17D0065B0BA /* share */ = {
 			isa = PBXGroup;
 			children = (
+				7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */,
+				7B9F322D1F695B19000D86BF /* CCUMSocialSDK.h */,
+				7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */,
 				7B8D037E1F5FC13A0065B0BA /* umeng_ios_social_sdk */,
 				7B8D02DF1F5ECF410065B0BA /* ShareScene.cpp */,
 				7B8D02451F5EC17D0065B0BA /* AuthScene.cpp */,
 				7B8D02461F5EC17D0065B0BA /* AuthScene.h */,
-				7B8D02471F5EC17D0065B0BA /* Cocos2dx */,
 				7B8D02521F5EC17D0065B0BA /* Entrance.cpp */,
 				7B8D02531F5EC17D0065B0BA /* Entrance.h */,
 				7B8D02541F5EC17D0065B0BA /* GetScene.cpp */,
@@ -588,34 +585,6 @@
 				7B8D025A1F5EC17D0065B0BA /* umeng_ios_social_sdk */,
 			);
 			path = share;
-			sourceTree = "<group>";
-		};
-		7B8D02471F5EC17D0065B0BA /* Cocos2dx */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D024B1F5EC17D0065B0BA /* Common */,
-				7B8D024F1F5EC17D0065B0BA /* iOS */,
-			);
-			path = Cocos2dx;
-			sourceTree = "<group>";
-		};
-		7B8D024B1F5EC17D0065B0BA /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D024C1F5EC17D0065B0BA /* CCUMSocialSDK.cpp */,
-				7B8D024D1F5EC17D0065B0BA /* CCUMSocialSDK.h */,
-				7B8D024E1F5EC17D0065B0BA /* CCUMTypeDef.h */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		7B8D024F1F5EC17D0065B0BA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D02501F5EC17D0065B0BA /* UmSocialControllerIOS.h */,
-				7B8D02511F5EC17D0065B0BA /* UmSocialControllerIOS.mm */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		7B8D025A1F5EC17D0065B0BA /* umeng_ios_social_sdk */ = {
@@ -628,7 +597,8 @@
 		7B8D02E21F5ED12E0065B0BA /* push */ = {
 			isa = PBXGroup;
 			children = (
-				7B8D03EF1F66A7D30065B0BA /* Cocos2dx */,
+				7B9F32291F695012000D86BF /* CCUMPushSDK.h */,
+				7B9F322A1F695012000D86BF /* CCUMPushSDK.mm */,
 				7B8D03771F5FC0ED0065B0BA /* UMPush.framework */,
 				7B8D02E31F5ED12F0065B0BA /* PushScence.h */,
 				7B8D02E41F5ED12F0065B0BA /* PushScence.cpp */,
@@ -831,33 +801,6 @@
 			path = UMSocialUI;
 			sourceTree = "<group>";
 		};
-		7B8D03EF1F66A7D30065B0BA /* Cocos2dx */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D03F31F66A7D30065B0BA /* Common */,
-				7B8D03F71F66A7D30065B0BA /* iOS */,
-			);
-			path = Cocos2dx;
-			sourceTree = "<group>";
-		};
-		7B8D03F31F66A7D30065B0BA /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D03F41F66A7D30065B0BA /* CCUMPushSDK.cpp */,
-				7B8D03F51F66A7D30065B0BA /* CCUMPushSDK.h */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		7B8D03F71F66A7D30065B0BA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				7B8D03F81F66A7D30065B0BA /* UmPushControllerIOS.h */,
-				7B8D03F91F66A7D30065B0BA /* UmPushControllerIOS.mm */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1019,21 +962,20 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				7B8D02A81F5EC17D0065B0BA /* GetScene.cpp in Sources */,
-				7B8D03FB1F66A7D30065B0BA /* CCUMPushSDK.cpp in Sources */,
 				7B8D02A31F5EC17D0065B0BA /* AuthScene.cpp in Sources */,
 				7B8D03451F5ED12F0065B0BA /* PushScence.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				7B9F322F1F695B19000D86BF /* CCUMSocialSDK.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				7B8D02A71F5EC17D0065B0BA /* Entrance.cpp in Sources */,
-				7B8D02A61F5EC17D0065B0BA /* UmSocialControllerIOS.mm in Sources */,
 				7B8D03701F5ED1420065B0BA /* AnalyticsHome.cpp in Sources */,
 				7B8D02E01F5ECF410065B0BA /* ShareScene.cpp in Sources */,
 				7B8D03761F5F88600065B0BA /* GameScence.cpp in Sources */,
-				7B8D03FC1F66A7D30065B0BA /* UmPushControllerIOS.mm in Sources */,
 				9D11851D1F6677460039F0B1 /* MobClickCpp.mm in Sources */,
 				7B8D03751F5F88600065B0BA /* AppScence.cpp in Sources */,
-				7B8D02A51F5EC17D0065B0BA /* CCUMSocialSDK.cpp in Sources */,
+				7B9F322B1F695012000D86BF /* CCUMPushSDK.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

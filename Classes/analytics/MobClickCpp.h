@@ -8,11 +8,14 @@
 
 #ifndef __MobClickGameAnalytics__MobClickCpp__
 #define __MobClickGameAnalytics__MobClickCpp__
-
+#include <jni.h>
+#include "platform/android/jni/JniHelper.h"
+#include <android/log.h>
+#include "cocos2d.h"
 #include <string>
 #include <map>
 using namespace std;
-
+USING_NS_CC;
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #define UMENG_DEPRECATED __attribute__((deprecated))
 #elif _MSC_VER >= 1400 //vs 2005 or higher
@@ -21,12 +24,13 @@ using namespace std;
 #define UMENG_DEPRECATED
 #endif
 
-namespace umeng {
+
     
     typedef map<string, string> eventDict;
     
     
     class MobClickCpp {
+        
     public:
         /** 设置是否打印sdk的log信息,默认不开启
          @param value 设置为true,umeng SDK 会输出log信息,记得release产品时要设置回false.
@@ -280,7 +284,7 @@ namespace umeng {
         
     };
 
-}
+
 
 /** 开启友盟统计,默认以BATCH方式发送log.
  

@@ -9,7 +9,7 @@
 #include "GameScence.h"
 #include "AnalyticsHome.h"
 #include "HelloWorldScene.h"
-//    #include "MobClickCpp.h"
+//#include "MobClickCpp.h"
 
 USING_NS_CC;
 

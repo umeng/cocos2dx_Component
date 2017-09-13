@@ -8,7 +8,7 @@
 
 #include "PushScence.h"
 #include "HelloWorldScene.h"
-#include "Cocos2dx/Common/CCUMPushSDK.h"
+#include "CCUMPushSDK.h"
 #include <string>
 #include <list>
 USING_NS_CC;
@@ -92,7 +92,7 @@ bool PushScence::init()
 
     
     
-    MenuItemFont *add_ex_alias = MenuItemFont::create("add exclisive alias", CC_CALLBACK_1(PushScence::addExAlias, this));
+    MenuItemFont *add_ex_alias = MenuItemFont::create("set alias", CC_CALLBACK_1(PushScence::addExAlias, this));
     
     add_ex_alias->setPosition(Vec2(visibleSize.width*3/4, 120));
     add_ex_alias->setFontSizeObj(10);
@@ -180,36 +180,30 @@ void aliasCallback(int stCode){
     stringstream stream;
     stream<<stCode;
     string_temp=stream.str();
-    item->setString("remain="+string_temp);
+    item->setString("alias code="+string_temp);
 }
 void PushScence::addTags(Ref* pSender) {
-    CCUMPushSDK *sdk = CCUMPushSDK::create( );
+    CCUMPushSDK::addTags("ddddd", push_remain_selector(remainCallback));
    
-    sdk->addTags("ddddd", push_remain_selector(remainCallback));
+   
 }
 void PushScence::delTags(Ref* pSender) {
-    CCUMPushSDK *sdk = CCUMPushSDK::create( );
-    
-    sdk->deleteTags("ddddd", push_remain_selector(remainCallback));
+     CCUMPushSDK::deleteTags("ddddd", push_remain_selector(remainCallback));
 }
 void PushScence::listTags(Ref* pSender) {
-     CCUMPushSDK *sdk = CCUMPushSDK::create( );
-    sdk->getTags(push_gettag_selector(tagsCallback));
+      CCUMPushSDK::getTags(push_gettag_selector(tagsCallback));
 }
 void PushScence::addAlias(Ref* pSender) {
-    CCUMPushSDK *sdk = CCUMPushSDK::create( );
-    sdk->addAlias("aaa", "bbb", push_alias_selector(aliasCallback));
+    CCUMPushSDK::addAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::aliasType(Ref* pSender) {
     
 }
 void PushScence::addExAlias(Ref* pSender) {
-    CCUMPushSDK *sdk = CCUMPushSDK::create( );
-    sdk->setAlias("aaa", "bbb", push_alias_selector(aliasCallback));
+    CCUMPushSDK::setAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::delAlias(Ref* pSender) {
-    CCUMPushSDK *sdk = CCUMPushSDK::create( );
-    sdk->removeAlias("aaa", "bbb", push_alias_selector(aliasCallback));
+    CCUMPushSDK::removeAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::Serialent(Ref* pSender) {
     
