@@ -106,7 +106,7 @@ void UmPushControllerIOS::getTags(PushGetTagsCallBack callback){
             }
         }
         if (remain) {
-            remainnum = [remain intValue];
+            remainnum = remain ;
         }
         callback(code,remainnum,tags);
     }];

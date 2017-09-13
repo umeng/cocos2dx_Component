@@ -21,6 +21,7 @@ using namespace std;
 
 
 
+CCUMPushSDK* CCUMPushSDK::_instance = NULL;
 CCUMPushSDK::CCUMPushSDK() :
 		mPlatforms(new vector<int>()),
         _wrapperType("Cocos2d-x"),
@@ -42,7 +43,7 @@ void CCUMPushSDK::initSDK() {
 
 #endif
 }
-CCUMPushSDK* CCUMPushSDK::create() {
+ CCUMPushSDK* CCUMPushSDK::create() {
     
     if (_instance == NULL) {
         _instance = new CCUMPushSDK();
