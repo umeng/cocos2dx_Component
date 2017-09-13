@@ -123,7 +123,7 @@ public class CCUMSocialController {
 	private static ShareAction openBoardAction;
 	private static ShareAction shareAction;
 	private static ArrayList<Integer> platforms = new ArrayList<Integer>();
-	public static void initSocialSDK(final Activity activity, String descriptor) {
+	public static void initSocialSDK(final Activity activity) {
 
 		runOnMainThread(new Runnable() {
 

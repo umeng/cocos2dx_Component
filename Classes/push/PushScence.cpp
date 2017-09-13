@@ -135,13 +135,13 @@ bool PushScence::init()
     pMenu->addChild(list_tags, 1);
     pMenu->addChild(add_alias, 1);
 
-    pMenu->addChild(alias_type, 1);
+//    pMenu->addChild(alias_type, 1);
     pMenu->addChild(add_ex_alias, 1);
 
     pMenu->addChild(del_alias, 1);
-    pMenu->addChild(serialnet, 1);
+//    pMenu->addChild(serialnet, 1);
 
-    pMenu->addChild(app_info, 1);
+//    pMenu->addChild(app_info, 1);
    
 
     pMenu->setPosition(Size::ZERO);

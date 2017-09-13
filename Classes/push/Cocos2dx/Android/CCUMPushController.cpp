@@ -50,7 +50,7 @@ JNIEXPORT void JNICALL Java_com_umeng_push_CCUMPushController_AliasCallback(
 	}
 
 }
-JNIEXPORT void JNICALL Java_com_umeng_push_CCUMPushController_AliasCallback(
+JNIEXPORT void JNICALL Java_com_umeng_push_CCUMPushController_RemainCallback(
 		JNIEnv *env, jclass clz, jint stCode, jint remain) {
 	if (remainCallback != NULL) {
 		
@@ -58,8 +58,9 @@ JNIEXPORT void JNICALL Java_com_umeng_push_CCUMPushController_AliasCallback(
 	}
 
 }
-void addTags(const char *tags,  PushRemainTagsCallBack callback){
+void addTagsExec(const char *tags,  PushRemainTagsCallBack callback){
 	remainCallback = callback;
+	CCLog("addTags");
 	if (remainCallback != NULL) {
 		CCLog("#### addTags回调不为NULL");
 
@@ -74,7 +75,7 @@ void addTags(const char *tags,  PushRemainTagsCallBack callback){
 		releasePushMethod(mi);
 	}
 }
- void deleteTags(const char *tags,  PushRemainTagsCallBack callback){
+ void deleteTagsExec(const char *tags,  PushRemainTagsCallBack callback){
  	remainCallback = callback;
 	if (remainCallback != NULL) {
 		CCLog("#### deleteTags回调不为NULL");
@@ -90,7 +91,7 @@ void addTags(const char *tags,  PushRemainTagsCallBack callback){
 		releasePushMethod(mi);
 	}
  }
- void getTags(PushGetTagsCallBack callback){
+ void getTagsExec(PushGetTagsCallBack callback){
  	tagsCallback = callback;
  	if (remainCallback != NULL) {
 		CCLog("#### getTags回调不为NULL");
@@ -105,7 +106,7 @@ void addTags(const char *tags,  PushRemainTagsCallBack callback){
 		}
 
  }
-  void addAlias(const char *name, const char *type, PushAliasCallBack callback){
+  void addAliasExec(const char *name, const char *type, PushAliasCallBack callback){
   	aliasCallback = callback;
 
 	if (aliasCallback != NULL) {
@@ -124,7 +125,7 @@ void addTags(const char *tags,  PushRemainTagsCallBack callback){
 
 	}
   }
-  void setAlias(const char *name, const char *type, PushAliasCallBack callback){
+  void setAliasExec(const char *name, const char *type, PushAliasCallBack callback){
   		aliasCallback = callback;
 
 	if (aliasCallback != NULL) {
@@ -143,7 +144,7 @@ void addTags(const char *tags,  PushRemainTagsCallBack callback){
 
 	}
   }
-  void removeAlias(const char *name, const char *type, PushAliasCallBack callback){
+  void removeAliasExec(const char *name, const char *type, PushAliasCallBack callback){
   	  		aliasCallback = callback;
 
 	if (aliasCallback != NULL) {
@@ -165,7 +166,7 @@ void addTags(const char *tags,  PushRemainTagsCallBack callback){
 bool getPushMethod(JniMethodInfo &mi, const char *methodName,
 		const char *signature) {
 	return JniHelper::getStaticMethodInfo(mi,
-			"com/umeng/social/CCUMSocialController", methodName, signature);
+			"com/umeng/push/CCUMPushController", methodName, signature);
 }
 
 /*

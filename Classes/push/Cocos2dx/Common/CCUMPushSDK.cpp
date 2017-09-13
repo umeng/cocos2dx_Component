@@ -15,7 +15,6 @@
 #include "Cocos2dx/Android/CCUMPushController.h"
 
 #endif
-
 USING_NS_CC;
 using namespace std;
 
@@ -53,7 +52,7 @@ void CCUMPushSDK::initSDK() {
 void CCUMPushSDK::addTags(const char *tags,  PushRemainTagsCallBack callback){
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
    
-  
+    addTagsExec(tags,callback);
     
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
@@ -64,7 +63,7 @@ void CCUMPushSDK::addTags(const char *tags,  PushRemainTagsCallBack callback){
 void CCUMPushSDK::deleteTags(const char *tags,  PushRemainTagsCallBack callback){
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
-    
+    deleteTagsExec(tags,callback);
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
     UmPushControllerIOS::deleteTags(tags, callback);
@@ -73,7 +72,7 @@ void CCUMPushSDK::deleteTags(const char *tags,  PushRemainTagsCallBack callback)
 }
 void CCUMPushSDK::getTags(PushGetTagsCallBack callback){
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    
+    getTagsExec(callback);
     
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
@@ -83,7 +82,7 @@ void CCUMPushSDK::getTags(PushGetTagsCallBack callback){
 }
 void CCUMPushSDK::addAlias(const char *name, const char *type, PushAliasCallBack callback){
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    
+    addAliasExec(name,type,callback);
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
     UmPushControllerIOS::addAlias(name, type,callback);
@@ -92,7 +91,7 @@ void CCUMPushSDK::addAlias(const char *name, const char *type, PushAliasCallBack
 }
 void CCUMPushSDK::setAlias(const char *name, const char *type, PushAliasCallBack callback){
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    
+    setAliasExec(name,type,callback);
     
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
@@ -102,7 +101,7 @@ void CCUMPushSDK::setAlias(const char *name, const char *type, PushAliasCallBack
 }
 void CCUMPushSDK::removeAlias(const char *name, const char *type, PushAliasCallBack callback){
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    
+    removeAliasExec(name,type,callback);
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
     UmPushControllerIOS::removeAlias(name,type, callback);

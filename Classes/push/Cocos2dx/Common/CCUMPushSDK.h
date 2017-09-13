@@ -19,9 +19,11 @@ using namespace std;
 typedef void (*PushGetTagsCallBack)(int stCode,list<string>& data);
 typedef void (*PushRemainTagsCallBack)(int stCode,int remain);
 typedef void (*PushAliasCallBack)(int stCode);
+
 #define push_gettag_selector(_SELECTOR) (PushGetTagsCallBack)(&_SELECTOR)
 #define push_remain_selector(_SELECTOR) (PushRemainTagsCallBack)(&_SELECTOR)
 #define push_alias_selector(_SELECTOR) (PushAliasCallBack)(&_SELECTOR)
+
 class CCUMPushSDK {
 private:
 	CCUMPushSDK();

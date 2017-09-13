@@ -17,15 +17,15 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 public class CCUMPushController {
-    private final int SUCCESS = 0;
-    private final int ERROR = -1;
+    private static final int SUCCESS = 0;
+    private static final int ERROR = -1;
     private static final String TAG = CCUMPushController.class.getSimpleName();
-    private PushAgent mPushAgent;
-    private native static void tagsCallback(int code,String[] key);
-    private native static void aliasCallback(int code);
-    private native static void remainCallback(int code,int remain);
+    private static PushAgent mPushAgent;
+    private native static void TagsCallBack(int code,String[] key);
+    private native static void AliasCallback(int code);
+    private native static void RemainCallback(int code,int remain);
     private static Cocos2dxActivity mActivity;
-    public static void initSocialSDK(final Activity activity, String descriptor) {
+    public static void initPushSDK(final Activity activity) {
 
 
         if (activity instanceof Cocos2dxActivity) {
@@ -34,31 +34,32 @@ public class CCUMPushController {
             throw new IllegalArgumentException(
                 "initSocialSDK函数的activity参数必须设置为Cocos2dxActivity类型, 且不为null. ");
         }
-
+        mPushAgent = PushAgent.getInstance(activity);
 
     }
-    public void addTag(String tag) {
+    public static void addTag(String tag) {
+        Log.e("xxxxxx","addTag");
         mPushAgent.getTagManager().addTags(new TagManager.TCallBack() {
             @Override
             public void onMessage(final boolean isSuccess, final ITagManager.Result result) {
                 if (isSuccess) {
-                    remainCallback(SUCCESS,result.remain);
+                    RemainCallback(SUCCESS,result.remain);
                 } else {
-                    remainCallback(ERROR,0);
+                    RemainCallback(ERROR,0);
                 }
             }
         }, tag);
     }
 
-    public void deleteTag(String tag) {
+    public static void deleteTag(String tag) {
         mPushAgent.getTagManager().deleteTags(new TagManager.TCallBack() {
             @Override
             public void onMessage(boolean isSuccess, final ITagManager.Result result) {
                 Log.i(TAG, "isSuccess:" + isSuccess);
                 if (isSuccess) {
-                    remainCallback(SUCCESS,result.remain);
+                    RemainCallback(SUCCESS,result.remain);
                 } else {
-                    remainCallback(ERROR,0);
+                    RemainCallback(ERROR,0);
                 }
             }
         }, tag);
@@ -67,32 +68,33 @@ public class CCUMPushController {
     {
         Cocos2dxGLSurfaceView.getInstance().queueEvent(runnable);
     }
-    public void listTag() {
+    public static  void listTag() {
         mPushAgent.getTagManager().getTags(new TagManager.TagListCallBack() {
             @Override
             public void onMessage(final boolean isSuccess, final List<String> result) {
-                runNativeCallback(new Runnable() {
-                    @Override
-                    public void run() {
+                //runNativeCallback(new Runnable() {
+                //    @Override
+                //    public void run() {
                         if (isSuccess) {
                             if (result != null) {
                                 String [] r = (String[])result.toArray();
-                               tagsCallback(SUCCESS,r);
+                                TagsCallBack(SUCCESS,r);
                             } else {
-                                tagsCallback(ERROR,null);
+                                TagsCallBack(ERROR,null);
                             }
                         } else {
-                            tagsCallback(ERROR,null);
+                            TagsCallBack(ERROR,null);
                         }
 
-                    }
-                });
+                    //}
+                //}
+                //);
 
             }
         });
     }
 
-    public void addAlias(String alias, String aliasType) {
+    public static void addAlias(String alias, String aliasType) {
         mPushAgent.addAlias(alias, aliasType, new UTrack.ICallBack() {
             @Override
             public void onMessage(final boolean isSuccess, final String message) {
@@ -100,9 +102,9 @@ public class CCUMPushController {
 
                 Log.e("xxxxxx","isuccess"+isSuccess);
                 if (isSuccess) {
-                    aliasCallback(SUCCESS);
+                    AliasCallback(SUCCESS);
                 } else {
-                    aliasCallback(ERROR);
+                    AliasCallback(ERROR);
                 }
 
 
@@ -110,20 +112,20 @@ public class CCUMPushController {
         });
     }
 
-    public void addAliasType() {
+    public static void addAliasType() {
 
     }
 
-    public void setAlias(String exclusiveAlias, String aliasType) {
+    public static void setAlias(String exclusiveAlias, String aliasType) {
         mPushAgent.setAlias(exclusiveAlias, aliasType, new UTrack.ICallBack() {
             @Override
             public void onMessage(final boolean isSuccess, final String message) {
 
                 Log.i(TAG, "isSuccess:" + isSuccess + "," + message);
                 if (isSuccess) {
-                    aliasCallback(SUCCESS);
+                    AliasCallback(SUCCESS);
                 } else {
-                    aliasCallback(ERROR);
+                    AliasCallback(ERROR);
                 }
 
 
@@ -132,14 +134,14 @@ public class CCUMPushController {
         });
     }
 
-    public void deleteAlias(String alias, String aliasType) {
+    public static void deleteAlias(String alias, String aliasType) {
         mPushAgent.deleteAlias(alias, aliasType, new UTrack.ICallBack() {
             @Override
             public void onMessage(boolean isSuccess, String s) {
                 if (isSuccess) {
-                    aliasCallback(SUCCESS);
+                    AliasCallback(SUCCESS);
                 } else {
-                    aliasCallback(ERROR);
+                    AliasCallback(ERROR);
                 }
             }
         });

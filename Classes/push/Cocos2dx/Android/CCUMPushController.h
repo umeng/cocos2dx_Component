@@ -29,12 +29,12 @@ JNIEXPORT void JNICALL Java_com_umeng_push_CCUMPushController_RemainCallback(
 		JNIEnv *, jclass, jint, jint );
 
 
-   void addTags(const char *tags,  PushRemainTagsCallBack callback);
-    void deleteTags(const char *tags,  PushRemainTagsCallBack callback);
-    void getTags(PushGetTagsCallBack callback);
-    void addAlias(const char *name, const char *type, PushAliasCallBack callback);
-    void setAlias(const char *name, const char *type, PushAliasCallBack callback);
-    void removeAlias(const char *name, const char *type, PushAliasCallBack callback);
+   void addTagsExec(const char *tags,  PushRemainTagsCallBack callback);
+    void deleteTagsExec(const char *tags,  PushRemainTagsCallBack callback);
+    void getTagsExec(PushGetTagsCallBack callback);
+    void addAliasExec(const char *name, const char *type, PushAliasCallBack callback);
+    void setAliasExec(const char *name, const char *type, PushAliasCallBack callback);
+    void removeAliasExec(const char *name, const char *type, PushAliasCallBack callback);
 bool getPushMethod(JniMethodInfo &mi, const char *methodName, const char *sig);
 
 /*
