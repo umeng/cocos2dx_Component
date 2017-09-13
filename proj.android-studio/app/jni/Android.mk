@@ -56,6 +56,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/AppDelegate.cpp \
                    ../../../Classes/share/Cocos2dx/Android/CCUMSocialController.cpp  \
                    ../../../Classes/share/Cocos2dx/Common/CCUMSocialSDK.cpp \
+                   ../../../Classes/push/Cocos2dx/Android/CCUMPushController.cpp  \
+                   ../../../Classes/push/Cocos2dx/Common/CCUMPushSDK.cpp \
                    ../../../Classes/HelloWorldScene.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes \

@@ -9,7 +9,7 @@
 #include "GameScence.h"
 #include "AnalyticsHome.h"
 #include "HelloWorldScene.h"
-#include "MobClickCpp.h"
+//    #include "MobClickCpp.h"
 
 USING_NS_CC;
 
@@ -125,49 +125,49 @@ bool GameScence::init()
 }
 void GameScence::startLevel(Ref* pSender)
 {
-    umeng::MobClickCpp::startLevel("start");
+//    umeng::MobClickCpp::startLevel("start");
     
 }
 void GameScence::failLevel(Ref* pSender)
 {
-    umeng::MobClickCpp::failLevel("start");
+//        umeng::MobClickCpp::failLevel("start");
 }
 void GameScence::endLevel(Ref* pSender)
 {
-    umeng::MobClickCpp::finishLevel("start");
+//        umeng::MobClickCpp::finishLevel("start");
     
 }
 void GameScence::use(Ref* pSender)
 {
-    umeng::MobClickCpp::use("use",2,4);    
+ //       umeng::MobClickCpp::use("use",2,4);
 }
 void GameScence::bonus(Ref* pSender)
 {
-    umeng::MobClickCpp::bonus("bonus",2.1,4,3.3);
+  //      umeng::MobClickCpp::bonus("bonus",2.1,4,3.3);
 }
 void GameScence::enter(Ref* pSender)
 {
-    umeng::MobClickCpp::profileSignIn("test_aaa");
+//        umeng::MobClickCpp::profileSignIn("test_aaa");
 }
 void GameScence::out(Ref* pSender)
 {
-    umeng::MobClickCpp::profileSignOff();
+ //       umeng::MobClickCpp::profileSignOff();
 }
 void GameScence::Recharge(Ref* pSender)
 {
-    umeng::MobClickCpp::pay(1.11,2,2.3);
+//        umeng::MobClickCpp::pay(1.11,2,2.3);
 }
 void GameScence::buy(Ref* pSender)
 {
-    umeng::MobClickCpp::buy("buy",2,4);
+//        umeng::MobClickCpp::buy("buy",2,4);
 }
 void GameScence::buyvir(Ref* pSender)
 {
-    umeng::MobClickCpp::pay(2.22,3,"pay",10,4);
+//        umeng::MobClickCpp::pay(2.22,3,"pay",10,4);
 }
 void GameScence::indent(Ref* pSender)
 {
-    umeng::MobClickCpp::exchange("test_order",648.0,"CNY",6480,1);
+//        umeng::MobClickCpp::exchange("test_order",648.0,"CNY",6480,1);
 }
 void GameScence::menuCloseCallback(Ref* pSender)
 {

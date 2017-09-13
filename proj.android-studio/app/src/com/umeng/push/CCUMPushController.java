@@ -2,6 +2,7 @@ package com.umeng.push;
 
 import java.util.List;
 
+import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
 import com.umeng.message.MsgConstant;
@@ -10,20 +11,40 @@ import com.umeng.message.UTrack;
 import com.umeng.message.common.UmengMessageDeviceConfig;
 import com.umeng.message.common.inter.ITagManager;
 import com.umeng.message.tag.TagManager;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import org.cocos2dx.lib.Cocos2dxActivity;
+import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 public class CCUMPushController {
-
+    private final int SUCCESS = 0;
+    private final int ERROR = -1;
     private static final String TAG = CCUMPushController.class.getSimpleName();
     private PushAgent mPushAgent;
+    private native static void tagsCallback(int code,String[] key);
+    private native static void aliasCallback(int code);
+    private native static void remainCallback(int code,int remain);
+    private static Cocos2dxActivity mActivity;
+    public static void initSocialSDK(final Activity activity, String descriptor) {
 
+
+        if (activity instanceof Cocos2dxActivity) {
+            mActivity = (Cocos2dxActivity) activity;
+        } else {
+            throw new IllegalArgumentException(
+                "initSocialSDK函数的activity参数必须设置为Cocos2dxActivity类型, 且不为null. ");
+        }
+
+
+    }
     public void addTag(String tag) {
         mPushAgent.getTagManager().addTags(new TagManager.TCallBack() {
             @Override
             public void onMessage(final boolean isSuccess, final ITagManager.Result result) {
                 if (isSuccess) {
-                    successCallback.invoke(0,resultToMap(result));
+                    remainCallback(SUCCESS,result.remain);
                 } else {
-                    successCallback.invoke(-1,resultToMap(result));
+                    remainCallback(ERROR,0);
                 }
             }
         }, tag);
@@ -35,30 +56,33 @@ public class CCUMPushController {
             public void onMessage(boolean isSuccess, final ITagManager.Result result) {
                 Log.i(TAG, "isSuccess:" + isSuccess);
                 if (isSuccess) {
-                    successCallback.invoke(0,resultToMap(result));
+                    remainCallback(SUCCESS,result.remain);
                 } else {
-                    successCallback.invoke(-1,resultToMap(result));
+                    remainCallback(ERROR,0);
                 }
             }
         }, tag);
     }
-
+    public static void runNativeCallback(Runnable runnable)
+    {
+        Cocos2dxGLSurfaceView.getInstance().queueEvent(runnable);
+    }
     public void listTag() {
         mPushAgent.getTagManager().getTags(new TagManager.TagListCallBack() {
             @Override
             public void onMessage(final boolean isSuccess, final List<String> result) {
-                mSDKHandler.post(new Runnable() {
+                runNativeCallback(new Runnable() {
                     @Override
                     public void run() {
                         if (isSuccess) {
                             if (result != null) {
-
-                                successCallback.invoke(0,resultToList(result));
+                                String [] r = (String[])result.toArray();
+                               tagsCallback(SUCCESS,r);
                             } else {
-                                successCallback.invoke(-1,resultToList(result));
+                                tagsCallback(ERROR,null);
                             }
                         } else {
-                            successCallback.invoke(-2,resultToList(result));
+                            tagsCallback(ERROR,null);
                         }
 
                     }
@@ -76,9 +100,9 @@ public class CCUMPushController {
 
                 Log.e("xxxxxx","isuccess"+isSuccess);
                 if (isSuccess) {
-                    successCallback.invoke(0,message);
+                    aliasCallback(SUCCESS);
                 } else {
-                    successCallback.invoke(-1,"");
+                    aliasCallback(ERROR);
                 }
 
 
@@ -87,7 +111,7 @@ public class CCUMPushController {
     }
 
     public void addAliasType() {
-        Toast.makeText(ma,"function will come soon",Toast.LENGTH_LONG);
+
     }
 
     public void setAlias(String exclusiveAlias, String aliasType) {
@@ -96,10 +120,10 @@ public class CCUMPushController {
             public void onMessage(final boolean isSuccess, final String message) {
 
                 Log.i(TAG, "isSuccess:" + isSuccess + "," + message);
-                if (Boolean.TRUE.equals(isSuccess)) {
-                    successCallback.invoke(0,message);
-                }else {
-                    successCallback.invoke(-1,"");
+                if (isSuccess) {
+                    aliasCallback(SUCCESS);
+                } else {
+                    aliasCallback(ERROR);
                 }
 
 
@@ -112,20 +136,16 @@ public class CCUMPushController {
         mPushAgent.deleteAlias(alias, aliasType, new UTrack.ICallBack() {
             @Override
             public void onMessage(boolean isSuccess, String s) {
-                if (Boolean.TRUE.equals(isSuccess)) {
-                    successCallback.invoke(0,s);
-                }else {
-                    successCallback.invoke(-1,"");
+                if (isSuccess) {
+                    aliasCallback(SUCCESS);
+                } else {
+                    aliasCallback(ERROR);
                 }
             }
         });
     }
 
     public void appInfo() {
-        String pkgName = context.getPackageName();
-        String info = String.format("DeviceToken:%s\n" + "SdkVersion:%s\nAppVersionCode:%s\nAppVersionName:%s",
-            mPushAgent.getRegistrationId(), MsgConstant.SDK_VERSION,
-            UmengMessageDeviceConfig.getAppVersionCode(context), UmengMessageDeviceConfig.getAppVersionName(context));
-        successCallback.invoke("应用包名:" + pkgName + "\n" + info);
+
     }
 }

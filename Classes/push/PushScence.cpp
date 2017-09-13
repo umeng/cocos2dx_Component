@@ -158,7 +158,7 @@ void remainCallback(int stCode,int remain){
     string_temp=stream.str();
     item->setString("remain="+string_temp);
 }
-void tagsCallback(int stCode,int remain, list<string>& data){
+void tagsCallback(int stCode, list<string>& data){
      list<string>::iterator itor = data.begin();
     string string_temp ="tags=";
     while(itor!=data.end())
@@ -170,7 +170,7 @@ void tagsCallback(int stCode,int remain, list<string>& data){
                                                                                                  pushlayer);
     Label* item = (Label*) hwLayer->getChildByTag(pushlabel);
    
-    item->setString("remain="+string_temp);
+    item->setString(string_temp);
 }
 void aliasCallback(int stCode){
     PushScence* hwLayer =(PushScence*) Director::getInstance()->getRunningScene()->getChildByTag(

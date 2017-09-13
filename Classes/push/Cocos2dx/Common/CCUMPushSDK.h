@@ -16,7 +16,7 @@ USING_NS_CC;
 using namespace std;
 
 
-typedef void (*PushGetTagsCallBack)(int stCode,int remain, list<string>& data);
+typedef void (*PushGetTagsCallBack)(int stCode,list<string>& data);
 typedef void (*PushRemainTagsCallBack)(int stCode,int remain);
 typedef void (*PushAliasCallBack)(int stCode);
 #define push_gettag_selector(_SELECTOR) (PushGetTagsCallBack)(&_SELECTOR)

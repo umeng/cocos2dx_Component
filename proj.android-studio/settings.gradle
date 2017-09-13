@@ -1,4 +1,4 @@
-include ':libcocos2dx'
+include ':libcocos2dx',':push'
 project(':libcocos2dx').projectDir = new File(settingsDir, '../cocos2d/cocos/platform/android/libcocos2dx')
 include ':CocosUMProject'
 project(':CocosUMProject').projectDir = new File(settingsDir, 'app')
