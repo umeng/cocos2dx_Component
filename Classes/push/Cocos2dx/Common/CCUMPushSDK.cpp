@@ -42,7 +42,7 @@ void CCUMPushSDK::initSDK() {
 
 #endif
 }
-CCUMPushSDK* CCUMPushSDK::create() {
+ CCUMPushSDK* CCUMPushSDK::create() {
     
     if (_instance == NULL) {
         _instance = new CCUMPushSDK();
