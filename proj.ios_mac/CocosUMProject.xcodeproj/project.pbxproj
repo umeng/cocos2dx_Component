@@ -906,7 +906,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = K7FM47A3M5;
+						DevelopmentTeam = 486K7NX823;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1105,7 +1105,7 @@
 					"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.UmengPlus.UMDemo;
 				PROVISIONING_PROFILE = "a974cdf0-dd4b-4d68-ac72-52c1ce64a007";
 				PROVISIONING_PROFILE_SPECIFIER = UMPush_component_dev;
 				SDKROOT = iphoneos;
@@ -1155,7 +1155,7 @@
 					"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Umeng.UMSocial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.UmengPlus.UMDemo;
 				PROVISIONING_PROFILE = "a974cdf0-dd4b-4d68-ac72-52c1ce64a007";
 				PROVISIONING_PROFILE_SPECIFIER = UMPush_component_dev;
 				SDKROOT = iphoneos;
