@@ -82,7 +82,7 @@ JNIEXPORT void JNICALL Java_com_umeng_push_CCUMPushController_RemainCallback(
 
 }
 }
-
+namespace umeng{
 void CCUMPushSDK::addTags(const char *tags,  PushRemainTagsCallBack callback){
     remainCallback = callback;
     CCLog("addTags");
@@ -189,4 +189,4 @@ void CCUMPushSDK::addTags(const char *tags,  PushRemainTagsCallBack callback){
     }
   }
 
-
+}

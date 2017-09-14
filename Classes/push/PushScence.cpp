@@ -183,27 +183,27 @@ void aliasCallback(int stCode){
     item->setString("alias code="+string_temp);
 }
 void PushScence::addTags(Ref* pSender) {
-    CCUMPushSDK::addTags("ddddd", push_remain_selector(remainCallback));
+    umeng::CCUMPushSDK::addTags("ddddd", push_remain_selector(remainCallback));
    
    
 }
 void PushScence::delTags(Ref* pSender) {
-     CCUMPushSDK::deleteTags("ddddd", push_remain_selector(remainCallback));
+     umeng::CCUMPushSDK::deleteTags("ddddd", push_remain_selector(remainCallback));
 }
 void PushScence::listTags(Ref* pSender) {
-      CCUMPushSDK::getTags(push_gettag_selector(tagsCallback));
+      umeng::CCUMPushSDK::getTags(push_gettag_selector(tagsCallback));
 }
 void PushScence::addAlias(Ref* pSender) {
-    CCUMPushSDK::addAlias("aaa", "bbb", push_alias_selector(aliasCallback));
+    umeng::CCUMPushSDK::addAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::aliasType(Ref* pSender) {
     
 }
 void PushScence::addExAlias(Ref* pSender) {
-    CCUMPushSDK::setAlias("aaa", "bbb", push_alias_selector(aliasCallback));
+    umeng::CCUMPushSDK::setAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::delAlias(Ref* pSender) {
-    CCUMPushSDK::removeAlias("aaa", "bbb", push_alias_selector(aliasCallback));
+    umeng::CCUMPushSDK::removeAlias("aaa", "bbb", push_alias_selector(aliasCallback));
 }
 void PushScence::Serialent(Ref* pSender) {
     

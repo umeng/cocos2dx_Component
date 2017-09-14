@@ -39,7 +39,8 @@ static string asserstring(NSString* str){
     }
 }
 
-
+namespace umeng {
+    
 void CCUMPushSDK::addTags(const char *tags, PushRemainTagsCallBack callback){
     [UMessage addTags:getNSStringFromCString(tags) response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
         int code = -1;
@@ -174,5 +175,5 @@ void CCUMPushSDK::removeAlias(const char *name, const char *type, PushAliasCallB
     }];
 }
 
-
+}
 
