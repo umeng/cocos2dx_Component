@@ -29,8 +29,10 @@ import android.os.Bundle;
 import com.umeng.message.PushAgent;
 import com.umeng.push.CCUMPushController;
 import com.umeng.social.CCUMSocialController;
+import com.umeng.analytics.UMGameAnalytics;
+import com.umeng.analytics.MobclickAgent;
 import org.cocos2dx.lib.Cocos2dxActivity;
-
+import com.umeng.commonsdk.UMConfigure;
 public class AppActivity extends Cocos2dxActivity {
     private Activity mActivity = null;
     @Override
@@ -39,8 +41,9 @@ public class AppActivity extends Cocos2dxActivity {
         mActivity = this;
         CCUMSocialController.initSocialSDK(mActivity);
         CCUMPushController.initPushSDK(mActivity);
+        UMGameAnalytics.init(this);
         PushAgent.getInstance(this).onAppStart();
-
+        UMConfigure.init(this, "57abec03e0f55a21c3003c61", "uemng", UMConfigure.DEVICE_TYPE_PHONE, "");
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -49,5 +52,17 @@ public class AppActivity extends Cocos2dxActivity {
         CCUMSocialController.onActivityResult(requestCode, resultCode, data);
 
         super.onActivityResult(requestCode, resultCode, data);
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        // 集成游戏统计分析,初始化 Session
+        MobclickAgent.onResume(this);
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        // //集成游戏统计分析, 结束 Session
+        MobclickAgent.onPause(this);
     }
 }
