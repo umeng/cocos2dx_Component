@@ -17,7 +17,7 @@
 
 using namespace std;
 USING_NS_CC;
-
+namespace umeng{
 
     extern "C"
     {
@@ -242,4 +242,4 @@ USING_NS_CC;
             t.env->CallStaticVoidMethod(t.classID,t.methodID,latency);
         }
     }
-
+}
