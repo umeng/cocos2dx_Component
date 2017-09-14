@@ -12,10 +12,9 @@
 #include <vector>
 #include <map>
 #include <string>
-#include "Cocos2dx/Common/CCUMSocialSDK.h"
+#include "CCUMSocialSDK.h"
 USING_NS_CC;
 
-USING_NS_UM_SOCIAL;
 int sharelabelTag = 222;
 int sharelayerTag = 111;
 Scene* Share::scene()
@@ -146,9 +145,7 @@ void boardCallback(int platform) {
         CCLog("platform num is : %d", platform);
      if (platform == QQ) {
 
-         CCUMSocialSDK *sdk = CCUMSocialSDK::create();
-
-         sdk->directShare(QQ,
+        CCUMSocialSDK::directShare(QQ,
                           "Umeng Social Cocos2d-x SDK -->  qqshare   DIFFERENT CONTENT","title" ,"","res/closenormal",
                           share_selector(shareCallback));
 
@@ -156,8 +153,7 @@ void boardCallback(int platform) {
      }
      else{
 
-     	   CCUMSocialSDK *sdk = CCUMSocialSDK::create();
-         	        sdk->directShare(platform,
+     	 CCUMSocialSDK::directShare(platform,
      	                         "Umeng Social Cocos2d-x SDK -->  qqshare   DIFFERENT CONTENT","title" ,"","CloseSelected.png",
      	                         share_selector(shareCallback));
 
@@ -170,42 +166,30 @@ void boardDismissCallback() {
     
 }
 void Share::qqShare(Ref* pSender) {
-    	CCUMSocialSDK *sdk = CCUMSocialSDK::create();
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    
-    sdk->directShareAndroid(QQ,
-                     "Umeng Social Cocos2d-x SDK -->  qqshare   testing","title" ,"","res/closenormal",
-                     share_selector(shareCallback));
-    
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    
-    sdk->directShareIos(QQ,
-                     "Umeng Social Cocos2d-x SDK -->  qqshare   testing","title" ,"","CloseNormal",
-                     share_selector(shareCallback));
 
     
-#endif
+    CCUMSocialSDK::directShare(QQ,
+                     "Umeng Social Cocos2d-x SDK -->  qqshare   testing","title" ,"","res/closenormal",
+                     share_selector(shareCallback));
+
+
     
     
  
  }
 void Share::sinaShare(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create();
-      sdk->directShare(SINA,
+    CCUMSocialSDK::directShare(SINA,
                      "Umeng Social Cocos2d-x SDK -->  qqshare   testing","title" ,"https://wsq.umeng.com/","https://dev.umeng.com/images/tab2_1.png",
                      share_selector(shareCallback));
 }
 void Share::wxShare(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    
-
-    sdk->directShare(WEIXIN,
+   CCUMSocialSDK::directShare(WEIXIN,
                      "Umeng Social Cocos2d-x SDK -->  qqshare   testing", "title" ,"https://wsq.umeng.com/","https://dev.umeng.com/images/tab2_1.png",
                      share_selector(shareCallback));
 
 }
 void Share::boardShare(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
+   
     vector<int>* platforms = new vector<int>();
     platforms->push_back(SINA);
     platforms->push_back(QZONE);
@@ -214,12 +198,12 @@ void Share::boardShare(Ref* pSender) {
     platforms->push_back(WEIXIN_CIRCLE);
     platforms->push_back(TWITTER);
     platforms->push_back(FACEBOOK);
-    sdk->setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
-    sdk->openShare(platforms, "来自分享面板", "title" ,"https://dev.umeng.com/images/tab2_1.png","https://wsq.umeng.com/",share_selector(shareCallback));
+     CCUMSocialSDK::setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
+     CCUMSocialSDK::openShare(platforms, "来自分享面板", "title" ,"https://dev.umeng.com/images/tab2_1.png","https://wsq.umeng.com/",share_selector(shareCallback));
 
 }
 void Share::boardcustomShare(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
+    
     vector<int>* platforms = new vector<int>();
     platforms->push_back(SINA);
       platforms->push_back(WEIXIN);
@@ -229,8 +213,8 @@ void Share::boardcustomShare(Ref* pSender) {
 
       platforms->push_back(FACEBOOK);
       platforms->push_back(TWITTER);
-    sdk->setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
-    sdk->openCustomShare(platforms, board_selector(boardCallback));
+     CCUMSocialSDK::setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
+     CCUMSocialSDK::openCustomShare(platforms, board_selector(boardCallback));
     
 }
 void Share::menuCloseCallback(Ref* pSender)

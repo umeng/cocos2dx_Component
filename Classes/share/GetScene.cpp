@@ -12,10 +12,9 @@
 #include <vector>
 #include <map>
 #include <string>
-#include "Cocos2dx/Common/CCUMSocialSDK.h"
+#include "CCUMSocialSDK.h"
 USING_NS_CC;
 
-USING_NS_UM_SOCIAL;
 USING_NS_CC;
 int getlabelTag = 333;
 int getlayerTag = 444;
@@ -117,21 +116,15 @@ void getCallback(int platform, int stCode, map<string, string>& data) {
     item->setString(result.c_str());
 }
 void Get::qqGet(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    log("#### qqGet");
-    sdk->getPlatformInfo(QQ, auth_selector(getCallback));
+    CCUMSocialSDK::getPlatformInfo(QQ, auth_selector(getCallback));
 
 }
 void Get::sinaGet(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    
-    sdk->getPlatformInfo(SINA, auth_selector(getCallback));
+    CCUMSocialSDK::getPlatformInfo(SINA, auth_selector(getCallback));
 
 }
 void Get::wxGet(Ref* pSender) {
-    CCUMSocialSDK *sdk = CCUMSocialSDK::create( );
-    
-    sdk->getPlatformInfo(WEIXIN, auth_selector(getCallback));
+   CCUMSocialSDK::getPlatformInfo(WEIXIN, auth_selector(getCallback));
 
 }
 
