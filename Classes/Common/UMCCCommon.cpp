@@ -60,11 +60,12 @@ USING_NS_CC;
         releaseCommonMethod(mi);
             }
         }
-          JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfuture_Init(
+         
+    }
+     JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfuture_Init(
         JNIEnv *env, jclass clz ) {
                 init();
          }
-    }
     void UMCCCommon::setLogEnabled(bool value){
          JniMethodInfo mi;
         bool isHave = getCommonMethod(mi, "setLog",  "(Z)V");
