@@ -26,6 +26,7 @@ package com.umeng.soexample;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import com.umeng.common.UMCocosConfuture;
 import com.umeng.message.PushAgent;
 import com.umeng.push.CCUMPushController;
 import com.umeng.social.CCUMSocialController;
@@ -43,7 +44,7 @@ public class AppActivity extends Cocos2dxActivity {
         CCUMPushController.initPushSDK(mActivity);
         UMGameAnalytics.init(this);
         PushAgent.getInstance(this).onAppStart();
-        UMConfigure.init(this, "57abec03e0f55a21c3003c61", "uemng", UMConfigure.DEVICE_TYPE_PHONE, "");
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
