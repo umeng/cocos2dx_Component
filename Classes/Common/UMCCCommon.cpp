@@ -27,17 +27,10 @@ USING_NS_CC;
 using namespace std;
 
 
-#define JAVA_CLASS_MOBCLICKAGENT                "com/umeng/analytics/MobclickAgent"
-#define JAVA_CLASS_UMGAMEANALYTICS              "com/umeng/analytics/UMGameAnalytics"
-#define JAVA_CLASS_UMGAMEAGENT                  "com/umeng/analytics/game/UMGameAgent"
 
-using namespace std;
-USING_NS_CC;
-
-
-    extern "C"
+    
+ extern "C"
     {
-
          static bool getCommonMethod(JniMethodInfo &mi, const char *methodName,const char *signature) {
             return JniHelper::getStaticMethodInfo(mi,
             "com/umeng/common/UMCocosConfuture", methodName, signature);
@@ -46,7 +39,7 @@ USING_NS_CC;
         static void releaseCommonMethod(JniMethodInfo &mi) {
         mi.env->DeleteLocalRef(mi.classID);
         }
-        static void init() {
+        static void initwrap() {
         
         JniMethodInfo mi;
         bool isHave = getCommonMethod(mi, "initCocos", "(java/lang/String;java/lang/String;)V");
@@ -60,12 +53,13 @@ USING_NS_CC;
         releaseCommonMethod(mi);
             }
         }
-         
+
+JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfuture_InitCC (
+        JNIEnv *env, jclass clz) {
+    
+}
     }
-     JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfuture_Init(
-        JNIEnv *env, jclass clz ) {
-                init();
-         }
+  
     void UMCCCommon::setLogEnabled(bool value){
          JniMethodInfo mi;
         bool isHave = getCommonMethod(mi, "setLog",  "(Z)V");

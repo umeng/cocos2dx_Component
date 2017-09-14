@@ -64,6 +64,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes \
                     $(LOCAL_PATH)/../../../Classes/share \
                     $(LOCAL_PATH)/../../../Classes/push \
                     $(LOCAL_PATH)/../../../Classes/analytics \
+                    $(LOCAL_PATH)/../../../Classes/Common \
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END
