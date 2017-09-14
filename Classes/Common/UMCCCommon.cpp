@@ -72,8 +72,7 @@ USING_NS_CC;
         if (isHave) {
         mi.env->CallStaticVoidMethod(mi.classID, mi.methodID, value);
         releaseCommonMethod(mi);
-        }
-       
+        } 
     }
     void UMCCCommon::init(const char *appkey, const char *channel){
        

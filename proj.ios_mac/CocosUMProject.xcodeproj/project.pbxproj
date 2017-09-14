@@ -118,6 +118,7 @@
 		7B9F32361F6A22A3000D86BF /* UMCCCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F32351F6A22A3000D86BF /* UMCCCommon.mm */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		9D11851D1F6677460039F0B1 /* MobClickCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D11851C1F6677460039F0B1 /* MobClickCpp.mm */; };
+		9D9A687F1F6A66320028FD31 /* DplusMobClickCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D9A687E1F6A66320028FD31 /* DplusMobClickCpp.mm */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -308,6 +309,8 @@
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9D11851B1F6677460039F0B1 /* MobClickCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickCpp.h; sourceTree = "<group>"; };
 		9D11851C1F6677460039F0B1 /* MobClickCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MobClickCpp.mm; sourceTree = "<group>"; };
+		9D9A687E1F6A66320028FD31 /* DplusMobClickCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DplusMobClickCpp.mm; sourceTree = "<group>"; };
+		9D9A68801F6A66CD0028FD31 /* DplusMobClickCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DplusMobClickCpp.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -612,6 +615,8 @@
 				7B8D03FF1F66BB6A0065B0BA /* UMAnalytics.framework */,
 				7B8D03711F5F885F0065B0BA /* AppScence.cpp */,
 				9D11851B1F6677460039F0B1 /* MobClickCpp.h */,
+				9D9A68801F6A66CD0028FD31 /* DplusMobClickCpp.h */,
+				9D9A687E1F6A66320028FD31 /* DplusMobClickCpp.mm */,
 				9D11851C1F6677460039F0B1 /* MobClickCpp.mm */,
 				7B8D03721F5F885F0065B0BA /* AppScence.h */,
 				7B8D03731F5F885F0065B0BA /* GameScence.cpp */,
@@ -969,6 +974,7 @@
 				7B8D03451F5ED12F0065B0BA /* PushScence.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */,
+				9D9A687F1F6A66320028FD31 /* DplusMobClickCpp.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				7B8D02A71F5EC17D0065B0BA /* Entrance.cpp in Sources */,
