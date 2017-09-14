@@ -56,6 +56,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/AppDelegate.cpp \
                    ../../../Classes/share/CCUMSocialSDK.cpp \
                    ../../../Classes/push/CCUMPushSDK.cpp \
+                   ../../../Classes/analytics/MobClickCpp.cpp \
                    ../../../Classes/HelloWorldScene.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes \
