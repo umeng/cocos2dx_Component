@@ -36,10 +36,6 @@ PushAliasCallBack aliasCallback = NULL;
             "com/umeng/push/CCUMPushController", methodName, signature);
         }
 
-/*
- * 释放方法对象
- * @param mi 要释放的方法对象
- */
         static void releasePushMethod(JniMethodInfo &mi) {
         mi.env->DeleteLocalRef(mi.classID);
         }

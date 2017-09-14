@@ -8,7 +8,6 @@
 #define UMENG_SDK_WRAPPER_VERSION                   @"4.7.1"
 
 
-namespace umeng {
     
     void MobClickCpp::setCheckDevice(bool value){
        
@@ -141,4 +140,4 @@ namespace umeng {
     }
     void MobClickCpp::setLatency(unsigned int latency){
     }
-}
+

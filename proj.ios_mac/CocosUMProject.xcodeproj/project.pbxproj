@@ -116,6 +116,7 @@
 		7B9F322B1F695012000D86BF /* CCUMPushSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322A1F695012000D86BF /* CCUMPushSDK.mm */; };
 		7B9F322F1F695B19000D86BF /* CCUMSocialSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */; };
 		7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */; };
+		7B9F32361F6A22A3000D86BF /* UMCCCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F32351F6A22A3000D86BF /* UMCCCommon.mm */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		9D11851D1F6677460039F0B1 /* MobClickCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9D11851C1F6677460039F0B1 /* MobClickCpp.mm */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -304,6 +305,8 @@
 		7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCUMSocialSDK.cpp; sourceTree = "<group>"; };
 		7B9F322D1F695B19000D86BF /* CCUMSocialSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMSocialSDK.h; sourceTree = "<group>"; };
 		7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCUMSocialSDK.mm; sourceTree = "<group>"; };
+		7B9F32341F6A22A3000D86BF /* UMCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMCCCommon.h; sourceTree = "<group>"; };
+		7B9F32351F6A22A3000D86BF /* UMCCCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UMCCCommon.mm; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9D11851B1F6677460039F0B1 /* MobClickCpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickCpp.h; sourceTree = "<group>"; };
 		9D11851C1F6677460039F0B1 /* MobClickCpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MobClickCpp.mm; sourceTree = "<group>"; };
@@ -625,6 +628,8 @@
 		7B8D03791F5FC0F70065B0BA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7B9F32341F6A22A3000D86BF /* UMCCCommon.h */,
+				7B9F32351F6A22A3000D86BF /* UMCCCommon.mm */,
 				7B8D037A1F5FC0F70065B0BA /* UMCommon.framework */,
 			);
 			path = Common;
@@ -963,6 +968,7 @@
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				7B8D02A81F5EC17D0065B0BA /* GetScene.cpp in Sources */,
 				7B8D02A31F5EC17D0065B0BA /* AuthScene.cpp in Sources */,
+				7B9F32361F6A22A3000D86BF /* UMCCCommon.mm in Sources */,
 				7B8D03451F5ED12F0065B0BA /* PushScence.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */,
