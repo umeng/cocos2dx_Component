@@ -3,8 +3,7 @@
 #include "MobClickCpp.h"
 
 
-#define VERSION "1.0"
-#define WRAP_TYPE "cocos2dx"
+
 
 static  NSString* getNSStringFromCString(const char* cstr){
     if (cstr) {

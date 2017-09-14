@@ -8,7 +8,8 @@
 
 #ifndef __UMCCCommon_H__
 #define __UMCCCommon_H__
-
+#define VERSION "1.0"
+#define WRAP_TYPE "cocos2dx"
 class UMCCCommon{
         
 public:
