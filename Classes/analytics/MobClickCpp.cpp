@@ -17,11 +17,11 @@
 
 using namespace std;
 USING_NS_CC;
-namespace umeng{
+namespace umeng {
 
     extern "C"
     {
-        static jobject createJavaMapObject(JNIEnv *env, std::map<std::string, std::string>* map) {
+        jobject createJavaMapObject(JNIEnv *env, std::map<std::string, std::string>* map) {
             jclass class_Hashtable = env->FindClass("java/util/HashMap");
             jmethodID construct_method = env->GetMethodID( class_Hashtable, "<init>","()V");
             jobject obj_Map = env->NewObject( class_Hashtable, construct_method, "");
@@ -231,7 +231,7 @@ namespace umeng{
         if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"exchange", "(DLjava/lang/String;DILjava/lang/String;)V")){
             jstring oId = t.env->NewStringUTF(orderId);
             jstring cTp = t.env->NewStringUTF(currencyType);
-            t.env->CallStaticVoidMethod(t.classID, t.methodID,oId,currencyAmount,cTp,virtualAmount,channel);
+            t.env->CallStaticVoidMethod(t.classID, t.methodID,currencyAmount,cTp,virtualAmount,channel,oId);
             t.env->DeleteLocalRef(oId);
             t.env->DeleteLocalRef(cTp);
         }

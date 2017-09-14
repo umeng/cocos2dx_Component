@@ -49,72 +49,72 @@ static jobjectArray createJavaArrayObject(JNIEnv* env, std::vector<std::string>*
 
 namespace umeng {
     void DplusMobClickCpp::track(const char * eventName, eventDict* property){
-        umengJniMethodInfo t;
+        JniMethodInfo t;
         if(property){
-            if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "track", "(Ljava/lang/String;Ljava/util/Map;)V")){
+            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "track", "(Ljava/lang/String;Ljava/util/Map;)V")){
                 jstring eName = t.env->NewStringUTF(eventName);
                 jobject jparamMap = createJavaMapObject(t.env, property);
-                t.env->CallStaticVoidMethod(gClass_MobClickCppHelper, t.methodID,eName,jparamMap);
+                t.env->CallStaticVoidMethod(t.classID, t.methodID,eName,jparamMap);
                 t.env->DeleteLocalRef(eName);
                 t.env->DeleteLocalRef(jparamMap);
             }
         }else{
-            if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "track", "(Ljava/lang/String;)V")){
+            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "track", "(Ljava/lang/String;)V")){
                 jstring eName = t.env->NewStringUTF(eventName);
-                t.env->CallStaticVoidMethod(gClass_MobClickCppHelper, t.methodID,eName);
+                t.env->CallStaticVoidMethod(t.classID, t.methodID,eName);
                 t.env->DeleteLocalRef(eName);
             }
         }
     }
     void DplusMobClickCpp::registerSuperProperty(eventDict* property){
-        umengJniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "registerSuperProperty", "(Ljava/util/Map;)V")){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "registerSuperProperty", "(Ljava/util/Map;)V")){
             jobject jparamMap = createJavaMapObject(t.env, property);
-            t.env->CallStaticVoidMethod(gClass_MobClickCppHelper, t.methodID,jparamMap);
+            t.env->CallStaticVoidMethod(t.classID, t.methodID,jparamMap);
             t.env->DeleteLocalRef(jparamMap);
         }
     }
     void DplusMobClickCpp::unregisterSuperProperty(const char* propertyName){
-        umengJniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "unregisterSuperProperty", "(Ljava/lang/String;)V")){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "unregisterSuperProperty", "(Ljava/lang/String;)V")){
             jstring eName = t.env->NewStringUTF(propertyName);
-            t.env->CallStaticVoidMethod(gClass_MobClickCppHelper, t.methodID,eName);
+            t.env->CallStaticVoidMethod(t.classID, t.methodID,eName);
             t.env->DeleteLocalRef(eName);
         }
         
     }
     string DplusMobClickCpp::getSuperProperty(const char* propertyName){
-        umengJniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "getSuperProperty", "(Ljava/lang/String;)Ljava/lang/String;")){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "getSuperProperty", "(Ljava/lang/String;)Ljava/lang/String;")){
             jstring eName = t.env->NewStringUTF(propertyName);
-            jstring jstr = (jstring)t.env->CallStaticObjectMethod(gClass_MobClickCppHelper, t.methodID,eName);
+            jstring jstr = (jstring)t.env->CallStaticObjectMethod(t.classID, t.methodID,eName);
             t.env->DeleteLocalRef(eName);
             return jstring2str(t.env,jstr);
         }
         return NULL;
     }
     string DplusMobClickCpp::getSuperProperties(){
-        umengJniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "getSuperProperties", "()Ljava/lang/String;")){
-            jstring jstr = (jstring)t.env->CallStaticObjectMethod(gClass_MobClickCppHelper, t.methodID);
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "getSuperProperties", "()Ljava/lang/String;")){
+            jstring jstr = (jstring)t.env->CallStaticObjectMethod(t.classID, t.methodID);
             return jstring2str(t.env,jstr);
         }
         return NULL;
     }
     void DplusMobClickCpp::clearSuperProperties(){
-        umengJniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "clearSuperProperties", "()V")){
-            t.env->CallStaticVoidMethod(gClass_MobClickCppHelper, t.methodID);
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "clearSuperProperties", "()V")){
+            t.env->CallStaticVoidMethod(t.classID, t.methodID);
         }
     }
         
     void DplusMobClickCpp::setFirstLaunchEvent(std::vector<std::string>* eventIdList){
          if(eventIdList->size()>0){
-            umengJniMethodInfo t;
+            JniMethodInfo t;
             
-            if (JniHelper::getStaticMethodInfo(t, gClass_MobClickCppHelper, "setFirstLaunchEvent", "([Ljava/lang/String;)V")){
+            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "setFirstLaunchEvent", "([Ljava/lang/String;)V")){
                 jobjectArray aStr = createJavaArrayObject(t.env,eventIdList);
-                t.env->CallStaticVoidMethod(gClass_MobClickCppHelper, t.methodID,aStr);
+                t.env->CallStaticVoidMethod(t.classID, t.methodID,aStr);
             }
         }
     }
