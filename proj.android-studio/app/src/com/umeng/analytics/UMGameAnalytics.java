@@ -30,6 +30,7 @@ public class UMGameAnalytics {
         }
         mCtx = context.getApplicationContext();
         MobclickAgent.setScenarioType(context,EScenarioType.E_UM_GAME);
+        UMGameAgent.init(context);
     }
 
     public static void event(String event_id, String label){
