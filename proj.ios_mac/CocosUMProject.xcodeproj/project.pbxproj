@@ -114,7 +114,6 @@
 		7B8D03EE1F5FE2090065B0BA /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7B8D03ED1F5FE2090065B0BA /* TwitterKitResources.bundle */; };
 		7B8D04001F66BB6A0065B0BA /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8D03FF1F66BB6A0065B0BA /* UMAnalytics.framework */; };
 		7B9F322B1F695012000D86BF /* CCUMPushSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322A1F695012000D86BF /* CCUMPushSDK.mm */; };
-		7B9F322F1F695B19000D86BF /* CCUMSocialSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */; };
 		7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */; };
 		7B9F32361F6A22A3000D86BF /* UMCCCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F32351F6A22A3000D86BF /* UMCCCommon.mm */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
@@ -302,7 +301,6 @@
 		7B8D03FF1F66BB6A0065B0BA /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
 		7B9F32291F695012000D86BF /* CCUMPushSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMPushSDK.h; sourceTree = "<group>"; };
 		7B9F322A1F695012000D86BF /* CCUMPushSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCUMPushSDK.mm; sourceTree = "<group>"; };
-		7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCUMSocialSDK.cpp; sourceTree = "<group>"; };
 		7B9F322D1F695B19000D86BF /* CCUMSocialSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUMSocialSDK.h; sourceTree = "<group>"; };
 		7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCUMSocialSDK.mm; sourceTree = "<group>"; };
 		7B9F32341F6A22A3000D86BF /* UMCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMCCCommon.h; sourceTree = "<group>"; };
@@ -573,7 +571,6 @@
 		7B8D02421F5EC17D0065B0BA /* share */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F322C1F695B19000D86BF /* CCUMSocialSDK.cpp */,
 				7B9F322D1F695B19000D86BF /* CCUMSocialSDK.h */,
 				7B9F322E1F695B19000D86BF /* CCUMSocialSDK.mm */,
 				7B8D037E1F5FC13A0065B0BA /* umeng_ios_social_sdk */,
@@ -854,7 +851,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 486K7NX823;
+						DevelopmentTeam = K7FM47A3M5;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -973,7 +970,6 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				7B9F32301F695B19000D86BF /* CCUMSocialSDK.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				7B9F322F1F695B19000D86BF /* CCUMSocialSDK.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				7B8D02A71F5EC17D0065B0BA /* Entrance.cpp in Sources */,
 				7B8D03701F5ED1420065B0BA /* AnalyticsHome.cpp in Sources */,

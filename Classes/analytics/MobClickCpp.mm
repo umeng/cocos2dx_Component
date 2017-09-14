@@ -7,7 +7,7 @@
 #define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x"
 #define UMENG_SDK_WRAPPER_VERSION                   @"4.7.1"
 
-
+namespace umeng {
     
     void MobClickCpp::setCheckDevice(bool value){
        
@@ -37,7 +37,7 @@
             return;
         }
         [MobClick setScenarioType:E_UM_GAME]; // 仅适用于游戏场景，应用统计不用设置
-        [UMConfigure initWithAppkey:[NSString stringWithUTF8String:appkey] channel:[NSString stringWithUTF8String:channel]];
+        //[UMConfigure initWithAppkey:[NSString stringWithUTF8String:appkey] channel:[NSString stringWithUTF8String:channel]];
     }
     void MobClickCpp::event(const char * eventId, const char * label){
         if(label){
@@ -140,4 +140,4 @@
     }
     void MobClickCpp::setLatency(unsigned int latency){
     }
-
+}

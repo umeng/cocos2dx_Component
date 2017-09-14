@@ -21,8 +21,8 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-#import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
+#import "UMCCCommon.h"
 #import <UMPush/UMessage.h>
 #import "AppController.h"
 #import "platform/ios/CCEAGLView-ios.h"
@@ -36,14 +36,14 @@
 
 #pragma mark -
 #pragma mark Application lifecycle
-#define UMENG_APPKEY @"58edd022f29d9826f000139e"
+#define UMENG_APPKEY "5790764267e58ed50300157a"
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     /***友盟初始化开始***/
-    [UMConfigure setLogEnabled:YES];    // debug: only for console log, must be remove in release version
-    [UMConfigure initWithAppkey:UMENG_APPKEY channel:@"App Store"]; // required
+    UMCCCommon::setLogEnabled(true);
+    UMCCCommon::init(UMENG_APPKEY, "app store");
     [self setupUSharePlatforms];   // required: setting platforms on demand
     
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;

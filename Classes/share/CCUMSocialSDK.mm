@@ -6,7 +6,7 @@
 //
 //
 
-#include "UmSocialControllerIOS.h"
+#include "CCUMSocialSDK.h"
 #import <UIKit/UIKit.h>
 #import <UShareUI/UShareUI.h>
 
@@ -14,7 +14,6 @@
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 int const platformlength = 18;
-string UmSocialControllerIOS::m_appKey = "";
 @interface UMSocialBriage :NSObject<UMSocialShareMenuViewDelegate>
 {
 @public BoardDismissEventHandler callback;
@@ -341,7 +340,7 @@ void CCUMSocialSDK::openShare(vector<int>* platform, const char* text, const cha
 
 
 
-void CCUMSocialSDK::directShare(const char* text, const char* title, const char* targeturl,const char* imagePath, int platform, ShareEventHandler callback){
+void CCUMSocialSDK::directShare( int platform,const char* text, const char* title, const char* targeturl,const char* imagePath, ShareEventHandler callback){
     id image = nil;
     NSString* nstargeturl = [NSString stringWithUTF8String:targeturl];
     NSString* nstext = [NSString stringWithUTF8String:text];

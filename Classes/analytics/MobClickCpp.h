@@ -8,9 +8,7 @@
 
 #ifndef __MobClickGameAnalytics__MobClickCpp__
 #define __MobClickGameAnalytics__MobClickCpp__
-#include <jni.h>
-#include "platform/android/jni/JniHelper.h"
-#include <android/log.h>
+
 #include "cocos2d.h"
 #include <string>
 #include <map>
@@ -24,7 +22,7 @@ USING_NS_CC;
 #define UMENG_DEPRECATED
 #endif
 
-
+namespace umeng {
     
     typedef map<string, string> eventDict;
     
@@ -283,9 +281,7 @@ USING_NS_CC;
         static void setLatency(unsigned int latency);
         
     };
-
-
-
+}
 /** 开启友盟统计,默认以BATCH方式发送log.
  
  @param appKey 友盟appKey.

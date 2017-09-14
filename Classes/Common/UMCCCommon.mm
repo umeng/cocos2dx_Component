@@ -1,11 +1,11 @@
 #include "UMCCCommon.h"
 #include <UMCommon/UMConfigure.h>
-//#include <UMAnalytics/MobClick.h>
-#include <UMAnalytics/MobClick.h>
-#include <UMAnalytics/MobClickGameAnalytics.h>
+#include "MobClickCpp.h"
 
-#define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x"
-#define UMENG_SDK_WRAPPER_VERSION                   @"4.7.1"
+
+#define VERSION "1.0"
+#define WRAP_TYPE "cocos2dx"
+
 
 
 static  NSString* getNSStringFromCString(const char* cstr){
@@ -21,8 +21,8 @@ static  NSString* getNSStringFromCString(const char* cstr){
         
     }
     void UMCCCommon::init(const char *appkey, const char *channel){
-        
-         [UMConfigure initWithAppkey:getNSStringFromCString(appkey) channel:getNSStringFromCString(channel)];
+        MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL(appkey, channel)
+        [UMConfigure initWithAppkey:getNSStringFromCString(appkey) channel:getNSStringFromCString(channel)];
     }
     
 
