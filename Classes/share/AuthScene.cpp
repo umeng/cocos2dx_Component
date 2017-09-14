@@ -184,47 +184,47 @@ void authCallback(int platform, int stCode, map<string, string>& data) {
 
 
 void Auth::qqAuth(Ref* pSender) {
-   CCUMSocialSDK::authorize(QQ, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::authorize(QQ, auth_selector(authCallback));
 }
 void Auth::sinaAuth(Ref* pSender) {
-    CCUMSocialSDK::authorize(SINA, auth_selector(authCallback));
+    umeng::CCUMSocialSDK::authorize(SINA, auth_selector(authCallback));
 }
 void Auth::wxAuth(Ref* pSender) {
-    CCUMSocialSDK::authorize(WEIXIN, auth_selector(authCallback));
+    umeng::CCUMSocialSDK::authorize(WEIXIN, auth_selector(authCallback));
 }
 void Auth::qqAuthDel(Ref* pSender) {
-   CCUMSocialSDK::deleteAuthorization(QQ, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::deleteAuthorization(QQ, auth_selector(authCallback));
 }
 void Auth::sinaAuthDel(Ref* pSender) {
-  CCUMSocialSDK::deleteAuthorization(SINA, auth_selector(authCallback));
+  umeng::CCUMSocialSDK::deleteAuthorization(SINA, auth_selector(authCallback));
 }
 void Auth::wxAuthDel(Ref* pSender) {
-    CCUMSocialSDK::deleteAuthorization(WEIXIN, auth_selector(authCallback));
+    umeng::CCUMSocialSDK::deleteAuthorization(WEIXIN, auth_selector(authCallback));
 }
 void Auth::doubanAuth(Ref* pSender) {
-    CCUMSocialSDK::authorize(DOUBAN, auth_selector(authCallback));
+    umeng::CCUMSocialSDK::authorize(DOUBAN, auth_selector(authCallback));
 }
 void Auth::renrenAuth(Ref* pSender) {
-    CCUMSocialSDK::authorize(RENREN, auth_selector(authCallback));
+    umeng::CCUMSocialSDK::authorize(RENREN, auth_selector(authCallback));
 }
 void Auth::facebookAuth(Ref* pSender) {
-    CCUMSocialSDK::authorize(FACEBOOK, auth_selector(authCallback));
+    umeng::CCUMSocialSDK::authorize(FACEBOOK, auth_selector(authCallback));
 }
 void Auth::doubanAuthDel(Ref* pSender) {
-   CCUMSocialSDK::deleteAuthorization(DOUBAN, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::deleteAuthorization(DOUBAN, auth_selector(authCallback));
 }
 void Auth::renrenAuthDel(Ref* pSender) {
-   CCUMSocialSDK::deleteAuthorization(RENREN, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::deleteAuthorization(RENREN, auth_selector(authCallback));
 }
 void Auth::facebookAuthDel(Ref* pSender) {
-   CCUMSocialSDK::deleteAuthorization(FACEBOOK, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::deleteAuthorization(FACEBOOK, auth_selector(authCallback));
 }
 
 void Auth::twitterAuth(Ref* pSender) {
-   CCUMSocialSDK::authorize(TWITTER, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::authorize(TWITTER, auth_selector(authCallback));
 }
 void Auth::twitterAuthDel(Ref* pSender) {
-   CCUMSocialSDK::deleteAuthorization(TWITTER, auth_selector(authCallback));
+   umeng::CCUMSocialSDK::deleteAuthorization(TWITTER, auth_selector(authCallback));
 }
 
 void Auth::menuCloseCallback(Ref* pSender)

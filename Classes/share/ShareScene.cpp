@@ -145,7 +145,7 @@ void boardCallback(int platform) {
         CCLog("platform num is : %d", platform);
      if (platform == QQ) {
 
-        CCUMSocialSDK::directShare(QQ,
+        umeng::CCUMSocialSDK::directShare(QQ,
                           "Umeng Social Cocos2d-x SDK -->  qqshare   DIFFERENT CONTENT","title" ,"","res/closenormal",
                           share_selector(shareCallback));
 
@@ -153,7 +153,7 @@ void boardCallback(int platform) {
      }
      else{
 
-     	 CCUMSocialSDK::directShare(platform,
+     	 umeng::CCUMSocialSDK::directShare(platform,
      	                         "Umeng Social Cocos2d-x SDK -->  qqshare   DIFFERENT CONTENT","title" ,"","CloseSelected.png",
      	                         share_selector(shareCallback));
 
@@ -168,7 +168,7 @@ void boardDismissCallback() {
 void Share::qqShare(Ref* pSender) {
 
     
-    CCUMSocialSDK::directShare(QQ,
+    umeng::CCUMSocialSDK::directShare(QQ,
                      "Umeng Social Cocos2d-x SDK -->  qqshare   testing","title" ,"","res/closenormal",
                      share_selector(shareCallback));
 
@@ -178,12 +178,12 @@ void Share::qqShare(Ref* pSender) {
  
  }
 void Share::sinaShare(Ref* pSender) {
-    CCUMSocialSDK::directShare(SINA,
+    umeng::CCUMSocialSDK::directShare(SINA,
                      "Umeng Social Cocos2d-x SDK -->  qqshare   testing","title" ,"https://wsq.umeng.com/","https://dev.umeng.com/images/tab2_1.png",
                      share_selector(shareCallback));
 }
 void Share::wxShare(Ref* pSender) {
-   CCUMSocialSDK::directShare(WEIXIN,
+   umeng::CCUMSocialSDK::directShare(WEIXIN,
                      "Umeng Social Cocos2d-x SDK -->  qqshare   testing", "title" ,"https://wsq.umeng.com/","https://dev.umeng.com/images/tab2_1.png",
                      share_selector(shareCallback));
 
@@ -198,8 +198,8 @@ void Share::boardShare(Ref* pSender) {
     platforms->push_back(WEIXIN_CIRCLE);
     platforms->push_back(TWITTER);
     platforms->push_back(FACEBOOK);
-     CCUMSocialSDK::setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
-     CCUMSocialSDK::openShare(platforms, "来自分享面板", "title" ,"https://dev.umeng.com/images/tab2_1.png","https://wsq.umeng.com/",share_selector(shareCallback));
+     umeng::CCUMSocialSDK::setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
+     umeng::CCUMSocialSDK::openShare(platforms, "来自分享面板", "title" ,"https://dev.umeng.com/images/tab2_1.png","https://wsq.umeng.com/",share_selector(shareCallback));
 
 }
 void Share::boardcustomShare(Ref* pSender) {
@@ -213,8 +213,8 @@ void Share::boardcustomShare(Ref* pSender) {
 
       platforms->push_back(FACEBOOK);
       platforms->push_back(TWITTER);
-     CCUMSocialSDK::setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
-     CCUMSocialSDK::openCustomShare(platforms, board_selector(boardCallback));
+     umeng::CCUMSocialSDK::setBoardDismissCallback(boarddismiss_selector(boardDismissCallback));
+     umeng::CCUMSocialSDK::openCustomShare(platforms, board_selector(boardCallback));
     
 }
 void Share::menuCloseCallback(Ref* pSender)

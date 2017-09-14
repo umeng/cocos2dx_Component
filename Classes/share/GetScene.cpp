@@ -116,15 +116,15 @@ void getCallback(int platform, int stCode, map<string, string>& data) {
     item->setString(result.c_str());
 }
 void Get::qqGet(Ref* pSender) {
-    CCUMSocialSDK::getPlatformInfo(QQ, auth_selector(getCallback));
+    umeng::CCUMSocialSDK::getPlatformInfo(QQ, auth_selector(getCallback));
 
 }
 void Get::sinaGet(Ref* pSender) {
-    CCUMSocialSDK::getPlatformInfo(SINA, auth_selector(getCallback));
+    umeng::CCUMSocialSDK::getPlatformInfo(SINA, auth_selector(getCallback));
 
 }
 void Get::wxGet(Ref* pSender) {
-   CCUMSocialSDK::getPlatformInfo(WEIXIN, auth_selector(getCallback));
+   umeng::CCUMSocialSDK::getPlatformInfo(WEIXIN, auth_selector(getCallback));
 
 }
 

@@ -65,22 +65,23 @@ typedef void (*BoardDismissEventHandler)();
 #define share_selector(_SELECTOR) (ShareEventHandler)(&_SELECTOR)
 #define board_selector(_SELECTOR) (BoardEventHandler)(&_SELECTOR)
 #define boarddismiss_selector(_SELECTOR) (BoardDismissEventHandler)(&_SELECTOR)
-class CCUMSocialSDK {
 
-public:
-	static void authorize(int platform, AuthEventHandler callback);
-	static void deleteAuthorization(int platform, AuthEventHandler callback);
-	static void openShare(vector<int>* platforms,const char* text, const char* title,const char* imgName,const char* targeturl,ShareEventHandler callback);
-    static void openCustomShare(vector<int>* platforms,BoardEventHandler callback);
-    static void setBoardDismissCallback(BoardDismissEventHandler callback);
-    static void getPlatformInfo(int platforms,AuthEventHandler callback);
+namespace umeng {
+    class CCUMSocialSDK {
+
+    public:
+        static void authorize(int platform, AuthEventHandler callback);
+        static void deleteAuthorization(int platform, AuthEventHandler callback);
+        static void openShare(vector<int>* platforms,const char* text, const char* title,const char* imgName,const char* targeturl,ShareEventHandler callback);
+        static void openCustomShare(vector<int>* platforms,BoardEventHandler callback);
+        static void setBoardDismissCallback(BoardDismissEventHandler callback);
+        static void getPlatformInfo(int platforms,AuthEventHandler callback);
 	
-	static void directShare(int platform, const char* text,const char* title,const char* targeturl,
+        static void directShare(int platform, const char* text,const char* title,const char* targeturl,
 			const char* imgName, ShareEventHandler callback);
 
 	
 
-};
-
-
+    };
+}
 #endif

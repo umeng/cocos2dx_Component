@@ -128,7 +128,7 @@ UIImage * formatImage(id image) {
 
 
 
-
+namespace umeng {
 void CCUMSocialSDK::getPlatformInfo(int platform, AuthEventHandler callback){
     [[UMSocialManager defaultManager]  getUserInfoWithPlatform:getPlatformString(platform) currentViewController:getViewController() completion:^(id result, NSError *error) {
         NSString *message = nil;
@@ -393,4 +393,5 @@ void CCUMSocialSDK::directShare( int platform,const char* text, const char* titl
         callback(platform, code,asserstring(message));
         
     }];
+}
 }

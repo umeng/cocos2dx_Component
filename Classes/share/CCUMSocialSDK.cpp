@@ -94,7 +94,7 @@ JNIEXPORT void JNICALL Java_com_umeng_social_CCUMSocialController_OnShareComplet
 }
 }
 
-
+namespace umeng{
 void CCUMSocialSDK::authorize(int platform, AuthEventHandler callback){
 	 	authCallback = callback;
 	if (authCallback != NULL) {
@@ -209,4 +209,5 @@ void CCUMSocialSDK:: directShare(int platform, const char* text,const char* titl
 				mi.env->DeleteLocalRef(share_target_url);
 		releaseMethod(mi);
 	}
+}
 }
