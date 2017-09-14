@@ -66,8 +66,7 @@ JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfuture_InitCC (
         if (isHave) {
         mi.env->CallStaticVoidMethod(mi.classID, mi.methodID, value);
         releaseCommonMethod(mi);
-        }
-       
+        } 
     }
     void UMCCCommon::init(const char *appkey, const char *channel){
        
