@@ -12,9 +12,12 @@ import com.umeng.commonsdk.UMConfigure;
  */
 
 public class UMCocosConfuture {
-    private native static void Init();
+    static {
+        System.loadLibrary("cocos2dcpp");
+    }
+    public native static void InitCC();
     public static void init(Context context, String appkey, String channel, int type, String secret){
-       Init();
+        InitCC();
         UMConfigure.init(context,appkey,channel,type,secret);
     }
     public static void initCocos(String v,String t){
