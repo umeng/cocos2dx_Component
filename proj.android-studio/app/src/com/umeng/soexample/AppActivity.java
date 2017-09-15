@@ -26,14 +26,14 @@ package com.umeng.soexample;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import com.umeng.common.UMCocosConfuture;
+import com.umeng.common.UMCocosConfigure;
 import com.umeng.message.PushAgent;
 import com.umeng.push.CCUMPushController;
 import com.umeng.social.CCUMSocialController;
 import com.umeng.analytics.UMGameAnalytics;
 import com.umeng.analytics.game.UMGameAgent;
 import org.cocos2dx.lib.Cocos2dxActivity;
-import com.umeng.commonsdk.UMConfigure;
+
 public class AppActivity extends Cocos2dxActivity {
     private Activity mActivity = null;
     @Override
@@ -47,6 +47,7 @@ public class AppActivity extends Cocos2dxActivity {
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
 
         // 授权回调
         CCUMSocialController.onActivityResult(requestCode, resultCode, data);
