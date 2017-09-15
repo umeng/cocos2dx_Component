@@ -57,6 +57,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/share/CCUMSocialSDK.cpp \
                    ../../../Classes/push/CCUMPushSDK.cpp \
                    ../../../Classes/analytics/MobClickCpp.cpp \
+                   ../../../Classes/analytics/DplusMobClickCpp.cpp \
                    ../../../Classes/Common/UMCCCommon.cpp \
                    ../../../Classes/HelloWorldScene.cpp
 
