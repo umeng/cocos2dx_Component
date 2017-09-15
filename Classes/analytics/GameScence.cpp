@@ -10,7 +10,7 @@
 #include "AnalyticsHome.h"
 #include "HelloWorldScene.h"
 #include "MobClickCpp.h"
-
+#include "DplusMobClickCpp.h"
 USING_NS_CC;
 
 Scene* GameScence::scene()
@@ -97,7 +97,10 @@ bool GameScence::init()
     MenuItemFont *indentButton = MenuItemFont::create("订单充值", CC_CALLBACK_1(GameScence::indent, this));
     indentButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7*6));
     indentButton->setFontSizeObj(14);
-    
+    // 自定义事件
+    MenuItemFont *defineButton = MenuItemFont::create("自定义事件", CC_CALLBACK_1(GameScence::define, this));
+    defineButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7));
+    defineButton->setFontSizeObj(14);
     MenuItemImage *pCloseItem = MenuItemImage::create(
                                                       "CloseNormal.png",
                                                       "CloseSelected.png",
@@ -167,6 +170,59 @@ void GameScence::buyvir(Ref* pSender)
 void GameScence::indent(Ref* pSender)
 {
     umeng::MobClickCpp::exchange("test_order",648.0,"CNY",6480,1);
+}
+void GameScence::define(Ref* pSender)
+{
+    umeng::MobClickCpp::event("event_1");
+    umeng::MobClickCpp::event("event_2","test");
+    umeng::eventDict PayMap;
+    PayMap.insert(std::make_pair("userid", std::string("userid-xuezhi")));
+    PayMap.insert(std::make_pair("ordeid", std::string("xxxxxx")));
+    PayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
+    PayMap.insert(std::make_pair("amout", "100"));
+    umeng::MobClickCpp::event("__submit_payment", &PayMap);
+    
+    umeng::eventDict successPayMap;
+    successPayMap.insert(std::make_pair("userid", std::string("xuezhi")));
+    successPayMap.insert(std::make_pair("orderid", std::string("xxxxxx")));
+    successPayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
+    successPayMap.insert(std::make_pair("amount", "200"));
+    umeng::MobClickCpp::event("__finish_payment", &successPayMap,10);
+    
+    umeng::DplusMobClickCpp::track("test");
+    
+    umeng::eventDict sPayMap;
+    sPayMap.insert(std::make_pair("userid", std::string("xuezhi")));
+    sPayMap.insert(std::make_pair("orderid", std::string("xxxxxx")));
+    sPayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
+    umeng::DplusMobClickCpp::track("test1",&sPayMap);
+    
+    umeng::eventDict beginPayMap;
+    beginPayMap.insert(std::make_pair("userid", std::string("userid-xuezhi")));
+    beginPayMap.insert(std::make_pair("ordeid", std::string("xxxxxx")));
+    beginPayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
+    beginPayMap.insert(std::make_pair("amout", "100"));
+    
+    umeng::DplusMobClickCpp::registerSuperProperty(&beginPayMap);
+    
+    umeng::DplusMobClickCpp::unregisterSuperProperty("userid");
+    
+    std::string pName = umeng::DplusMobClickCpp::getSuperProperty("item");
+    
+    std::string testMap = umeng::DplusMobClickCpp::getSuperProperties();
+    
+    
+    std::vector<std::string> vec;
+    vec.push_back("userid");
+    vec.push_back("ordeid");
+    vec.push_back("item");
+    vec.push_back("amout");
+    vec.push_back("test");
+    vec.push_back("test1");
+    //
+    umeng::DplusMobClickCpp::setFirstLaunchEvent(&vec);
+    umeng::DplusMobClickCpp::clearSuperProperties();
+    
 }
 void GameScence::menuCloseCallback(Ref* pSender)
 {

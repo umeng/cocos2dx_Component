@@ -34,6 +34,7 @@ public:
     void buy(Ref* pSender);
     void buyvir(Ref* pSender);
     void indent(Ref* pSender);
+    void define(Ref* pSender);
     void gotoApp(Ref* pSender);
     void gotoGame(Ref* pSender);
     

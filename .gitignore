@@ -1,3 +1,4 @@
 .DS_Store
 /proj.android-studio/app/obj/*
 dabao.sh
+cocos2d/*
