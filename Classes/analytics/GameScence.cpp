@@ -143,6 +143,7 @@ void GameScence::endLevel(Ref* pSender)
 void GameScence::use(Ref* pSender)
 {
     umeng::MobClickCpp::use("use",2,4);
+    umeng::MobClickCpp::setUserLevel(9);
 }
 void GameScence::bonus(Ref* pSender)
 {
@@ -223,6 +224,7 @@ void GameScence::define(Ref* pSender)
     //
     umeng::DplusMobClickCpp::setFirstLaunchEvent(&vec);
     umeng::DplusMobClickCpp::clearSuperProperties();
+    umeng::MobClickCpp::setUserLevel(10)
     
 }
 void GameScence::menuCloseCallback(Ref* pSender)
