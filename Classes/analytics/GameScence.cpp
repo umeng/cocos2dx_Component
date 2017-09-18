@@ -224,7 +224,6 @@ void GameScence::define(Ref* pSender)
     //
     umeng::DplusMobClickCpp::setFirstLaunchEvent(&vec);
     umeng::DplusMobClickCpp::clearSuperProperties();
-    umeng::MobClickCpp::setUserLevel(10)
     
 }
 void GameScence::menuCloseCallback(Ref* pSender)
