@@ -44,8 +44,8 @@ static AppDelegate s_sharedApplication;
     /***友盟初始化开始***/
     UMCCCommon::setLogEnabled(true);
     UMCCCommon::init(UMENG_APPKEY, "app store");
+    log("didFinishLaunchingWithOptions");
     [self setupUSharePlatforms];   // required: setting platforms on demand
-    
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc]init];
     entity.types = UMessageAuthorizationOptionAlert | UMessageAuthorizationOptionBadge | UMessageAuthorizationOptionSound;
