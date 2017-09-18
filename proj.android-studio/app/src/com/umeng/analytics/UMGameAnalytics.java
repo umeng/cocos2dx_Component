@@ -29,7 +29,7 @@ public class UMGameAnalytics {
             return;
         }
         mCtx = context.getApplicationContext();
-        MobclickAgent.setScenarioType(context,EScenarioType.E_UM_GAME);
+        MobclickAgent.setScenarioType(context,EScenarioType.E_DUM_GAME);
         UMGameAgent.init(context);
     }
 

@@ -1,7 +1,8 @@
 #include "MobClickCpp.h"
 #include <UMCommon/UMConfigure.h>
-//#include <UMAnalytics/MobClick.h>
 #include <UMAnalytics/MobClick.h>
+#include <UMAnalytics/DplusMobClick.h>
+
 #include <UMAnalytics/MobClickGameAnalytics.h>
 
 #define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x"
@@ -18,7 +19,6 @@ namespace umeng {
     void MobClickCpp::setLogEnabled(bool value){
         BOOL valTmp = value?YES:NO;
         [UMConfigure setLogEnabled:valTmp];
-        
     }
     void MobClickCpp::setEncryptEnabled(bool value){
         BOOL valTmp = value?YES:NO;
@@ -29,15 +29,13 @@ namespace umeng {
             NSLog(@"(MobClickCpp::setAppVersion)appversion can't be NULL or \"\"!");
             return;
         }
-        
     }
     void MobClickCpp::doNotCallItFromYourCode(const char * appkey, const char * channel){
         if (!appkey || strlen(appkey) == 0) {
             NSLog(@"(MobClickCpp::startWithAppkey) appKey can not be NULL or \"\"!");
             return;
         }
-        [MobClick setScenarioType:E_UM_GAME]; // 仅适用于游戏场景，应用统计不用设置
-        //[UMConfigure initWithAppkey:[NSString stringWithUTF8String:appkey] channel:[NSString stringWithUTF8String:channel]];
+        [MobClick setScenarioType:(eScenarioType)(E_UM_GAME|E_UM_DPLUS)]; // 仅适用于游戏场景
     }
     void MobClickCpp::event(const char * eventId, const char * label){
         if(label){

@@ -122,6 +122,7 @@ bool GameScence::init()
     pMenu->addChild(buyButton, 1);
     pMenu->addChild(buyvirButton, 1);
     pMenu->addChild(indentButton, 1);
+    pMenu->addChild(defineButton, 1);
     pMenu->setPosition(Size::ZERO);
     this->addChild(pMenu, 1);
     return true;
