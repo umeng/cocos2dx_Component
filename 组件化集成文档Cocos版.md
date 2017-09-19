@@ -299,7 +299,7 @@ void tagsCallback(int stCode, list<string>& data){
     item->setString(string_temp);
 }
 ```
-### 增加alias
+### 增加alias，不清空已绑定alias
 
 ```
 umeng::CCUMPushSDK::addAlias("alias", "type", push_alias_selector(aliasCallback));
@@ -314,7 +314,7 @@ void aliasCallback(int stCode){
 }
 ```
 stCode为200标识成功
-### 增加额外的alias
+### 增加alias，清空已绑定alias
 
 ```
 umeng::CCUMPushSDK::setAlias("alias", "type", push_alias_selector(aliasCallback));
