@@ -30,6 +30,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import "MobClickCpp.h"
 @interface AppController()<UNUserNotificationCenterDelegate>
 @end
 @implementation AppController
@@ -43,6 +44,7 @@ static AppDelegate s_sharedApplication;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     /***友盟初始化开始***/
     UMCCCommon::setLogEnabled(true);
+    umeng::MobClickCpp::init();
     UMCCCommon::init(UMENG_APPKEY, "app store");
     log("didFinishLaunchingWithOptions");
     [self setupUSharePlatforms];   // required: setting platforms on demand

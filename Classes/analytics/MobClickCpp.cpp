@@ -54,12 +54,6 @@ namespace umeng {
         }
     }
     
-    void MobClickCpp::doNotCallItFromYourCode(const char *appKey, const char * channelId){
-        //for ios
-    }
-    void MobClickCpp::setAppVersion(const char *){
-        //for ios
-    }
     void MobClickCpp::event(const char * eventId, const char * label){
         JniMethodInfo t;
         if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS,"event", "(Ljava/lang/String;Ljava/lang/String;)V")){
@@ -241,5 +235,8 @@ namespace umeng {
         if (JniHelper::getStaticMethodInfo(t,JAVA_CLASS_MOBCLICKAGENT,"setLatencyWindow", "(J)V")){
             t.env->CallStaticVoidMethod(t.classID,t.methodID,latency);
         }
+    }
+    void MobClickCpp::init() {
+        //for iOS
     }
 }
