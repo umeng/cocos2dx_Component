@@ -1,6 +1,7 @@
 # 工程配置
 首先需要说明，Cocos2dx下载的只是桥接文件，不含最新版本的jar，对应组件的jar请去[下载中心](http://mobile.umeng.com/custom_sdk)下载。
 如果对于文档仍有疑问的，请参照我们在github上的[demo](https://github.com/umeng/cocos2dx_Component)
+请留意：demo使用xcode9编译会报错，请使用xcode8及以下版本运行demo。
 ## Android
 将所有需要的组件的jar放到Android工程中，如图所示：
 
