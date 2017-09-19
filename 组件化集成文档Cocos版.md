@@ -199,6 +199,47 @@ void umeng::MobClickCpp::failLevel(const char *level);
 void exchange(const char *orderId, double currencyAmount, const char *currencyType,double virtualAmount,int channel)
 umeng::MobClickCpp::exchange("test_order",648.0,"CNY",6480,1);
 ```
+```
+track事件
+自定义track事件
+void track(const char * eventName, eventDict* property = NULL)
+```
+```
+超级属性
+对Dplus的事件，可以设置持久化的超级属性，如果用户具有某些典型特征（例如账号信息），或者需要按照某些特征（例如广告来源）分析用户的行为，那么可通过以下方法为用户标记超级属性：
+
+// 设置超级属性集, 标记超级属性后,该用户后续触发的所有行为事件都将自动包含这些属性；且这些属性存入系统文件，APP重启后仍然存在。
+umeng::eventDict beginPayMap;
+beginPayMap.insert(std::make_pair("userid", std::string("userid-xuezhi")));
+beginPayMap.insert(std::make_pair("ordeid", std::string("xxxxxx")));
+beginPayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
+beginPayMap.insert(std::make_pair("amout", "100"));
+umeng::DplusMobClickCpp::registerSuperProperty(&beginPayMap);
+/*针对同一超级属性，设定的新值会改写旧值。*/
+
+// 获取某一个超级属性值
+std::string pName = umeng::DplusMobClickCpp::getSuperProperty("item");
+
+// 获取所有超级属性值
+std::string testMap = umeng::DplusMobClickCpp::getSuperProperties();
+
+// 删除某一个超级属性
+umeng::DplusMobClickCpp::unregisterSuperProperty("userid");
+
+// 删除所有超级属性
+umeng::DplusMobClickCpp::clearSuperProperties();
+```
+```
+//设置关注首次触发track事件.
+umeng::DplusMobClickCpp::setFirstLaunchEvent(std::vector<std::string>* eventIdList)
+//比如用户首次付费,因为不同原因可以如下集成:
+std::vector<std::string> fisLaunchList;
+fisLaunchList.push_back("pay_p");
+fisLaunchList.push_back("pay_because_dabai");
+fisLaunchList.push_back("pay_because_deng");
+ ...  ...
+umeng::DplusMobClickCpp::setFirstLaunchEvent(&fisLaunchList);
+```
 # 推送
 ## Android
 首先，Android push需要让Android app依赖我们提供的push module，再根据文档进行相应的初始化。
