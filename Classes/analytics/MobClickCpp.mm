@@ -24,17 +24,7 @@ namespace umeng {
         BOOL valTmp = value?YES:NO;
         [UMConfigure setEncryptEnabled:valTmp];
     }
-    void MobClickCpp::setAppVersion(const char *appVersion){
-        if(!appVersion || strlen(appVersion) == 0){
-            NSLog(@"(MobClickCpp::setAppVersion)appversion can't be NULL or \"\"!");
-            return;
-        }
-    }
-    void MobClickCpp::doNotCallItFromYourCode(const char * appkey, const char * channel){
-        if (!appkey || strlen(appkey) == 0) {
-            NSLog(@"(MobClickCpp::startWithAppkey) appKey can not be NULL or \"\"!");
-            return;
-        }
+    void MobClickCpp::init(void){
         [MobClick setScenarioType:(eScenarioType)(E_UM_GAME|E_UM_DPLUS)]; // 仅适用于游戏场景
     }
     void MobClickCpp::event(const char * eventId, const char * label){
