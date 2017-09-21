@@ -24,7 +24,7 @@ public class UMCocosConfigure {
         Method method = null;
         try {
             Class<?> config = Class.forName("com.umeng.commonsdk.UMConfigure");
-            method = config.getDeclaredMethod("setWrapper", String.class);
+            method = config.getDeclaredMethod("setWraperType", String.class, String.class);
             method.setAccessible(true);
             method.invoke(null, v,t);
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | ClassNotFoundException e) {

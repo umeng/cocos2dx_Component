@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/zhz/Desktop/work/Cocos2dx_Component/cocos2d/cocos/platform/android/libcocos2dx/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/zhz/Desktop/work/Cocos2dx_Component/cocos2d/cocos/platform/android/libcocos2dx/src/release/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/umeng/Documents/source/CocosUMProject/cocos2d/cocos/platform/android/libcocos2dx/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/umeng/Documents/source/CocosUMProject/cocos2d/cocos/platform/android/libcocos2dx/src/release/jniLibs"/></dataSet></merger>
