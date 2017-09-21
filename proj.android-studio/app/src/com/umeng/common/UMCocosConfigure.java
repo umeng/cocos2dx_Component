@@ -23,6 +23,7 @@ public class UMCocosConfigure {
         Log.e("cocos2d-x","initCocos success");
         Method method = null;
         try {
+            Log.e("xxxxxx","v="+v+"  t="+t);
             Class<?> config = Class.forName("com.umeng.commonsdk.UMConfigure");
             method = config.getDeclaredMethod("setWraperType", String.class, String.class);
             method.setAccessible(true);
