@@ -20,7 +20,7 @@ public class UMCocosConfigure {
         UMConfigure.init(context,appkey,channel,type,secret);
     }
     public static void initCocos(String v,String t){
-        Log.e("cocos2d-x","initCocos success");
+
         Method method = null;
         try {
             Log.e("xxxxxx","v="+v+"  t="+t);
