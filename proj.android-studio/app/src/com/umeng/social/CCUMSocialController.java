@@ -1022,24 +1022,40 @@ public class CCUMSocialController {
 	 * 
 	 */
 	static {
-		mPlatformsList.add(0, SHARE_MEDIA.SINA);
-		mPlatformsList.add(1, SHARE_MEDIA.WEIXIN);
-		mPlatformsList.add(2, SHARE_MEDIA.WEIXIN_CIRCLE);
-		mPlatformsList.add(3, SHARE_MEDIA.QQ);
+		mPlatformsList.add(0, SHARE_MEDIA.QQ);
+		mPlatformsList.add(1, SHARE_MEDIA.SINA);
+		mPlatformsList.add(2, SHARE_MEDIA.WEIXIN);
+		mPlatformsList.add(3, SHARE_MEDIA.WEIXIN_CIRCLE);
 		mPlatformsList.add(4, SHARE_MEDIA.QZONE);
-		mPlatformsList.add(5, SHARE_MEDIA.RENREN);
-		mPlatformsList.add(6, SHARE_MEDIA.DOUBAN);
-		mPlatformsList.add(7, SHARE_MEDIA.LAIWANG);
-		mPlatformsList.add(8, SHARE_MEDIA.LAIWANG_DYNAMIC);
-		mPlatformsList.add(9, SHARE_MEDIA.YIXIN);
-		mPlatformsList.add(10, SHARE_MEDIA.YIXIN_CIRCLE);
-		mPlatformsList.add(11, SHARE_MEDIA.FACEBOOK);
-		mPlatformsList.add(12, SHARE_MEDIA.TWITTER);
-		mPlatformsList.add(13, SHARE_MEDIA.INSTAGRAM);
-		mPlatformsList.add(14, SHARE_MEDIA.SMS);
-		mPlatformsList.add(15, SHARE_MEDIA.EMAIL);
-		mPlatformsList.add(16, SHARE_MEDIA.TENCENT);
-		mPlatformsList.add(16, SHARE_MEDIA.WHATSAPP);
+		mPlatformsList.add(5, SHARE_MEDIA.EMAIL);
+		mPlatformsList.add(6, SHARE_MEDIA.SMS);
+		mPlatformsList.add(7, SHARE_MEDIA.FACEBOOK);
+		mPlatformsList.add(8, SHARE_MEDIA.TWITTER);
+		mPlatformsList.add(9, SHARE_MEDIA.WEIXIN_FAVORITE);
+		mPlatformsList.add(10, SHARE_MEDIA.GOOGLEPLUS);
+		mPlatformsList.add(11, SHARE_MEDIA.RENREN);
+		mPlatformsList.add(12, SHARE_MEDIA.TENCENT);
+		mPlatformsList.add(13, SHARE_MEDIA.DOUBAN);
+		mPlatformsList.add(14, SHARE_MEDIA.FACEBOOK_MESSAGER);
+		mPlatformsList.add(15, SHARE_MEDIA.YIXIN);
+		mPlatformsList.add(16, SHARE_MEDIA.YIXIN_CIRCLE);
+		mPlatformsList.add(17, SHARE_MEDIA.INSTAGRAM);
+		mPlatformsList.add(18, SHARE_MEDIA.PINTEREST);
+		mPlatformsList.add(19, SHARE_MEDIA.EVERNOTE);
+		mPlatformsList.add(20, SHARE_MEDIA.POCKET);
+		mPlatformsList.add(21, SHARE_MEDIA.LINKEDIN);
+		mPlatformsList.add(22, SHARE_MEDIA.FOURSQUARE);
+		mPlatformsList.add(23, SHARE_MEDIA.YNOTE);
+		mPlatformsList.add(24, SHARE_MEDIA.WHATSAPP);
+		mPlatformsList.add(25, SHARE_MEDIA.LINE);
+		mPlatformsList.add(26, SHARE_MEDIA.FLICKR);
+		mPlatformsList.add(27, SHARE_MEDIA.TUMBLR);
+		mPlatformsList.add(28, SHARE_MEDIA.ALIPAY);
+		mPlatformsList.add(29, SHARE_MEDIA.KAKAO);
+		mPlatformsList.add(30, SHARE_MEDIA.DROPBOX);
+		mPlatformsList.add(31, SHARE_MEDIA.VKONTAKTE);
+		mPlatformsList.add(32, SHARE_MEDIA.DINGTALK);
+		mPlatformsList.add(33, SHARE_MEDIA.MORE);
 	}
 
 }
