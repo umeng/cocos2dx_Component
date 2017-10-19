@@ -380,13 +380,13 @@ void CCUMSocialSDK::directShare( int platform,const char* text, const char* titl
         NSString* message;
         if (error) {
             code = error.code;
+            if (error.code == 2009) {
+                code = -1;
+            }
             NSLog(@"************Share fail with error %@*********",error);
             message =@"************Share fail with error %@*********";
         }else{
             code = 200;
-            if (error.code == 2009) {
-                code = -1;
-            }
             if ([data isKindOfClass:[UMSocialShareResponse class]]) {
                 UMSocialShareResponse *resp = data;
                 //分享结果消息
