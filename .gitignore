@@ -2,3 +2,5 @@
 /proj.android-studio/app/obj/*
 dabao.sh
 cocos2d/*
+upload.*
+/upload

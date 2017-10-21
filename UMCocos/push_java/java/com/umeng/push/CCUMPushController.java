@@ -17,7 +17,7 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 public class CCUMPushController {
-    private static final int SUCCESS = 0;
+    private static final int SUCCESS = 200;
     private static final int ERROR = -1;
     private static final String TAG = CCUMPushController.class.getSimpleName();
     private static PushAgent mPushAgent;
