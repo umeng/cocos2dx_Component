@@ -16,6 +16,10 @@ void UMCCCommon::setLogEnabled(bool value){
     [UMConfigure setLogEnabled:valTmp];
 }
 void UMCCCommon::init(const char *appkey, const char *channel){
+    SEL sel = NSSelectorFromString(@"setWraperType:wrapperVersion:");
+    if ([UMConfigure respondsToSelector:sel]) {
+        [UMConfigure performSelector:sel withObject:@WRAP_TYPE withObject:@VERSION];
+    }
     [UMConfigure initWithAppkey:getNSStringFromCString(appkey) channel:getNSStringFromCString(channel)];
 }
     

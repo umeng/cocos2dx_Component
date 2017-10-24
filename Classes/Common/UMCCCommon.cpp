@@ -77,7 +77,7 @@ JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfigure_InitCC (
         if (isHave) {
         jstring version = mi.env->NewStringUTF(VERSION);
         jstring type = mi.env->NewStringUTF(WRAP_TYPE);
-        mi.env->CallStaticVoidMethod(mi.classID, mi.methodID, version,type);
+        mi.env->CallStaticVoidMethod(mi.classID, mi.methodID, type,version);
         mi.env->DeleteLocalRef(version);
         mi.env->DeleteLocalRef(type);
 
