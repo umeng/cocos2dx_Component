@@ -16,7 +16,6 @@ void UMCCCommon::setLogEnabled(bool value){
     [UMConfigure setLogEnabled:valTmp];
 }
 void UMCCCommon::init(const char *appkey, const char *channel){
-    MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL(appkey, channel)
     [UMConfigure initWithAppkey:getNSStringFromCString(appkey) channel:getNSStringFromCString(channel)];
 }
     

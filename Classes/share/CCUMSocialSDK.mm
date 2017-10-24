@@ -13,7 +13,7 @@
 //#import "UMSocialTencentWeiboHandler.h"
 
 #define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-int const platformlength = 18;
+int const platformlength = 34;
 @interface UMSocialBriage :NSObject<UMSocialShareMenuViewDelegate>
 {
 @public BoardDismissEventHandler callback;
@@ -41,24 +41,41 @@ int const platformlength = 18;
 @end
 //UMSocialUIDelegateObject * UmSocialControllerIOS::m_socialDelegate = nil;
 UMSocialPlatformType const platforms[platformlength] = {
-    UMSocialPlatformType_Sina
+    UMSocialPlatformType_QQ
+    , UMSocialPlatformType_Sina
     , UMSocialPlatformType_WechatSession
     , UMSocialPlatformType_WechatTimeLine
-    , UMSocialPlatformType_QQ
     , UMSocialPlatformType_Qzone
-    , UMSocialPlatformType_Renren
-    , UMSocialPlatformType_Douban
-    , UMSocialPlatformType_LaiWangSession
-    , UMSocialPlatformType_LaiWangTimeLine
-    , UMSocialPlatformType_YixinSession
-    , UMSocialPlatformType_YixinTimeLine
+    , UMSocialPlatformType_Email
+    , UMSocialPlatformType_Sms
     , UMSocialPlatformType_Facebook
     , UMSocialPlatformType_Twitter
-    , UMSocialPlatformType_Instagram
-    , UMSocialPlatformType_Sms
-    , UMSocialPlatformType_Email
+    , UMSocialPlatformType_WechatFavorite
+    , UMSocialPlatformType_GooglePlus
+    , UMSocialPlatformType_Renren
     , UMSocialPlatformType_TencentWb
+    , UMSocialPlatformType_Douban
+    , UMSocialPlatformType_FaceBookMessenger
+    , UMSocialPlatformType_YixinSession
+    , UMSocialPlatformType_YixinTimeLine
+    , UMSocialPlatformType_Instagram
+    , UMSocialPlatformType_Pinterest
+    , UMSocialPlatformType_EverNote
+    , UMSocialPlatformType_Pocket
+    , UMSocialPlatformType_Linkedin
+    , UMSocialPlatformType_UnKnown
+    , UMSocialPlatformType_YouDaoNote
     , UMSocialPlatformType_Whatsapp
+    , UMSocialPlatformType_Linkedin
+    , UMSocialPlatformType_Flickr
+    , UMSocialPlatformType_Tumblr
+    , UMSocialPlatformType_AlipaySession
+    , UMSocialPlatformType_KakaoTalk
+    , UMSocialPlatformType_DropBox
+    , UMSocialPlatformType_VKontakte
+    , UMSocialPlatformType_DingDing
+    , UMSocialPlatformType_UnKnown
+   
 };
 
 UMSocialPlatformType getPlatformString(int platform){
@@ -184,12 +201,16 @@ void CCUMSocialSDK::getPlatformInfo(int platform, AuthEventHandler callback){
 void CCUMSocialSDK::authorize(int platform, AuthEventHandler callback){
     [[UMSocialManager defaultManager]  authWithPlatform:getPlatformString(platform) currentViewController:getViewController() completion:^(id result, NSError *error) {
         NSString *message = nil;
-        int code = 200;
+        NSInteger code = 200;
         map<string,string> loginData;
         if (error) {
             NSLog(@"Auth fail with error %@", error);
             message = @"Auth fail";
-            code = error.code;
+            if (error.code == 2009) {
+                code = -1;
+            } else {
+                code = error.code;
+            }
             loginData.insert(pair<string, string>("message", asserstring(message)));
         }else{
             if ([result isKindOfClass:[UMSocialAuthResponse class]]) {
@@ -311,6 +332,9 @@ void CCUMSocialSDK::openShare(vector<int>* platform, const char* text, const cha
             NSString* message;
             if (error) {
                 code = (int)error.code;
+                if (error.code == 2009) {
+                    code = -1;
+                }
                 NSLog(@"************Share fail with error %@*********",error);
                 message =@"************Share fail with error %@*********";
             }else{
@@ -373,6 +397,9 @@ void CCUMSocialSDK::directShare( int platform,const char* text, const char* titl
         NSString* message;
         if (error) {
             code = error.code;
+            if (error.code == 2009) {
+                code = -1;
+            }
             NSLog(@"************Share fail with error %@*********",error);
             message =@"************Share fail with error %@*********";
         }else{

@@ -3,7 +3,7 @@
 #include "CCUMPushSDK.h"
 #import <UIKit/UIKit.h>
 #import <UMPush/UMessage.h>
-#import "CCUMPushSDK.h"
+
 
 
 

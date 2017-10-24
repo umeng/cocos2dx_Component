@@ -20,11 +20,12 @@ public class UMCocosConfigure {
         UMConfigure.init(context,appkey,channel,type,secret);
     }
     public static void initCocos(String v,String t){
-        Log.e("cocos2d-x","initCocos success");
+
         Method method = null;
         try {
+            Log.e("xxxxxx","v="+v+"  t="+t);
             Class<?> config = Class.forName("com.umeng.commonsdk.UMConfigure");
-            method = config.getDeclaredMethod("setWrapper", String.class);
+            method = config.getDeclaredMethod("setWraperType", String.class, String.class);
             method.setAccessible(true);
             method.invoke(null, v,t);
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | ClassNotFoundException e) {

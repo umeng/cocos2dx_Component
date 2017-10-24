@@ -30,6 +30,13 @@ namespace umeng {
     class MobClickCpp {
         
     public:
+        /** 初始化sdk
+         @param void.
+         @return .
+         @exception .
+         */
+        
+        static void init();
         /** 设置是否打印sdk的log信息,默认不开启
          @param value 设置为true,umeng SDK 会输出log信息,记得release产品时要设置回false.
          @return .
@@ -65,17 +72,6 @@ namespace umeng {
          @param appVersion 版本号，例如设置成`XcodeAppVersion`.
          @return void.
          */
-        static void setAppVersion(const char *);
-        ///---------------------------------------------------------------------------------------
-        /// @name  开启统计
-        ///---------------------------------------------------------------------------------------
-        
-        
-
-        static void doNotCallItFromYourCode(const char * , const char * );
-        
-        
-        
         ///---------------------------------------------------------------------------------------
         /// @name  事件统计
         ///---------------------------------------------------------------------------------------
@@ -282,16 +278,4 @@ namespace umeng {
         
     };
 }
-/** 开启友盟统计,默认以BATCH方式发送log.
- 
- @param appKey 友盟appKey.
- @param channelId 渠道名称,为NULL或""时,ios默认会被被当作@"App Store"渠道，android默认为“Unknown”。
- @return void
- */
-#define MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL(appkey, channel)  \
-umeng::MobClickCpp::doNotCallItFromYourCode((appkey), (channel));
-
-#define MOBCLICKCPP_START_WITH_APPKEY(appkey)   MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL(appkey, NULL)
-
-
 #endif
