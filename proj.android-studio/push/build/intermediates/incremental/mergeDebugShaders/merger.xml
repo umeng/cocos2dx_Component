@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/umeng/Documents/source/CocosUMProject/proj.android-studio/push/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/umeng/Documents/source/CocosUMProject/proj.android-studio/push/build-types/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/zhz/Desktop/work/Cocos2dx_Component/proj.android-studio/push/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/zhz/Desktop/work/Cocos2dx_Component/proj.android-studio/push/build-types/debug/shaders"/></dataSet></merger>
