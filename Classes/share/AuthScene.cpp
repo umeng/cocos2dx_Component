@@ -93,13 +93,11 @@ bool Auth::init()
     deltwitterButton->setPosition(Vec2(visibleSize.width/2+width, 125));
       deltwitterButton->setFontSizeObj(12);
    
-    MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                          CC_CALLBACK_1(Auth::menuCloseCallback, this));
+    MenuItemFont *pCloseItem = MenuItemFont::create("返回", CC_CALLBACK_1(Auth::menuCloseCallback, this));
+    pCloseItem->setFontSizeObj(14);
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
-                                origin.y + pCloseItem->getContentSize().height));
+                                 origin.y + pCloseItem->getContentSize().height));
     
     Menu* pMenu = Menu::create();
     pMenu->addChild(qqButton, 1);

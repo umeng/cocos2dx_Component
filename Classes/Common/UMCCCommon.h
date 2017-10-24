@@ -21,7 +21,7 @@ using namespace std;
 // #include "platform/android/jni/JniHelper.h"
 // #include <android/log.h>
 // #endif
-#define VERSION "5.0.0"
+#define VERSION "5.0"
 #define WRAP_TYPE "Cocos2d-x"
 
 

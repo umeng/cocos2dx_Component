@@ -2,6 +2,7 @@
 #include "Entrance.h"
 #include "AnalyticsHome.h"
 #include "PushScence.h"
+#include "GameScence.h"
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -87,7 +88,7 @@ bool HelloWorld::init()
 }
 void HelloWorld::gotoAnalytics(Ref* pSender) {
     TransitionScene * reScene = NULL;
-    Scene * s = AnalyticsHome::scene();
+    Scene * s = GameScence::scene();
     float t = 1.2f;
     
     reScene = TransitionJumpZoom ::create(t , s);

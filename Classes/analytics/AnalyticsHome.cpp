@@ -53,26 +53,18 @@ bool AnalyticsHome::init()
     // add the label as a child to this layer
     this->addChild(pLabel, 1);
 
-    MenuItemFont *appButton = MenuItemFont::create("App", CC_CALLBACK_1(AnalyticsHome::gotoApp, this));
-
-    appButton->setPosition(Vec2(visibleSize.width/2, 160));
-    appButton->setFontSizeObj(14);
     // 底层API分享
     MenuItemFont *gameButton = MenuItemFont::create("游戏", CC_CALLBACK_1(AnalyticsHome::gotoGame, this));
     gameButton->setPosition(Vec2(visibleSize.width/2, 120));
  gameButton->setFontSizeObj(14);
     // 授权某平台
-
-    MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                           CC_CALLBACK_1(AnalyticsHome::menuCloseCallback, this));
+    MenuItemFont *pCloseItem = MenuItemFont::create("返回", CC_CALLBACK_1(AnalyticsHome::gotoApp, this));
+    pCloseItem->setFontSizeObj(14);
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
                                 origin.y + pCloseItem->getContentSize().height));
    
     Menu* pMenu = Menu::create();
-    pMenu->addChild(appButton, 1);
     pMenu->addChild(pCloseItem, 1);
     pMenu->addChild(gameButton, 1);
    
@@ -82,11 +74,10 @@ bool AnalyticsHome::init()
 }
 
 void AnalyticsHome::gotoApp(Ref* pSender) {
-    TransitionScene * reScene = NULL;
-    Scene * s = AppScence::scene();
+    auto scene = HelloWorld::createScene();
     float t = 1.2f;
     
-    reScene = TransitionJumpZoom ::create(t , s);
+    auto reScene = TransitionJumpZoom ::create(t , scene);
     Director::getInstance()->replaceScene(reScene);
 }
 void AnalyticsHome::gotoGame(Ref* pSender) {
