@@ -856,7 +856,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = K7FM47A3M5;
+						DevelopmentTeam = 486K7NX823;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1020,7 +1020,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CocosUMProject-mobile.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = K7FM47A3M5;
+				DEVELOPMENT_TEAM = 486K7NX823;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocial_Sdk_Extra_Frameworks\"/**",
@@ -1056,8 +1056,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UmengPlus.UMDemo;
-				PROVISIONING_PROFILE = "a974cdf0-dd4b-4d68-ac72-52c1ce64a007";
-				PROVISIONING_PROFILE_SPECIFIER = UMPush_component_dev;
+				PROVISIONING_PROFILE = "12c70f3e-b466-4415-8844-09d3b58fb681";
+				PROVISIONING_PROFILE_SPECIFIER = UMengPlusDemo_dev;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -1072,7 +1072,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CocosUMProject-mobile.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = K7FM47A3M5;
+				DEVELOPMENT_TEAM = 486K7NX823;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Classes/share/umeng_ios_social_sdk/UMSocial_Sdk_Extra_Frameworks\"/**",
@@ -1106,8 +1106,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UmengPlus.UMDemo;
-				PROVISIONING_PROFILE = "a974cdf0-dd4b-4d68-ac72-52c1ce64a007";
-				PROVISIONING_PROFILE_SPECIFIER = UMPush_component_dev;
+				PROVISIONING_PROFILE = "12c70f3e-b466-4415-8844-09d3b58fb681";
+				PROVISIONING_PROFILE_SPECIFIER = UMengPlusDemo_dev;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";

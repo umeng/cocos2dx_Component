@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="libcocos2dx-unspecified">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/res" />
+      <root url="jar://$PROJECT_DIR$/../../cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/libs/httpclient-4.4.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/libs/android-async-http-1.4.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/libs/com.android.vending.expansion.zipfile.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

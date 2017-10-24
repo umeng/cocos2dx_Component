@@ -1,0 +1,4 @@
+#Tue Oct 24 14:40:11 CST 2017
+base.0=/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

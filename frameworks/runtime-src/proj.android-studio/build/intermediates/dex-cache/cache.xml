@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng_social_shareboard.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="658455a7239b8be7fd6d1c71ee79dd4139b0b23e">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng_social_shareboard_b9b0fa9fa93f17ac3a1ac5e487be45162b3834d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_twitter.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9ee9a9e1360f0877661b33dc9e3b3a9c350e2189">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_twitter_fa8aa142dc3b759650bc1f16e24e1df1ae76ddac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/libs/android-async-http-1.4.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="769f000c2940ab43578cd56ffcc81340aad0b182">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.9_1820e4dfc1266b38cd5f1e82c437c26f95ac182b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng_social_tool.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1b66ee18574420f05af05d4136fdb86e345f5228">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng_social_tool_015dd8cd034129c0d694a0e1acac1af6d11d6940.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c4a60e62e6ad45ae57b7d1a7517aadda9c73bd99">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/classes_b966f98a5ca2bf3b734996336da91138ef83f237.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_email.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ccdf2edd590ab37354bd92ca6ea0276c0060a262">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_email_4e6bd055dee62185e0b579921685223138fabb2e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/wechat-sdk-android-with-mta-1.1.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="379056fcb09a02bd0db722be359695ad88beb04d">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/wechat-sdk-android-with-mta-1.1.6_5f060f12f2f4e4910b2e3461a25007c87d20421e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng_social_net.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1800e7cb8f672a30f0bf44ed68ec87197b29c607">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng_social_net_79edcc3ac94dd71a34fa6d8d962b091b2c54233a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/android-support-v4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9b6a9a9078af571732159b904ad423b03b7cc786">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/android-support-v4_e9c93368034df9638a774af305ce22e9324bd083.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_WeiXin_Full.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="557fc04001aa2370b90f3c5f63e8f55f0bbc5ad0">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_WeiXin_Full_5bfd989afd4ef92636993147bcfc3c7763e59141.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_facebook.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f60b42387e1cd447ae42818dcf2bed8de4c37641">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_facebook_dd0b9ad783acbfbc70dd126bda01a12c6cb755f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/libs/httpclient-4.4.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="becf40a1a480be2a5ccb46529dce490f31b516d5">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/httpclient-4.4.1.1_ffb6f8d067aaeaa1569f80c5593c2d2111bf1590.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng-common-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e060c8f68adf0e8055c1f9796094bf3254462f74">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng-common-1.4.0_7dbe1297de8ca6bfd4cf5bd43e13bb8d51d3815a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_whatsapp.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="95a6eed8c56a514b4cafabd3c32ea4d9154a85c1">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_whatsapp_d8e834cdf22d9295dbe7d30205f96fb53b36bdc0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/utdid4all-1.1.5.3_proguard.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="989c3bb13060da1e3154bfe00236f76453a2725f">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/utdid4all-1.1.5.3_proguard_cbdefc95999550625d14c0c4c7c4b5b6392353df.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng_social_api.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e9177904c59537f746c328c61ad991aed392953f">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng_social_api_233281327b5622a9df39dcf9c742c86f9de3f2b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/push/build/intermediates/bundles/default/libs/umeng-push-3.3.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44a6c995fe9549773676b4348784eb865d0dad65">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng-push-3.3.3_d5dd2b83a60a8c026ca6a87056aa66dfa48b938f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/build/intermediates/bundles/default/libs/com.android.vending.expansion.zipfile.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3785cbb057b995cb42463158b1a798fcc78bb3b0">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/com.android.vending.expansion.zipfile_cca0c186358adfb9d479ea23262c8870c051f0c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/open_sdk_r5781.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cbac7d081542657d885efd7a529a9267d22ec080">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/open_sdk_r5781_329e6b6779ce56e884c0990c608b8f76d6554ca6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng_social_shareview.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fe75c6d534b6bfaceef24349e699bc04d1672e9b">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng_social_shareview_d7429007adbcdeb7154c01fc83b72e75023915af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_Sina_Full.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e9778a312517fd5c9e6415c115d3c04ebfa77f4f">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_Sina_Full_a81d78e50edd0d1179eeafecf207c247cde11909.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/push/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a908a9ecf77c0bb9ef606b0aa7a0c0dc0612eb02">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/classes_e8fc12fe1e3234d321713fd91064727e05d67e96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_sms.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8841557c1e8f7f20be129f83dd98fe4f8e8b1778">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_sms_79d30de79f855cb3106e0b2f649a633d2385ad87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng_shareboard_widget.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e46b03af01fc47dfbc35a7d48e8c28bb323ff402">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng_shareboard_widget_eb3807ce4e2c2c9ebd88afa0780fde0e23e8e56f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/push/build/intermediates/bundles/default/libs/alicloud-android-sdk-httpdns-1.0.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1d61bb0f23861e5b86d4308a9ed2a4751e95fe03">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/alicloud-android-sdk-httpdns-1.0.7_e6683272e6f542677b6e86b5868ffe63bca47da6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/weiboSDKCore_3.1.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f3617ce51258bf3ec0fe2503e3c0a920040b1b53">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/weiboSDKCore_3.1.4_a463baf2004d95251243294f6682ff8300b49f13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/umeng-analytics-7.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="98d65513ec69e251f6ab703d5204423d5fac3174">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/umeng-analytics-7.4.0_6d4f1c497f2e2cdf8647ee3a9edb88251e924dd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/libs/SocialSDK_QQ_Full.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="34db47ef132c4e94b70fc935737bfbddaed236e0">
+        <dex dex="/Users/zhz/Desktop/work/Cocos2dx_Component/frameworks/runtime-src/proj.android-studio/app/build/intermediates/pre-dexed/debug/SocialSDK_QQ_Full_ea32ab10f8cb21250d9a6f0f4ff32d60ea97c8fc.jar" />
+    </item>
+
+</items>
