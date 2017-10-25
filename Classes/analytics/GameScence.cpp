@@ -101,10 +101,8 @@ bool GameScence::init()
     MenuItemFont *defineButton = MenuItemFont::create("自定义事件", CC_CALLBACK_1(GameScence::define, this));
     defineButton->setPosition(Vec2(visibleSize.width/4*3, visibleSize.height/7));
     defineButton->setFontSizeObj(14);
-    MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                      "CloseNormal.png",
-                                                      "CloseSelected.png",
-                                                      CC_CALLBACK_1(GameScence::menuCloseCallback, this));
+    MenuItemFont *pCloseItem = MenuItemFont::create("返回", CC_CALLBACK_1(GameScence::menuCloseCallback, this));
+    pCloseItem->setFontSizeObj(14);
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
                                  origin.y + pCloseItem->getContentSize().height));
@@ -228,11 +226,10 @@ void GameScence::define(Ref* pSender)
 }
 void GameScence::menuCloseCallback(Ref* pSender)
 {
-    TransitionScene * reScene = NULL;
-    Scene * s = HelloWorld::createScene();
+    auto * s = HelloWorld::createScene();
     float t = 1.2f;
     
-    reScene = TransitionJumpZoom ::create(t , s);
+    auto reScene = TransitionJumpZoom ::create(t , s);
     Director::getInstance()->replaceScene(reScene);
     
 }

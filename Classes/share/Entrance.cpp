@@ -66,13 +66,11 @@ bool Entrance::init()
     MenuItemFont *getInfoButton = MenuItemFont::create("获取用户信息", CC_CALLBACK_1(Entrance::gotoGetPlatform, this));
     getInfoButton->setPosition(Vec2(visibleSize.width/2, 80));
  getInfoButton->setFontSizeObj(14);
-    MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                           CC_CALLBACK_1(Entrance::menuCloseCallback, this));
+    MenuItemFont *pCloseItem = MenuItemFont::create("返回", CC_CALLBACK_1(Entrance::menuCloseCallback, this));
+    pCloseItem->setFontSizeObj(14);
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
-                                origin.y + pCloseItem->getContentSize().height));
+                                 origin.y + pCloseItem->getContentSize().height));
    
     Menu* pMenu = Menu::create();
     pMenu->addChild(getInfoButton, 1);

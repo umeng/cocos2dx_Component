@@ -8,7 +8,7 @@
 
 #include "AppScence.h"
 #include "AnalyticsHome.h"
-
+#include "HelloWorldScene.h"
 USING_NS_CC;
 
 Scene* AppScence::scene()
@@ -81,7 +81,7 @@ void AppScence::gotoGame(Ref* pSender) {
 void AppScence::menuCloseCallback(Ref* pSender)
 {
     TransitionScene * reScene = NULL;
-    Scene * s = AnalyticsHome::scene();
+    Scene * s = AppScence::scene();
     float t = 1.2f;
     
     reScene = TransitionJumpZoom ::create(t , s);

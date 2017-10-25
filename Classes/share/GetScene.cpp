@@ -64,13 +64,11 @@ bool Get::init()
     MenuItemFont *wxButton = MenuItemFont::create("微信", CC_CALLBACK_1(Get::wxGet, this));
     wxButton->setPosition(Vec2(visibleSize.width/2, 80));
     wxButton->setFontSizeObj(14);
-    MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                          CC_CALLBACK_1(Get::menuCloseCallback, this));
+    MenuItemFont *pCloseItem = MenuItemFont::create("返回", CC_CALLBACK_1(Get::menuCloseCallback, this));
+    pCloseItem->setFontSizeObj(14);
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
-                                origin.y + pCloseItem->getContentSize().height));
+                                 origin.y + pCloseItem->getContentSize().height));
     
     Menu* pMenu = Menu::create();
     pMenu->addChild(sinaButton, 1);

@@ -21,8 +21,8 @@ using namespace std;
 // #include "platform/android/jni/JniHelper.h"
 // #include <android/log.h>
 // #endif
-#define VERSION "1.0"
-#define WRAP_TYPE "cocos2dx"
+#define VERSION "5.0"
+#define WRAP_TYPE "Cocos2d-x"
 
 
 // JNIEXPORT void JNICALL Java_com_umeng_common_UMCocosConfuture_Init(

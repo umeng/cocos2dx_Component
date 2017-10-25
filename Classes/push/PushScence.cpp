@@ -120,13 +120,11 @@ bool PushScence::init()
 
     // 底层API分享
    
-    MenuItemImage *pCloseItem = MenuItemImage::create(
-                                                          "CloseNormal.png",
-                                                          "CloseSelected.png",
-                                                           CC_CALLBACK_1(PushScence::menuCloseCallback, this));
+    MenuItemFont *pCloseItem = MenuItemFont::create("返回", CC_CALLBACK_1(PushScence::menuCloseCallback, this));
+    pCloseItem->setFontSizeObj(14);
     
     pCloseItem->setPosition(Vec2(origin.x + visibleSize.width - pCloseItem->getContentSize().width ,
-                                origin.y + pCloseItem->getContentSize().height));
+                                 origin.y + pCloseItem->getContentSize().height));
    
     Menu* pMenu = Menu::create();
         pMenu->addChild(pCloseItem, 1);
@@ -214,7 +212,7 @@ void PushScence::appInfo(Ref* pSender) {
 void PushScence::menuCloseCallback(Ref* pSender)
 {
     TransitionScene * reScene = NULL;
-    Scene * s = HelloWorld::createScene();
+    auto * s = HelloWorld::createScene();
     float t = 1.2f;
     
     reScene = TransitionJumpZoom ::create(t , s);
