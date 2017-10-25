@@ -78,46 +78,47 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+<<<<<<< HEAD
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
+=======
+>>>>>>> 4461226426e15c845ea25bcff54b9847e6af9059
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-safeguard" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="SocialSDK_twitter" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_email" level="project" />
+    <orderEntry type="library" exported="" name="umeng-common-1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="umeng-analytics-7.4.0" level="project" />
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
-    <orderEntry type="library" exported="" name="umeng-analytics-7.3.2" level="project" />
     <orderEntry type="library" exported="" name="umeng_social_net" level="project" />
-    <orderEntry type="library" exported="" name="umeng_social_api" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_Sina_Full" level="project" />
+    <orderEntry type="library" exported="" name="umeng_social_api" level="project" />
     <orderEntry type="library" exported="" name="umeng_social_shareview" level="project" />
     <orderEntry type="library" exported="" name="umeng_social_tool" level="project" />
     <orderEntry type="library" exported="" name="open_sdk_r5781" level="project" />
-    <orderEntry type="library" exported="" name="weiboSDKCore_3.1.4" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_QQ_Full" level="project" />
-    <orderEntry type="library" exported="" name="utdid4all-1.1.5.3_proguard" level="project" />
+    <orderEntry type="library" exported="" name="weiboSDKCore_3.1.4" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_WeiXin_Full" level="project" />
+    <orderEntry type="library" exported="" name="utdid4all-1.1.5.3_proguard" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_facebook" level="project" />
     <orderEntry type="library" exported="" name="wechat-sdk-android-with-mta-1.1.6" level="project" />
     <orderEntry type="library" exported="" name="umeng_social_shareboard" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_whatsapp" level="project" />
     <orderEntry type="library" exported="" name="SocialSDK_sms" level="project" />
     <orderEntry type="library" exported="" name="umeng_shareboard_widget" level="project" />
-    <orderEntry type="library" exported="" name="umeng-common-1.3.3" level="project" />
     <orderEntry type="module" module-name="push" exported="" />
     <orderEntry type="module" module-name="libcocos2dx" exported="" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" exported="" name="alicloud-android-sdk-httpdns-1.0.7" level="project" />
+    <orderEntry type="library" exported="" name="umeng-push-3.3.3" level="project" />
+>>>>>>> 4461226426e15c845ea25bcff54b9847e6af9059
   </component>
 </module>

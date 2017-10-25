@@ -6,3 +6,4 @@ upload.*
 /upload
 UMCocos.*
 /UMCocos/*
+build/*
