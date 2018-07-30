@@ -110,7 +110,33 @@ namespace umeng {
         
         static void beginLogPageView(const char *pageName);
         static void endLogPageView(const char *pageName);
+        /**
+         * 设置属性 键值对 会覆盖同名的key
+         * 将该函数指定的key-value写入专用文件；APP启动时会自动读取该文件的所有key-value，并将key-value自动作为后续所有track事件的属性。
+         */
+        static void registerSuperProperty(eventDict* property);
         
+        /**
+         *
+         * 从专用文件中删除指定key-value
+         @param propertyName
+         */
+        static void unregisterSuperProperty(const char* propertyName);
+        
+        /**
+         * 返回专用文件中的所有key-value；如果不存在，则返回空。
+         */
+        static std::string getSuperProperties();
+        
+        /**
+         *清空专用文件中的所有key-value。
+         */
+        static void clearSuperProperties();
+        
+        /**
+         * 设置关注事件是否首次触发,只关注eventList前五个合法eventID.只要已经保存五个,此接口无效
+         */
+        static void setFirstLaunchEvent(std::vector<std::string>* eventIdList);
         
         //游戏统计开始
         

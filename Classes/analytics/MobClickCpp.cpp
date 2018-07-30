@@ -11,14 +11,45 @@
 #include <jni/JniHelper.h>
 
 
-#define JAVA_CLASS_MOBCLICKAGENT                "com/umeng/analytics/MobclickAgent"
 #define JAVA_CLASS_UMGAMEANALYTICS              "com/umeng/analytics/UMGameAnalytics"
 #define JAVA_CLASS_UMGAMEAGENT                  "com/umeng/analytics/game/UMGameAgent"
 
 using namespace std;
 USING_NS_CC;
 namespace umeng {
+    static string jstring2str(JNIEnv* env, jstring jstr)
+    {
+        char*   rtn   =   NULL;
+        jclass   clsstring   =   env->FindClass("java/lang/String");
+        jstring   strencode   =   env->NewStringUTF("GB2312");
+        jmethodID   mid   =   env->GetMethodID(clsstring,   "getBytes",   "(Ljava/lang/String;)[B");
+        jbyteArray   barr=   (jbyteArray)env->CallObjectMethod(jstr,mid,strencode);
+        jsize   alen   =   env->GetArrayLength(barr);
+        jbyte*   ba   =   env->GetByteArrayElements(barr,JNI_FALSE);
+        if(alen   >   0)
+        {
+            rtn   =   (char*)malloc(alen+1);
+            memcpy(rtn,ba,alen);
+            rtn[alen]=0;
+        }
+        env->ReleaseByteArrayElements(barr,ba,0);
+        std::string stemp(rtn);
+        free(rtn);
+        return   stemp;
+    }
+    static jobjectArray createJavaArrayObject(JNIEnv* env, std::vector<std::string>* cStrVector){
 
+        jclass objClass = env->FindClass("java/lang/String");
+        jobjectArray aStr= env->NewObjectArray((jsize)cStrVector->size(), objClass, 0);
+        jstring jstr;
+        int i=0;
+        for(;i<cStrVector->size();i++)
+        {
+            jstr = env->NewStringUTF(cStrVector->at(i).c_str());
+            env->SetObjectArrayElement(aStr, i, jstr);//必须放入jstring
+        }
+        return aStr;
+    }
     extern "C"
     {
         jobject createJavaMapObject(JNIEnv *env, std::map<std::string, std::string>* map) {
@@ -37,19 +68,19 @@ namespace umeng {
     }
     void MobClickCpp::setLogEnabled(bool value){
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t,JAVA_CLASS_MOBCLICKAGENT,"setDebugMode", "(Z)V")){
+        if (JniHelper::getStaticMethodInfo(t,JAVA_CLASS_UMGAMEAGENT,"setDebugMode", "(Z)V")){
             t.env->CallStaticVoidMethod(t.classID, t.methodID,value);
         }
     }
     void MobClickCpp::setCheckDevice(bool value){
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"setCheckDevice", "(Z)V")){
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"setCheckDevice", "(Z)V")){
             t.env->CallStaticVoidMethod(t.classID, t.methodID,value);
         }
     }
     void MobClickCpp::setSessionIdleLimit(int seconds){
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"setSessionContinueMillis", "(J)V")){
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"setSessionContinueMillis", "(J)V")){
             t.env->CallStaticVoidMethod(t.classID, t.methodID,seconds);
         }
     }
@@ -172,7 +203,7 @@ namespace umeng {
     
     void MobClickCpp::beginLogPageView(const char *pageName){
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"onPageStart", "(Ljava/lang/String;)V")){
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"onPageStart", "(Ljava/lang/String;)V")){
             jstring page = t.env->NewStringUTF(pageName);
             t.env->CallStaticVoidMethod(t.classID, t.methodID,page);
             t.env->DeleteLocalRef(page);
@@ -181,7 +212,7 @@ namespace umeng {
     
     void MobClickCpp::endLogPageView(const char *pageName){
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"onPageEnd", "(Ljava/lang/String;)V")){
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"onPageEnd", "(Ljava/lang/String;)V")){
             jstring page = t.env->NewStringUTF(pageName);
             t.env->CallStaticVoidMethod(t.classID, t.methodID,page);
             t.env->DeleteLocalRef(page);
@@ -190,7 +221,7 @@ namespace umeng {
     
     void MobClickCpp::setEncryptEnabled(bool value) {
        JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"enableEncrypt", "(Z)V")){
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"enableEncrypt", "(Z)V")){
             t.env->CallStaticVoidMethod(t.classID, t.methodID,value);
         }
     }
@@ -198,13 +229,13 @@ namespace umeng {
     void MobClickCpp::profileSignIn(const char *puid, const char *provider) {
         JniMethodInfo t;
         if(provider == NULL){
-            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"onProfileSignIn", "(Ljava/lang/String;)V")){
+            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"onProfileSignIn", "(Ljava/lang/String;)V")){
                 jstring uid = t.env->NewStringUTF(puid);
                 t.env->CallStaticVoidMethod(t.classID, t.methodID,uid);
                 t.env->DeleteLocalRef(uid);
             }
         }else{
-            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"onProfileSignIn", "(Ljava/lang/String;Ljava/lang/String;)V")){
+            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"onProfileSignIn", "(Ljava/lang/String;Ljava/lang/String;)V")){
                 jstring uid = t.env->NewStringUTF(puid);
                 jstring pro = t.env->NewStringUTF(provider);
                 t.env->CallStaticVoidMethod(t.classID, t.methodID,uid,pro);
@@ -216,7 +247,7 @@ namespace umeng {
     
     void MobClickCpp::profileSignOff() {
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_MOBCLICKAGENT,"onProfileSignOff", "()V")){
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEAGENT,"onProfileSignOff", "()V")){
             t.env->CallStaticVoidMethod(t.classID, t.methodID);
         }
     }
@@ -232,11 +263,52 @@ namespace umeng {
     }
     void MobClickCpp::setLatency(unsigned int latency) {
         JniMethodInfo t;
-        if (JniHelper::getStaticMethodInfo(t,JAVA_CLASS_MOBCLICKAGENT,"setLatencyWindow", "(J)V")){
+        if (JniHelper::getStaticMethodInfo(t,JAVA_CLASS_UMGAMEAGENT,"setLatencyWindow", "(J)V")){
             t.env->CallStaticVoidMethod(t.classID,t.methodID,latency);
         }
     }
     void MobClickCpp::init() {
         //for iOS
+    }
+    void MobClickCpp::registerSuperProperty(eventDict* property){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "registerSuperProperty", "(Ljava/util/Map;)V")){
+            jobject jparamMap = createJavaMapObject(t.env, property);
+            t.env->CallStaticVoidMethod(t.classID, t.methodID,jparamMap);
+            t.env->DeleteLocalRef(jparamMap);
+        }
+    }
+    void MobClickCpp::unregisterSuperProperty(const char* propertyName){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "unregisterSuperProperty", "(Ljava/lang/String;)V")){
+            jstring eName = t.env->NewStringUTF(propertyName);
+            t.env->CallStaticVoidMethod(t.classID, t.methodID,eName);
+            t.env->DeleteLocalRef(eName);
+        }
+        
+    }
+    string MobClickCpp::getSuperProperties(){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "getSuperProperties", "()Ljava/lang/String;")){
+            jstring jstr = (jstring)t.env->CallStaticObjectMethod(t.classID, t.methodID);
+            return jstring2str(t.env,jstr);
+        }
+        return NULL;
+    }
+    void MobClickCpp::clearSuperProperties(){
+        JniMethodInfo t;
+        if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "clearSuperProperties", "()V")){
+            t.env->CallStaticVoidMethod(t.classID, t.methodID);
+        }
+    }
+    void MobClickCpp::setFirstLaunchEvent(std::vector<std::string>* eventIdList){
+         if(eventIdList->size()>0){
+            JniMethodInfo t;
+            
+            if (JniHelper::getStaticMethodInfo(t, JAVA_CLASS_UMGAMEANALYTICS, "setFirstLaunchEvent", "([Ljava/lang/String;)V")){
+                jobjectArray aStr = createJavaArrayObject(t.env,eventIdList);
+                t.env->CallStaticVoidMethod(t.classID, t.methodID,aStr);
+            }
+        }
     }
 }

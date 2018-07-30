@@ -10,7 +10,6 @@
 #include "AnalyticsHome.h"
 #include "HelloWorldScene.h"
 #include "MobClickCpp.h"
-#include "DplusMobClickCpp.h"
 USING_NS_CC;
 
 Scene* GameScence::scene()
@@ -189,13 +188,6 @@ void GameScence::define(Ref* pSender)
     successPayMap.insert(std::make_pair("amount", "200"));
     umeng::MobClickCpp::event("__finish_payment", &successPayMap,10);
     
-    umeng::DplusMobClickCpp::track("test");
-    
-    umeng::eventDict sPayMap;
-    sPayMap.insert(std::make_pair("userid", std::string("xuezhi")));
-    sPayMap.insert(std::make_pair("orderid", std::string("xxxxxx")));
-    sPayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
-    umeng::DplusMobClickCpp::track("test1",&sPayMap);
     
     umeng::eventDict beginPayMap;
     beginPayMap.insert(std::make_pair("userid", std::string("userid-xuezhi")));
@@ -203,13 +195,11 @@ void GameScence::define(Ref* pSender)
     beginPayMap.insert(std::make_pair("item", std::string("test-xuezhi")));
     beginPayMap.insert(std::make_pair("amout", "100"));
     
-    umeng::DplusMobClickCpp::registerSuperProperty(&beginPayMap);
+    umeng::MobClickCpp::registerSuperProperty(&beginPayMap);
     
-    umeng::DplusMobClickCpp::unregisterSuperProperty("userid");
+    umeng::MobClickCpp::unregisterSuperProperty("userid");
     
-    std::string pName = umeng::DplusMobClickCpp::getSuperProperty("item");
-    
-    std::string testMap = umeng::DplusMobClickCpp::getSuperProperties();
+    std::string testMap = umeng::MobClickCpp::getSuperProperties();
     
     
     std::vector<std::string> vec;
@@ -220,8 +210,8 @@ void GameScence::define(Ref* pSender)
     vec.push_back("test");
     vec.push_back("test1");
     //
-    umeng::DplusMobClickCpp::setFirstLaunchEvent(&vec);
-    umeng::DplusMobClickCpp::clearSuperProperties();
+    umeng::MobClickCpp::setFirstLaunchEvent(&vec);
+    umeng::MobClickCpp::clearSuperProperties();
     
 }
 void GameScence::menuCloseCallback(Ref* pSender)

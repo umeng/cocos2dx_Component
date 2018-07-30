@@ -1,12 +1,11 @@
 #include "MobClickCpp.h"
 #include <UMCommon/UMConfigure.h>
 #include <UMAnalytics/MobClick.h>
-#include <UMAnalytics/DplusMobClick.h>
 
 #include <UMAnalytics/MobClickGameAnalytics.h>
 
-#define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x"
-#define UMENG_SDK_WRAPPER_VERSION                   @"4.7.1"
+#define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x_lua"
+#define UMENG_SDK_WRAPPER_VERSION                   @"6.0.0"
 
 namespace umeng {
     
@@ -25,7 +24,7 @@ namespace umeng {
         [UMConfigure setEncryptEnabled:valTmp];
     }
     void MobClickCpp::init(void){
-        [MobClick setScenarioType:(eScenarioType)(E_UM_GAME|E_UM_DPLUS)]; // 仅适用于游戏场景
+        [MobClick setScenarioType:E_UM_GAME]; // 仅适用于游戏场景
     }
     void MobClickCpp::event(const char * eventId, const char * label){
         if(label){
@@ -127,5 +126,54 @@ namespace umeng {
         [MobClickGameAnalytics exchange:oId currencyAmount:currencyAmount currencyType:cTy virtualCurrencyAmount:virtualAmount paychannel:channel];
     }
     void MobClickCpp::setLatency(unsigned int latency){
+    }
+    void MobClickCpp::registerSuperProperty(eventDict* property){
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        eventDict::iterator it;
+        for(it=property->begin();it!=property->end();++it)
+        {
+            NSString* key = [NSString stringWithUTF8String:it->first.c_str()];
+            NSString* obj = [NSString stringWithUTF8String:it->second.c_str()];
+            [dict setObject:obj forKey:key];
+        }
+        [MobClick registerPreProperties:dict];
+        [dict release];
+    }
+    void MobClickCpp::unregisterSuperProperty(const char* propertyName){
+        NSString* eName = [NSString stringWithUTF8String:propertyName];
+        [MobClick unregisterPreProperty:eName];
+        
+    }
+    std::string MobClickCpp::getSuperProperties(){
+        NSDictionary* dict = [MobClick getPreProperties];
+        std::string result;
+        result.append("{");
+        if(dict){
+            for (NSString *key in dict) {
+                result.append([key UTF8String]);
+                result.append(":");
+                result.append([dict[key] UTF8String]);
+                result.append(",");
+            }
+            result.erase(result.end()-1);
+        }
+        result.append("}");
+        return result;
+    }
+    void MobClickCpp::clearSuperProperties(){
+        [MobClick clearPreProperties];
+    }
+    
+    void MobClickCpp::setFirstLaunchEvent(std::vector<std::string>* eventIdList){
+        
+        NSMutableArray* arr = [[NSMutableArray alloc] init];
+        
+        std::vector<std::string>::iterator it =eventIdList->begin();
+        
+        for(;it!= eventIdList->end();it++){
+            [arr addObject:[NSString stringWithUTF8String:it->c_str()]];
+        }
+        [MobClick setFirstLaunchEvent:arr];
+        [arr release];
     }
 }
