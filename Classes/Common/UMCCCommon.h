@@ -21,7 +21,7 @@ using namespace std;
 // #include "platform/android/jni/JniHelper.h"
 // #include <android/log.h>
 // #endif
-#define VERSION "5.0"
+#define VERSION "6.0.0"
 #define WRAP_TYPE "Cocos2d-x"
 
 
@@ -33,7 +33,6 @@ class UMCCCommon{
 public:
     static void setLogEnabled(bool value);
     
-        
     static void init(const char *appkey, const char *channel);
 };
 #endif

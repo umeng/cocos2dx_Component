@@ -197,9 +197,9 @@ void GameScence::define(Ref* pSender)
     
     umeng::MobClickCpp::registerSuperProperty(&beginPayMap);
     
-    umeng::MobClickCpp::unregisterSuperProperty("userid");
+   // umeng::MobClickCpp::unregisterSuperProperty("userid");
     
-    std::string testMap = umeng::MobClickCpp::getSuperProperties();
+    //std::string testMap = umeng::MobClickCpp::getSuperProperties();
     
     
     std::vector<std::string> vec;
@@ -218,7 +218,7 @@ void GameScence::menuCloseCallback(Ref* pSender)
 {
     auto * s = HelloWorld::createScene();
     float t = 1.2f;
-    
+    std::string testMap = umeng::MobClickCpp::getSuperProperties();
     auto reScene = TransitionJumpZoom ::create(t , s);
     Director::getInstance()->replaceScene(reScene);
     

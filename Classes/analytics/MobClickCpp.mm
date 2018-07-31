@@ -4,7 +4,7 @@
 
 #include <UMAnalytics/MobClickGameAnalytics.h>
 
-#define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x_lua"
+#define UMENG_SDK_WRAPPER_TYPE                      @"Cocos2d-x"
 #define UMENG_SDK_WRAPPER_VERSION                   @"6.0.0"
 
 namespace umeng {
@@ -137,6 +137,7 @@ namespace umeng {
             [dict setObject:obj forKey:key];
         }
         [MobClick registerPreProperties:dict];
+        
         [dict release];
     }
     void MobClickCpp::unregisterSuperProperty(const char* propertyName){
