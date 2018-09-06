@@ -1,0 +1,44 @@
+{
+    "docslink": "https://developer.umeng.com/docs/66632/detail/67583", 
+    "notice": "统计Cocos2dx-c++版本桥接文件，平台库请点选Android或iOS下载", 
+    "description": "统计Cocos2dx-c++版本桥接文件，平台库请点选Android或iOS下载", 
+    "index": 0, 
+    "required": 0, 
+    "chooseDescription": "", 
+    "platform_version": "5.0.0", 
+    "display_platform": "Cocos2dx C++", 
+    "log": {
+        "date": "2017-12-03", 
+        "content": "1.整体进行了重构，使其适配了组件化版本", 
+        "title": "v5.0.0"
+    }, 
+    "show": 1, 
+    "title": "移动统计 SDK", 
+    "packages": [
+        {
+            "files": [
+                "Cocos2dx_Cpp/analytics/analytics_cocos2dxcpp_5.0.0/analytics_cc/", 
+                "Cocos2dx_Cpp/analytics/analytics_cocos2dxcpp_5.0.0/analytics_java/"
+            ], 
+            "docslink": "", 
+            "required": 1, 
+            "description": "", 
+            "title": "", 
+            "destination": "", 
+            "key": "cocoscanalytics"
+        }, 
+        {
+            "files": [
+                "Android/analytics/analytics_android_7.5.3/umeng-analytics-7.5.3.jar", 
+                "iOS/analytics/analytics_ios_5.5.0/UMAnalytics.framework"
+            ], 
+            "required": 1, 
+            "description": "友盟+统计SDK", 
+            "show": 1, 
+            "destination": "", 
+            "key": "androidanalytics_cocoscpp", 
+            "title": "友盟+统计SDK"
+        }
+    ], 
+    "name": "analyticscocosc"
+}

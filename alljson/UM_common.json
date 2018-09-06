@@ -1,0 +1,48 @@
+{
+    "docslink": "http://dev.umeng.com/sdk_integate/android_sdk/android_common_guide", 
+    "description": "cocosc common", 
+    "title": "Common SDK 5.0.0测试版", 
+    "required": 1, 
+    "platform_version": "5.0.0", 
+    "display_platform": "Cocos2dx C++", 
+    "log": {
+        "date": "2017-12-03", 
+        "content": "1.整体进行了重构，使其适配了组件化版本", 
+        "title": "v5.0.0"
+    }, 
+    "show": 0, 
+    "packages": [
+        {
+            "files": [
+                "Cocos2dx_Cpp/common/common_cocos2dxcpp_5.0.0/common_cc/", 
+                "Cocos2dx_Cpp/common/common_cocos2dxcpp_5.0.0/common_java/"
+            ], 
+            "docslink": "", 
+            "required": 1, 
+            "description": "", 
+            "title": "", 
+            "destination": "", 
+            "key": "cocosccommon"
+        }, 
+        {
+            "files": [
+                "Android/common/common_android_1.5.3/umeng-common-1.5.3.jar"
+            ], 
+            "docslink": "", 
+            "destination": "", 
+            "description": "common组件库，必须添加到工程中", 
+            "files_abroad": [
+                "Android/common/common_android_1.5.3/internation/umeng-common-1.5.3.jar", 
+                "iOS/common/common_ios_1.5.2/internation/000/UMCommon.framework"
+            ], 
+            "required": 1, 
+            "key": "androidcommon_cocoscpp", 
+            "title": "common组件库", 
+            "files_internal": [
+                "Android/common/common_android_1.5.3/normal/umeng-common-1.5.3.jar", 
+                "iOS/common/common_ios_1.5.2/normal/UMCommon.framework"
+            ]
+        }
+    ], 
+    "name": "commoncocosc"
+}

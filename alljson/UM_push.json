@@ -1,0 +1,56 @@
+{
+    "docslink": "https://developer.umeng.com/docs/66632/detail/67583", 
+    "notice": "推送Cocos2dx-c++版本桥接文件，平台库请点选Android或iOS下载", 
+    "description": "推送Cocos2dx-c++版本桥接文件，平台库请点选Android或iOS下载", 
+    "index": 1, 
+    "required": 0, 
+    "chooseDescription": "", 
+    "platform_version": "5.0.0", 
+    "display_platform": "Cocos2dx C++", 
+    "log": {
+        "date": "2017-12-03", 
+        "content": "1.整体进行了重构，使其适配了组件化版本", 
+        "title": "v5.0.0"
+    }, 
+    "show": 1, 
+    "title": "消息推送 SDK", 
+    "defaultSelect": [
+        "androidpush_cocoscpp"
+    ], 
+    "packages": [
+        {
+            "files": [
+                "Cocos2dx_Cpp/push/push_cocos2dxcpp_5.0.0/push_cc/", 
+                "Cocos2dx_Cpp/push/push_cocos2dxcpp_5.0.0/push_java/"
+            ], 
+            "docslink": "", 
+            "required": 1, 
+            "description": "", 
+            "title": "", 
+            "destination": "", 
+            "key": "cocoscpush"
+        }, 
+        {
+            "files": [
+                "Android/push/push_android_4.2.0/push/"
+            ], 
+            "style": " single", 
+            "required": 1, 
+            "description": "SDK核心库文件，必须添加到工程中", 
+            "title": "PushSDK标准版", 
+            "destination": "", 
+            "key": "androidpush_cocoscpp"
+        }, 
+        {
+            "files": [
+                "iOS/push/push_ios_3.2.2/UMPush.framework"
+            ], 
+            "required": 1, 
+            "description": "SDK核心库文件，必须添加到工程中", 
+            "title": "PushSDK核心库", 
+            "destination": "", 
+            "key": "iospush_cocoscpp"
+        }
+    ], 
+    "name": "pushcocosc"
+}
