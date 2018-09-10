@@ -1,21 +1,21 @@
 {
     "docslink": "http://dev.umeng.com/sdk_integate/android_sdk/android_common_guide", 
     "description": "cocosc common", 
-    "title": "Common SDK 5.0.0测试版", 
+    "title": "Common SDK 6.0.0测试版", 
     "required": 1, 
-    "platform_version": "5.0.0", 
+    "platform_version": "6.0.0", 
     "display_platform": "Cocos2dx C++", 
     "log": {
         "date": "2017-12-03", 
         "content": "1.整体进行了重构，使其适配了组件化版本", 
-        "title": "v5.0.0"
+        "title": "v6.0.0"
     }, 
     "show": 0, 
     "packages": [
         {
             "files": [
-                "Cocos2dx_Cpp/common/common_cocos2dxcpp_5.0.0/common_cc/", 
-                "Cocos2dx_Cpp/common/common_cocos2dxcpp_5.0.0/common_java/"
+                "Cocos2dx_Cpp/common/common_cocos2dxcpp_6.0.0/common_cc/", 
+                "Cocos2dx_Cpp/common/common_cocos2dxcpp_6.0.0/common_java/"
             ], 
             "docslink": "", 
             "required": 1, 

@@ -1,7 +1,7 @@
 #!/bin/bash
 myPath="UMCocos"
 pro_name="Cocos2dx_Cpp"
-version="5.0.0"
+version="6.0.0"
 platform="cocos2dxcpp"
 sharename="share_${platform}_$version.zip"
 pushname="push_${platform}_$version.zip"
@@ -127,4 +127,3 @@ value=`cat alljson/UM_analytics.json | awk -F '"' '/platform_version/{print$4}'`
 echo $value
 sed -i '' "s/$value/$version/g" alljson/UM_analytics.json
 #########################版本号修改##################################
-./addlog.py
